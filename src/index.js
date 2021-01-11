@@ -9,6 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 // the highest specificity to the styling of MUI default components. These lines will
 // help control the order in which CSS is applied to components.
 import { create } from "jss";
+import { CssBaseline } from "@material-ui/core";
 import { StylesProvider, jssPreset } from "@material-ui/core/styles";
 
 const jss = create({
@@ -20,6 +21,7 @@ const jss = create({
 ReactDOM.render(
   <React.StrictMode>
     <StylesProvider jss={jss}>
+      <CssBaseline />
       <App />
     </StylesProvider>
   </React.StrictMode>,
