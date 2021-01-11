@@ -1,34 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
 import Header from "./Header";
-import { Collapse, IconButton } from "@material-ui/core";
+import LandingPageBanner from "./LandingPageBanner";
+import LandingPageInfo from "./LandingPageInfo";
 
 function LandingPage() {
-  const [checked, setChecked] = useState(false);
-  useEffect(() => {
-    setChecked(true);
-  });
-
   return (
     <BackgroundContainer>
       <Wrapper>
         <Header />
-        <Collapse
-          in={checked}
-          {...(checked ? { timeout: 1000 } : {})}
-          collapsedHeight={50}
-        >
-          <InnerWrapper>
-            <Title>
-              Welcome to <br /> <span>Forleti</span>
-            </Title>
-            <IconButton>
-              <StyledExpandMoreIcon />
-            </IconButton>
-          </InnerWrapper>
-        </Collapse>
+        <LandingPageBanner />
       </Wrapper>
+      <LandingPageInfo />
     </BackgroundContainer>
   );
 }
@@ -43,20 +27,7 @@ const BackgroundContainer = styled.div`
   background-image: url(${backgroundURL});
   background-repeat: no-repeat;
   background-size: cover;
-`;
-
-const InnerWrapper = styled.div`
-  text-align: center;
-`;
-
-const StyledExpandMoreIcon = styled(ExpandMoreIcon)`
-  color: rgb(67, 238, 164);
-  font-size: 5rem;
-`;
-
-const Title = styled.h2`
-  color: white;
-  font-size: 4.5rem;
+  background-attachment: fixed;
 `;
 
 const Wrapper = styled.div`
