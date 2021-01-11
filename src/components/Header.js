@@ -24,7 +24,7 @@ const Title = styled.h1`
 `;
 
 const StyledAppBar = styled(AppBar)`
-  background: none !important;
+  background: none;
 `;
 
 const StyledSortIcon = styled(SortIcon)`
