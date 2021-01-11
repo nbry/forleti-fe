@@ -1,11 +1,13 @@
 import React from "react";
 import { CssBaseline } from "@material-ui/core";
 import styled from "styled-components";
+import Header from "./components/Header";
 
 function App() {
   return (
     <Wrapper>
       <CssBaseline />
+      <Header />
     </Wrapper>
   );
 }
