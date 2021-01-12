@@ -5,6 +5,9 @@ import LandingPage from "./LandingPage/LandingPage";
 const Routes = () => {
   return (
     <Switch>
+      <Route path="/login">
+          
+      </Route>
       <Route path="/">
         <LandingPage />
       </Route>
