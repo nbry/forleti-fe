@@ -1,13 +1,22 @@
-import { Avatar, Button, Paper } from "@material-ui/core";
+import { Avatar, Box, Button, Paper } from "@material-ui/core";
 import styled from "styled-components";
 
-const StyledAvatar = styled(Avatar)`
+const StyledLoginAvatar = styled(Avatar)`
   background-color: #08cb85;
 `;
 
-const StyledSubmitButton = styled(Button)`
-  margin: 8px 0;
+const StyledSignupAvatar = styled(Avatar)`
+  background-color: #9746e6;
 `;
+
+const StyledButton = styled(Button)`
+  margin-bottom: 10px;
+`;
+
+const StyledFormBox = styled(Box)`
+  height: 150px;
+`;
+
 const StyledFormPaper = styled(Paper)`
   margin: 100px auto;
   padding: 20px;
@@ -21,4 +30,11 @@ const StyledTitle = styled.h2`
   margin-bottom: 0px;
 `;
 
-export { StyledAvatar, StyledSubmitButton, StyledFormPaper, StyledTitle };
+export {
+  StyledLoginAvatar,
+  StyledSignupAvatar,
+  StyledButton,
+  StyledFormPaper,
+  StyledFormBox,
+  StyledTitle,
+};

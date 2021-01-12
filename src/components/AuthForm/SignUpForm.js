@@ -1,33 +1,32 @@
-import {
-  Box,
-  Checkbox,
-  FormControlLabel,
-  Grid,
-  TextField,
-  Typography,
-} from "@material-ui/core";
-import LockIcon from "@material-ui/icons/Lock";
+import { Box, Grid, TextField, Typography } from "@material-ui/core";
+import CreateIcon from "@material-ui/icons/Create";
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  StyledLoginAvatar as StyledAvatar,
+  StyledSignupAvatar as StyledAvatar,
   StyledButton,
   StyledFormBox,
   StyledFormPaper,
   StyledTitle,
 } from "./sharedAuthStyles";
 
-function LoginForm() {
+function SignUpForm() {
   return (
     <Grid>
       <StyledFormPaper elevation={10}>
         <Grid align="center">
           <StyledAvatar>
-            <LockIcon />
+            <CreateIcon />
           </StyledAvatar>
-          <StyledTitle>Log In</StyledTitle>
+          <StyledTitle>Sign Up</StyledTitle>
         </Grid>
         <StyledFormBox my={2}>
+          <TextField
+            label="email"
+            placeholder="Enter Email"
+            fullWidth
+            required
+          />
           <TextField
             label="username"
             placeholder="Enter Username"
@@ -40,10 +39,6 @@ function LoginForm() {
             type="password"
             fullWidth
             required
-          />
-          <FormControlLabel
-            control={<Checkbox name="checkedB" color="primary" />}
-            label="Remember Me"
           />
         </StyledFormBox>
         <StyledButton
@@ -67,7 +62,7 @@ function LoginForm() {
         <Box mt={1} textAlign="center">
           <Typography>
             {" "}
-            Need to make an account? <Link to="/signup">Sign Up Here!</Link>
+            Already have an account? <Link to="/login">Log In Here!</Link>
           </Typography>
         </Box>
       </StyledFormPaper>
@@ -75,4 +70,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default SignUpForm;
