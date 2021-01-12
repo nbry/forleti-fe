@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Collapse, IconButton, Button } from "@material-ui/core";
+import { Collapse, IconButton, Button, Grid } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
-import p from "../../theme/themePalette";
 
 function LandingPageBanner() {
   const [checked, setChecked] = useState(false);
@@ -18,14 +17,27 @@ function LandingPageBanner() {
       collapsedHeight={50}
     >
       <InnerWrapper>
-        <Title>
-          Welcome to <br /> <span>Forleti</span>
-        </Title>
-        <Scroll to="loading-page-info" smooth={true}>
-          <IconButton>
-            <StyledExpandMoreIcon />
-          </IconButton>
-        </Scroll>
+        <Grid>
+          <Title>
+            Welcome to <br /> <span>Forleti</span>
+          </Title>
+          <StyledButton
+            variant="contained"
+            color="primary"
+            size="large"
+            fullWidth
+          >
+            Sign Up
+          </StyledButton>
+          <StyledButton variant="contained" size="large" fullWidth>
+            Log In
+          </StyledButton>
+          <Scroll to="loading-page-info" smooth={true}>
+            <IconButton>
+              <StyledExpandMoreIcon />
+            </IconButton>
+          </Scroll>
+        </Grid>
       </InnerWrapper>
     </Collapse>
   );
@@ -38,8 +50,12 @@ const InnerWrapper = styled.div`
   text-align: center;
 `;
 
+const StyledButton = styled(Button)`
+  margin-bottom: 10px;
+`;
+
 const StyledExpandMoreIcon = styled(ExpandMoreIcon)`
-  color: ${p.primary.main};
+  color: #43eea4;
   font-size: 5rem;
   border-radius: 50%;
   animation: pulse-animation 4s infinite;

@@ -10,12 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 // help control the order in which CSS is applied to components.
 import { create } from "jss";
 import { CssBaseline } from "@material-ui/core";
-import {
-  StylesProvider,
-  jssPreset,
-  ThemeProvider,
-} from "@material-ui/core/styles";
-import theme from "./theme/theme";
+import { StylesProvider, jssPreset } from "@material-ui/core/styles";
 
 const jss = create({
   ...jssPreset(),
@@ -26,10 +21,8 @@ const jss = create({
 ReactDOM.render(
   <React.StrictMode>
     <StylesProvider jss={jss}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App />
-      </ThemeProvider>
+      <CssBaseline />
+      <App />
     </StylesProvider>
   </React.StrictMode>,
   document.getElementById("root")
