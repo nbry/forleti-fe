@@ -15,7 +15,7 @@ import {
   jssPreset,
   ThemeProvider,
 } from "@material-ui/core/styles";
-import theme from "./theme";
+import theme from "./theme/theme";
 
 const jss = create({
   ...jssPreset(),

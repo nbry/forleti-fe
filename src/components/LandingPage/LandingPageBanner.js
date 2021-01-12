@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Collapse, IconButton, Button } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
+import p from "../../theme/themePalette";
 
 function LandingPageBanner() {
   const [checked, setChecked] = useState(false);
@@ -38,7 +39,7 @@ const InnerWrapper = styled.div`
 `;
 
 const StyledExpandMoreIcon = styled(ExpandMoreIcon)`
-  color: rgb(67, 238, 164);
+  color: ${p.primary.main};
   font-size: 5rem;
   border-radius: 50%;
   animation: pulse-animation 4s infinite;
