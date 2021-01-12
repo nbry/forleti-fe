@@ -6,7 +6,7 @@ import HeaderMenuList from "./HeaderMenuList";
 
 function Header() {
   return (
-    <StyledAppBar id="header" elevation={10}>
+    <StyledAppBar id="header" elevation={2}>
       <StyledToolbar>
         <Title>Forleti</Title>
         <HeaderMenuList />
