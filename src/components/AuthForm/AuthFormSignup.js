@@ -18,7 +18,7 @@ import {
 function SignUpForm({ setBannerContent }) {
   return (
     <Grid>
-      <StyledFormPaper elevation={10}>
+      <StyledFormPaper elevation={20}>
         <Grid align="center">
           <StyledAvatar>
             <CreateIcon />

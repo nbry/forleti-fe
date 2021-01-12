@@ -20,7 +20,7 @@ import {
 function LoginForm({ setBannerContent }) {
   return (
     <Grid>
-      <StyledFormPaper elevation={10}>
+      <StyledFormPaper elevation={20}>
         <Grid align="center">
           <StyledAvatar>
             <LockIcon />
