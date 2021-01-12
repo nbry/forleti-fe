@@ -1,18 +1,20 @@
 import {
-  Avatar,
   Box,
-  Button,
   Checkbox,
   FormControlLabel,
   Grid,
-  Paper,
   TextField,
   Typography,
 } from "@material-ui/core";
 import LockIcon from "@material-ui/icons/Lock";
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import {
+  StyledAvatar,
+  StyledSubmitButton,
+  StyledFormPaper,
+  StyledTitle,
+} from "./sharedAuthStyles";
 
 function LoginForm() {
   return (
@@ -69,24 +71,3 @@ function LoginForm() {
 }
 
 export default LoginForm;
-
-//STYLE:
-const StyledAvatar = styled(Avatar)`
-  background-color: #08cb85;
-`;
-
-const StyledSubmitButton = styled(Button)`
-  margin: 8px 0;
-`;
-const StyledFormPaper = styled(Paper)`
-  margin: 100px auto;
-  padding: 20px;
-  height: 55vh;
-  width: 380px;
-`;
-
-const StyledTitle = styled.h2`
-  font-size: 2rem;
-  margin-top: 0px;
-  margin-bottom: 0px;
-`;
