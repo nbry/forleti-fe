@@ -25,7 +25,7 @@ const Title = styled.h1`
 `;
 
 const StyledAppBar = styled(AppBar)`
-  background: none;
+  background: rgb(0, 0, 0, 0.7);
 `;
 
 const StyledToolbar = styled(Toolbar)`
