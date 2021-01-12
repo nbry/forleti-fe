@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { IconButton, Button, Grid } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
+import { Link } from "react-router-dom";
 
 function LandingPageBanner() {
   return (
@@ -14,6 +15,8 @@ function LandingPageBanner() {
         </Subtitle>
         <Description>(noun, informal). blogging made simple</Description>
         <StyledButton
+          component={Link}
+          to="/signup"
           variant="contained"
           color="primary"
           size="large"
@@ -21,7 +24,13 @@ function LandingPageBanner() {
         >
           Sign Up
         </StyledButton>
-        <StyledButton variant="contained" size="large" fullWidth>
+        <StyledButton
+          component={Link}
+          to="/login"
+          variant="contained"
+          size="large"
+          fullWidth
+        >
           Log In
         </StyledButton>
         <Scroll to="loading-page-info" smooth={true}>
