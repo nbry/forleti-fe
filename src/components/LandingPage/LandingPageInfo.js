@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import ImageCard from "./ImageCard";
-import cards from "../static/LandingPageCards";
+// import ImageCard from "./ImageCard";
+// import cards from "../../static/LandingPageCards";
 
 function LandingPageInfo() {
   return (

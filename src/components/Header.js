@@ -1,6 +1,5 @@
 import React from "react";
-import { AppBar, IconButton, Toolbar } from "@material-ui/core";
-import SortIcon from "@material-ui/icons/Sort";
+import { AppBar, Toolbar } from "@material-ui/core";
 import styled from "styled-components";
 
 import HeaderMenu from "./HeaderMenu";
