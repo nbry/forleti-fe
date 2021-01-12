@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Collapse, IconButton } from "@material-ui/core";
+import { Link as Scroll } from "react-scroll";
 
 function LandingPageBanner() {
   const [checked, setChecked] = useState(false);
@@ -19,9 +20,11 @@ function LandingPageBanner() {
         <Title>
           Welcome to <br /> <span>Forleti</span>
         </Title>
-        <IconButton>
-          <StyledExpandMoreIcon />
-        </IconButton>
+        <Scroll to="loading-page-info" smooth={true}>
+          <IconButton>
+            <StyledExpandMoreIcon />
+          </IconButton>
+        </Scroll>
       </InnerWrapper>
     </Collapse>
   );
@@ -41,5 +44,6 @@ const StyledExpandMoreIcon = styled(ExpandMoreIcon)`
 
 const Title = styled.h2`
   color: white;
-  font-size: 4.5rem;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+  font-size: 4rem;
 `;

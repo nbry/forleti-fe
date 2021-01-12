@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 function Header() {
   return (
-    <StyledAppBar elevation={0}>
+    <StyledAppBar id="header" elevation={0}>
       <StyledToolbar>
         <Title>Forleti</Title>
         <IconButton>
@@ -21,6 +21,8 @@ export default Header;
 // STYLES:
 const Title = styled.h1`
   flex-grow: 1;
+  font-size: 1rem;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
 `;
 
 const StyledAppBar = styled(AppBar)`
@@ -29,7 +31,8 @@ const StyledAppBar = styled(AppBar)`
 
 const StyledSortIcon = styled(SortIcon)`
   color: #fff;
-  font-size: 2rem;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
 `;
 
 const StyledToolbar = styled(Toolbar)`

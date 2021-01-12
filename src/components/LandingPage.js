@@ -7,13 +7,15 @@ import LandingPageInfo from "./LandingPageInfo";
 
 function LandingPage() {
   return (
-    <BackgroundContainer>
-      <Wrapper>
-        <Header />
-        <LandingPageBanner />
-      </Wrapper>
+    <>
+      <BackgroundContainer>
+        <Wrapper>
+          <Header />
+          <LandingPageBanner />
+        </Wrapper>
+      </BackgroundContainer>
       <LandingPageInfo />
-    </BackgroundContainer>
+    </>
   );
 }
 

@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 import ImageCard from "./ImageCard";
-import cards from "./static/LandingPageCards";
+import cards from "../static/LandingPageCards";
 
 function LandingPageInfo() {
   return (
-    <OuterWrapper>
-      {cards.map((card) => (
-        <ImageCard key={card.title} cardInfo={card} />
-      ))}
+    <OuterWrapper id="loading-page-info">
+      {/* {cards.map((card) => (
+        <ImageCard key={card.title} cardInfo={card}/>
+      ))} */}
     </OuterWrapper>
   );
 }

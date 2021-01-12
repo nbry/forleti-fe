@@ -7,20 +7,20 @@ import styled from "styled-components";
 
 function ImageCard({ cardInfo }) {
   return (
-    <StyledCard>
-      <StyledCardMedia
-        image={cardInfo.imageUrl}
-        title="Contemplative Reptile"
-      />
-      <CardContent>
-        <StyledTitle gutterBottom variant="h5" component="h2">
-          {cardInfo.title}
-        </StyledTitle>
-        <StyledDescription variant="body2" component="p">
-          {cardInfo.description}
-        </StyledDescription>
-      </CardContent>
-    </StyledCard>
+      <StyledCard>
+        <StyledCardMedia
+          image={cardInfo.imageUrl}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <StyledTitle gutterBottom variant="h5" component="h2">
+            {cardInfo.title}
+          </StyledTitle>
+          <StyledDescription variant="body2" component="p">
+            {cardInfo.description}
+          </StyledDescription>
+        </CardContent>
+      </StyledCard>
   );
 }
 
