@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Collapse, IconButton, Button, Grid } from "@material-ui/core";
+import { Collapse, IconButton, Button, Grid, Link } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
 
 function LandingPageBanner() {
@@ -18,9 +18,11 @@ function LandingPageBanner() {
     >
       <InnerWrapper>
         <Grid>
-          <Title>
-            Welcome to <br /> <span>Forleti</span>
-          </Title>
+          <Title>Forleti</Title>
+          <Subtitle>
+            <i>[ four-leh-tee ]</i>
+          </Subtitle>
+          <Description>(noun, informal). blogging made simple</Description>
           <StyledButton
             variant="contained"
             color="primary"
@@ -46,12 +48,14 @@ function LandingPageBanner() {
 export default LandingPageBanner;
 
 //STYLES:
+
+// General:
 const InnerWrapper = styled.div`
   text-align: center;
 `;
 
 const StyledButton = styled(Button)`
-  margin-bottom: 10px;
+  margin-top: 10px;
 `;
 
 const StyledExpandMoreIcon = styled(ExpandMoreIcon)`
@@ -72,9 +76,28 @@ const StyledExpandMoreIcon = styled(ExpandMoreIcon)`
   }
 `;
 
-const Title = styled.h2`
+// Banner Font:
+const sharedFontStyle = css`
   color: white;
-  text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.6);
+  text-shadow: 3px 4px 5px rgba(0, 0, 0);
+  font-family: "Raleway";
+`;
+
+const Description = styled.div`
+  ${sharedFontStyle}
+  font-size: 1.1rem;
+  text-align: start;
+  margin-bottom: 10px;
+`;
+
+const Subtitle = styled.h3`
+  ${sharedFontStyle}
+  font-size: 1.2rem;
+  text-align: start;
+`;
+
+const Title = styled.h2`
+  ${sharedFontStyle}
   font-size: 4rem;
-  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
 `;
