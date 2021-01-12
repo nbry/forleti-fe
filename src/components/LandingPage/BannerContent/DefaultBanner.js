@@ -3,9 +3,8 @@ import styled, { css } from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { IconButton, Button, Grid } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
-import { Link } from "react-router-dom";
 
-function LandingPageBanner() {
+function LandingPageBanner({ setBannerContent }) {
   return (
     <InnerWrapper>
       <Grid>
@@ -15,8 +14,7 @@ function LandingPageBanner() {
         </Subtitle>
         <Description>(noun, informal). blogging made simple</Description>
         <StyledButton
-          component={Link}
-          to="/signup"
+          onClick={() => setBannerContent("signup")}
           variant="contained"
           color="primary"
           size="large"
@@ -25,8 +23,7 @@ function LandingPageBanner() {
           Sign Up
         </StyledButton>
         <StyledButton
-          component={Link}
-          to="/login"
+          onClick={() => setBannerContent("login")}
           variant="contained"
           size="large"
           fullWidth

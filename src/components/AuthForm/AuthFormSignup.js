@@ -1,7 +1,12 @@
-import { Box, Grid, TextField, Typography } from "@material-ui/core";
+import {
+  Box,
+  Grid,
+  TextField,
+  Link,
+  Typography,
+} from "@material-ui/core";
 import CreateIcon from "@material-ui/icons/Create";
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   StyledSignupAvatar as StyledAvatar,
   StyledButton,
@@ -10,7 +15,7 @@ import {
   StyledTitle,
 } from "./sharedAuthStyles";
 
-function SignUpForm() {
+function SignUpForm({ setBannerContent }) {
   return (
     <Grid>
       <StyledFormPaper elevation={10}>
@@ -51,8 +56,7 @@ function SignUpForm() {
           Submit
         </StyledButton>
         <StyledButton
-          component={Link}
-          to="/"
+          onClick={() => setBannerContent("default")}
           variant="contained"
           size="large"
           fullWidth
@@ -62,7 +66,10 @@ function SignUpForm() {
         <Box mt={1} textAlign="center">
           <Typography>
             {" "}
-            Already have an account? <Link to="/login">Log In Here!</Link>
+            Already have an account?{" "}
+            <Link component="button" onClick={() => setBannerContent("login")}>
+              Log In Here!
+            </Link>
           </Typography>
         </Box>
       </StyledFormPaper>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import LandingPage from "./LandingPage/LandingPage";
-import LoginForm from "./AuthForm/LoginForm";
-import SignUpForm from "./AuthForm/SignUpForm";
+import LoginForm from "./AuthForm/AuthFormLogin";
+import SignUpForm from "./AuthForm/AuthFormSignup";
 
 const Routes = () => {
   return (

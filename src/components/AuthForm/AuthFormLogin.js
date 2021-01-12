@@ -3,12 +3,12 @@ import {
   Checkbox,
   FormControlLabel,
   Grid,
+  Link,
   TextField,
   Typography,
 } from "@material-ui/core";
 import LockIcon from "@material-ui/icons/Lock";
-import React from "react";
-import { Link } from "react-router-dom";
+
 import {
   StyledLoginAvatar as StyledAvatar,
   StyledButton,
@@ -17,7 +17,7 @@ import {
   StyledTitle,
 } from "./sharedAuthStyles";
 
-function LoginForm() {
+function LoginForm({ setBannerContent }) {
   return (
     <Grid>
       <StyledFormPaper elevation={10}>
@@ -56,8 +56,7 @@ function LoginForm() {
           Submit
         </StyledButton>
         <StyledButton
-          component={Link}
-          to="/"
+          onClick={() => setBannerContent("default")}
           variant="contained"
           size="large"
           fullWidth
@@ -67,7 +66,10 @@ function LoginForm() {
         <Box mt={1} textAlign="center">
           <Typography>
             {" "}
-            Need to make an account? <Link to="/signup">Sign Up Here!</Link>
+            Need to make an account?{" "}
+            <Link component="button" onClick={() => setBannerContent("signup")}>
+              Sign Up Here!
+            </Link>
           </Typography>
         </Box>
       </StyledFormPaper>
