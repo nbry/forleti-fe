@@ -2,14 +2,14 @@ import React from "react";
 import { AppBar, Toolbar } from "@material-ui/core";
 import styled from "styled-components";
 
-import HeaderMenu from "./HeaderMenu";
+import HeaderMenuList from "./HeaderMenuList";
 
 function Header() {
   return (
     <StyledAppBar id="header" elevation={0}>
       <StyledToolbar>
         <Title>Forleti</Title>
-        <HeaderMenu />
+        <HeaderMenuList />
       </StyledToolbar>
     </StyledAppBar>
   );

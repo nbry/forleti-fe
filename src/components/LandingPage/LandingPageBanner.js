@@ -40,10 +40,24 @@ const InnerWrapper = styled.div`
 const StyledExpandMoreIcon = styled(ExpandMoreIcon)`
   color: rgb(67, 238, 164);
   font-size: 5rem;
+  border-radius: 50%;
+  animation: pulse-animation 4s infinite;
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+  }
+  :hover {
+    animation: none;
+  }
 `;
 
 const Title = styled.h2`
   color: white;
-  text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.6);
   font-size: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
 `;
