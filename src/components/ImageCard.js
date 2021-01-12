@@ -5,19 +5,19 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
 
-function ImageCard() {
+function ImageCard({ cardInfo }) {
   return (
     <StyledCard>
       <StyledCardMedia
-        image={process.env.PUBLIC_URL + "/assets/blog.jpg"}
+        image={cardInfo.imageUrl}
         title="Contemplative Reptile"
       />
       <CardContent>
         <StyledTitle gutterBottom variant="h5" component="h2">
-          Lizard
+          {cardInfo.title}
         </StyledTitle>
         <StyledDescription variant="body2" component="p">
-          Default Material UI description for lizards
+          {cardInfo.description}
         </StyledDescription>
       </CardContent>
     </StyledCard>
@@ -28,7 +28,8 @@ export default ImageCard;
 
 //STYLES:
 const StyledCard = styled(Card)`
-  max-width: 600px;
+  max-width: 50%;
+  margin: 20px;
   background: rgb(0, 0, 0, 0.5);
 `;
 
