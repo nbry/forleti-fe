@@ -1,10 +1,10 @@
 import {
   Avatar,
+  Box,
   Button,
   Checkbox,
   FormControlLabel,
   Grid,
-  Link as MuiLink,
   Paper,
   TextField,
   Typography,
@@ -22,25 +22,27 @@ function LoginForm() {
           <StyledAvatar>
             <LockIcon />
           </StyledAvatar>
-          <h2>Log In</h2>
+          <StyledTitle>Log In</StyledTitle>
         </Grid>
-        <TextField
-          label="username"
-          placeholder="Enter Username"
-          fullWidth
-          required
-        />
-        <TextField
-          label="password"
-          placeholder="Enter Password"
-          type="password"
-          fullWidth
-          required
-        />
-        <FormControlLabel
-          control={<Checkbox name="checkedB" color="primary" />}
-          label="Remember Me"
-        />
+        <Box my={2}>
+          <TextField
+            label="username"
+            placeholder="Enter Username"
+            fullWidth
+            required
+          />
+          <TextField
+            label="password"
+            placeholder="Enter Password"
+            type="password"
+            fullWidth
+            required
+          />
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Remember Me"
+          />
+        </Box>
         <StyledSubmitButton
           type="submit"
           color="primary"
@@ -50,10 +52,17 @@ function LoginForm() {
         >
           Submit
         </StyledSubmitButton>
-        <Typography>
-          {" "}
-          Need to make an account? <Link to="/signup">Sign Up Here!</Link>
-        </Typography>
+        <Box my={2}>
+          <Typography>
+            <Link to="/">Return Home</Link>
+          </Typography>
+        </Box>
+        <Box my={2}>
+          <Typography>
+            {" "}
+            Need to make an account? <Link to="/signup">Sign Up Here!</Link>
+          </Typography>
+        </Box>
       </StyledFormPaper>
     </Grid>
   );
@@ -72,6 +81,12 @@ const StyledSubmitButton = styled(Button)`
 const StyledFormPaper = styled(Paper)`
   margin: 100px auto;
   padding: 20px;
-  height: 70vh;
+  height: 55vh;
   width: 380px;
+`;
+
+const StyledTitle = styled.h2`
+  font-size: 2rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
 `;
