@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import Header from "../Header";
 import LandingPageBanner from "./LandingPageBanner";
 import LandingPageInfo from "./LandingPageInfo";
 
@@ -10,7 +9,6 @@ function LandingPage() {
     <>
       <BackgroundContainer>
         <Wrapper>
-          <Header />
           <LandingPageBanner />
         </Wrapper>
       </BackgroundContainer>

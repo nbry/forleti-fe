@@ -1,9 +1,13 @@
 import React from "react";
-import LandingPage from "./components/LandingPage/LandingPage"
+import Routes from "./components/Routes";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <LandingPage />
+    <>
+      <Header />
+      <Routes />
+    </>
   );
 }
 

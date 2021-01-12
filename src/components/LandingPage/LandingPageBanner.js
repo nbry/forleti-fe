@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Collapse, IconButton, Button, Grid, Link } from "@material-ui/core";
+import { Collapse, IconButton, Button, Grid } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
 
 function LandingPageBanner() {

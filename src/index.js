@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 
 // To control the order that CSS rules are applied to components
 // i.e. Material UI (MUI) will inject CSS at the end of the head, which gives
@@ -22,7 +23,9 @@ ReactDOM.render(
   <React.StrictMode>
     <StylesProvider jss={jss}>
       <CssBaseline />
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </StylesProvider>
   </React.StrictMode>,
   document.getElementById("root")
