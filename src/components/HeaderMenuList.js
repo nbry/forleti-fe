@@ -52,8 +52,9 @@ function HeaderMenuList() {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          <StyledMenuIcon />
+          <StyledMenuIcon color="primary"/>
         </Button>
+
         <Popper
           open={open}
           anchorEl={anchorRef.current}
@@ -94,13 +95,8 @@ export default HeaderMenuList;
 
 // STYLES:
 const StyledMenuIcon = styled(MenuIcon)`
-  color: #fff;
   text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   font-size: 2rem;
-  :hover {
-    transition: 400ms;
-    color: rgb(67, 238, 164);
-  }
 `;
 
 const StyledRoot = styled.div`
