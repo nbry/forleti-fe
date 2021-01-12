@@ -7,23 +7,19 @@ function LandingPageBanner() {
   const [checked, setChecked] = useState(false);
   const [bannerContent, setBannerContent] = useState("default");
 
-  useEffect(() => {
-    setChecked(true);
-  }, []);
-
   return (
     <>
       {bannerContent === "default" ? (
-        <Collapse
-          in={checked}
-          {...(checked ? { timeout: 1000 } : {})}
-          collapsedHeight={50}
-        >
-          <DefaultBanner setBannerContent={setBannerContent} />
-        </Collapse>
+        <DefaultBanner
+          checked={checked}
+          setChecked={setChecked}
+          setBannerContent={setBannerContent}
+        />
       ) : (
         <AuthForm
           authForm={bannerContent}
+          checked={checked}
+          setChecked={setChecked}
           setBannerContent={setBannerContent}
         />
       )}

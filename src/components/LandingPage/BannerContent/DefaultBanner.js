@@ -1,46 +1,56 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { IconButton, Button, Grid } from "@material-ui/core";
+import { IconButton, Button, Collapse, Grid } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
 
-function LandingPageBanner({ setBannerContent }) {
+function DefaultBanner({ setBannerContent, checked, setChecked }) {
+  useEffect(() => {
+    setChecked(true);
+  }, []);
+
   return (
-    <InnerWrapper>
-      <Grid>
-        <Title>Forleti</Title>
-        <Subtitle>
-          <i>[ four-leh-tee ]</i>
-        </Subtitle>
-        <Description>(noun, informal). blogging made simple</Description>
-        <StyledButton
-          onClick={() => setBannerContent("signup")}
-          variant="contained"
-          color="primary"
-          size="large"
-          fullWidth
-        >
-          Sign Up
-        </StyledButton>
-        <StyledButton
-          onClick={() => setBannerContent("login")}
-          variant="contained"
-          size="large"
-          fullWidth
-        >
-          Log In
-        </StyledButton>
-        <Scroll to="loading-page-info" smooth={true}>
-          <IconButton>
-            <StyledExpandMoreIcon />
-          </IconButton>
-        </Scroll>
-      </Grid>
-    </InnerWrapper>
+    <Collapse
+      in={checked}
+      {...(checked ? { timeout: 1000 } : {})}
+      collapsedHeight={50}
+    >
+      <InnerWrapper>
+        <Grid>
+          <Title>Forleti</Title>
+          <Subtitle>
+            <i>[ four-leh-tee ]</i>
+          </Subtitle>
+          <Description>(noun, informal). blogging made simple</Description>
+          <StyledButton
+            onClick={() => setBannerContent("signup")}
+            variant="contained"
+            color="primary"
+            size="large"
+            fullWidth
+          >
+            Sign Up
+          </StyledButton>
+          <StyledButton
+            onClick={() => setBannerContent("login")}
+            variant="contained"
+            size="large"
+            fullWidth
+          >
+            Log In
+          </StyledButton>
+          <Scroll to="loading-page-info" smooth={true}>
+            <IconButton>
+              <StyledExpandMoreIcon />
+            </IconButton>
+          </Scroll>
+        </Grid>
+      </InnerWrapper>
+    </Collapse>
   );
 }
 
-export default LandingPageBanner;
+export default DefaultBanner;
 
 //STYLES:
 
