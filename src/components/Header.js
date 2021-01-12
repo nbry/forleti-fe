@@ -3,14 +3,14 @@ import { AppBar, IconButton, Toolbar } from "@material-ui/core";
 import SortIcon from "@material-ui/icons/Sort";
 import styled from "styled-components";
 
+import HeaderMenu from "./HeaderMenu";
+
 function Header() {
   return (
     <StyledAppBar id="header" elevation={0}>
       <StyledToolbar>
         <Title>Forleti</Title>
-        <IconButton>
-          <StyledSortIcon />
-        </IconButton>
+        <HeaderMenu />
       </StyledToolbar>
     </StyledAppBar>
   );
@@ -27,12 +27,6 @@ const Title = styled.h1`
 
 const StyledAppBar = styled(AppBar)`
   background: none;
-`;
-
-const StyledSortIcon = styled(SortIcon)`
-  color: #fff;
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
-  font-size: 1.5rem;
 `;
 
 const StyledToolbar = styled(Toolbar)`

@@ -44,6 +44,6 @@ const StyledExpandMoreIcon = styled(ExpandMoreIcon)`
 
 const Title = styled.h2`
   color: white;
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
   font-size: 4rem;
 `;
