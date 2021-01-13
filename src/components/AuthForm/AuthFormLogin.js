@@ -15,7 +15,7 @@ import {
   StyledFormBox,
   StyledFormPaper,
   StyledTitle,
-} from "./sharedAuthStyles";
+} from "./shared/authStyles";
 
 function LoginForm({ changeContent }) {
   return (

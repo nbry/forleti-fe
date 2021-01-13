@@ -7,7 +7,7 @@ import {
   StyledFormBox,
   StyledFormPaper,
   StyledTitle,
-} from "./sharedAuthStyles";
+} from "./shared/authStyles";
 
 function SignUpForm({ changeContent }) {
   return (
