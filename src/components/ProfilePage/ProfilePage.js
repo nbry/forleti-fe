@@ -1,11 +1,15 @@
 import React from "react";
+import Header from "../Header/Header";
 
 function ProfilePage() {
   return (
     <>
-      <div>
-        <h1>WELCOME TO PROFILE TESTING PAGE</h1>
-      </div>
+      <Header />
+
+      <h1>WELCOME TO PROFILE TESTING PAGE</h1>
+      <h1>WELCOME TO PROFILE TESTING PAGE</h1>
+      <h1>WELCOME TO PROFILE TESTING PAGE</h1>
+      <h1>WELCOME TO PROFILE TESTING PAGE</h1>
     </>
   );
 }
