@@ -6,7 +6,7 @@ import HeaderMenuList from "./HeaderMenuList";
 import LoginContext from "../LoginContext";
 
 function Header() {
-  const { loggedIn, logOut } = useContext(LoginContext);
+  const { loggedIn } = useContext(LoginContext);
   return (
     <>
       {loggedIn ? (

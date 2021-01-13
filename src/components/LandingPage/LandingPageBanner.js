@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DefaultBanner from "./BannerContent/DefaultBanner";
-import AuthForm from "../AuthForm/AuthForm";
+import AuthForm from "./AuthForm/AuthForm";
 
 function LandingPageBanner() {
   const [checked, setChecked] = useState(false);

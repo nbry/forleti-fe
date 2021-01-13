@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Fade } from "@material-ui/core";
 import AuthFormContent from "./AuthFormContent";
-import LoginContext from "../LoginContext";
-import BackendApi from "../../helpers/BackendApi";
+import LoginContext from "../../LoginContext";
+import BackendApi from "../../../helpers/BackendApi";
 
 function AuthForm({ checked, authForm, changeContent }) {
   const { setLoggedIn } = useContext(LoginContext);
