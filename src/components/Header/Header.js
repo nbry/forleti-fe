@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AppBar, Toolbar } from "@material-ui/core";
 import styled from "styled-components";
 
 import HeaderMenuList from "./HeaderMenuList";
+import LoginContext from "../LoginContext";
 
 function Header() {
+  const { loggedIn, logOut } = useContext(LoginContext);
   return (
-    <StyledAppBar id="header" elevation={1}>
-      <StyledToolbar>
-        <Title>Forleti</Title>
-        <HeaderMenuList />
-      </StyledToolbar>
-    </StyledAppBar>
+    <>
+      {loggedIn ? (
+        <StyledAppBar id="header" elevation={1}>
+          <StyledToolbar>
+            <Title>Forleti</Title>
+            <HeaderMenuList />
+          </StyledToolbar>
+        </StyledAppBar>
+      ) : null}
+    </>
   );
 }
 
