@@ -1,17 +1,17 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import BlogPost from "./BlogPost/BlogPost";
 import LandingPage from "./LandingPage/LandingPage";
-import LoginForm from "./AuthForm/AuthFormLogin";
-import SignUpForm from "./AuthForm/AuthFormSignup";
+
+// DEPRACATED: LOGIN/SIGNUP ON HOME PAGE
+// import LoginForm from "./AuthForm/AuthFormLogin";
+// import SignUpForm from "./AuthForm/AuthFormSignup";
 
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/login">
-        <LoginForm />
-      </Route>
-      <Route path="/signup">
-        <SignUpForm />
+      <Route path="/new">
+        <BlogPost />
       </Route>
       <Route path="/">
         <LandingPage />
