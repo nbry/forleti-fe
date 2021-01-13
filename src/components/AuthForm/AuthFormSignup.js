@@ -1,10 +1,4 @@
-import {
-  Box,
-  Grid,
-  TextField,
-  Link,
-  Typography,
-} from "@material-ui/core";
+import { Box, Grid, TextField, Link, Typography } from "@material-ui/core";
 import CreateIcon from "@material-ui/icons/Create";
 import React from "react";
 import {
@@ -25,36 +19,39 @@ function SignUpForm({ changeContent }) {
           </StyledAvatar>
           <StyledTitle>Sign Up</StyledTitle>
         </Grid>
-        <StyledFormBox my={2}>
-          <TextField
-            label="email"
-            placeholder="Enter Email"
+        <form>
+          <StyledFormBox my={2}>
+            <TextField
+              label="email"
+              placeholder="Enter Email"
+              fullWidth
+              type="email"
+              required
+            />
+            <TextField
+              label="username"
+              placeholder="Enter Username"
+              fullWidth
+              required
+            />
+            <TextField
+              label="password"
+              placeholder="Enter Password"
+              type="password"
+              fullWidth
+              required
+            />
+          </StyledFormBox>
+          <StyledButton
+            type="submit"
+            color="primary"
+            variant="contained"
+            size="large"
             fullWidth
-            required
-          />
-          <TextField
-            label="username"
-            placeholder="Enter Username"
-            fullWidth
-            required
-          />
-          <TextField
-            label="password"
-            placeholder="Enter Password"
-            type="password"
-            fullWidth
-            required
-          />
-        </StyledFormBox>
-        <StyledButton
-          type="submit"
-          color="primary"
-          variant="contained"
-          size="large"
-          fullWidth
-        >
-          Submit
-        </StyledButton>
+          >
+            Submit
+          </StyledButton>
+        </form>
         <StyledButton
           onClick={() => changeContent("default")}
           variant="contained"

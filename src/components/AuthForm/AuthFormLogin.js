@@ -27,34 +27,36 @@ function LoginForm({ changeContent }) {
           </StyledAvatar>
           <StyledTitle>Log In</StyledTitle>
         </Grid>
-        <StyledFormBox my={2}>
-          <TextField
-            label="username"
-            placeholder="Enter Username"
+        <form>
+          <StyledFormBox my={2}>
+            <TextField
+              label="username"
+              placeholder="Enter Username"
+              fullWidth
+              required={true}
+            />
+            <TextField
+              label="password"
+              placeholder="Enter Password"
+              type="password"
+              fullWidth
+              required
+            />
+            <FormControlLabel
+              control={<Checkbox name="checkedB" color="primary" />}
+              label="Remember Me"
+            />
+          </StyledFormBox>
+          <StyledButton
+            type="submit"
+            color="primary"
+            variant="contained"
+            size="large"
             fullWidth
-            required
-          />
-          <TextField
-            label="password"
-            placeholder="Enter Password"
-            type="password"
-            fullWidth
-            required
-          />
-          <FormControlLabel
-            control={<Checkbox name="checkedB" color="primary" />}
-            label="Remember Me"
-          />
-        </StyledFormBox>
-        <StyledButton
-          type="submit"
-          color="primary"
-          variant="contained"
-          size="large"
-          fullWidth
-        >
-          Submit
-        </StyledButton>
+          >
+            Submit
+          </StyledButton>
+        </form>
         <StyledButton
           onClick={() => changeContent("default")}
           variant="contained"
