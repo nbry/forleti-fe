@@ -14,7 +14,13 @@ import LockIcon from "@material-ui/icons/Lock";
 import CreateIcon from "@material-ui/icons/Create";
 import styled from "styled-components";
 
-function AuthFormContent({ authForm, changeContent, formData, handleChange }) {
+function AuthFormContent({
+  authForm,
+  changeContent,
+  formData,
+  handleChange,
+  handleSubmit,
+}) {
   // Using a Boolean to dynamically change form fields between
   // Log In and Sign Up. Look for notes below that say "HERE"
   const isLoginForm = authForm === "login";
@@ -41,7 +47,7 @@ function AuthFormContent({ authForm, changeContent, formData, handleChange }) {
             {isLoginForm ? "Log In" : "Sign Up"}
           </StyledTitle>
         </Grid>
-        <form>
+        <form onSubmit={handleSubmit}>
           <StyledFormBox>
             {/* **********************************
             HERE: Email Field */}

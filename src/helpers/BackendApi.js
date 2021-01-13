@@ -3,7 +3,7 @@ import axios from "axios";
 class BackendAPI {
   // Function to provide backbone for making HTTP requests to the Backend API
   static async request(endpoint, paramsOrData = {}, verb = "get") {
-    const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:5000";
+    const BASE_URL = process.env.REACT_APP_BASE_URL || "http://127.0.0.1:5000";
     const token = localStorage.getItem("_token");
 
     // Backend is using Flask Praetorian, and if
@@ -34,6 +34,10 @@ class BackendAPI {
   static async login({ username, password }) {
     let res = await this.request("login", { username, password }, "post");
     return res;
+  }
+
+  static async logout() {
+    localStorage.clear();
   }
 }
 
