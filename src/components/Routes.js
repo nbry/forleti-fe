@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import BlogPost from "./BlogPost/BlogPost";
+import BlogPostEditor from "./BlogPost/BlogPostEditor";
 import LandingPage from "./LandingPage/LandingPage";
 
 // DEPRACATED: LOGIN/SIGNUP ON HOME PAGE
@@ -11,7 +11,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route path="/new">
-        <BlogPost />
+        <BlogPostEditor />
       </Route>
       <Route path="/">
         <LandingPage />
