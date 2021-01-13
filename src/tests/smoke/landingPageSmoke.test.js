@@ -5,6 +5,19 @@ import LandingPageBanner from "../../components/LandingPage/LandingPageBanner";
 import LandingPageInfo from "../../components/LandingPage/LandingPageInfo";
 import DefaultBanner from "../../components/LandingPage/BannerContent/DefaultBanner";
 
+
+let realUseContext;
+let useContextMock;
+// Setup mock
+beforeEach(() => {
+  realUseContext = React.useContext;
+  useContextMock = React.useContext = jest.fn();
+});
+// Cleanup mock
+afterEach(() => {
+  React.useContext = realUseContext;
+});
+
 it("LandingPage renders without crashing", function () {
   render(<LandingPage />);
 });

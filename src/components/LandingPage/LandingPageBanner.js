@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DefaultBanner from "./BannerContent/DefaultBanner";
 import AuthForm from "./AuthForm/AuthForm";
+import LandingPageBannerContext from "./LandingPageBannerContext";
 
 function LandingPageBanner() {
   const [checked, setChecked] = useState(false);
@@ -16,17 +17,17 @@ function LandingPageBanner() {
   }, [checked]);
 
   return (
-    <>
-      {bannerContent === "default" ? (
-        <DefaultBanner checked={checked} changeContent={changeContent} />
-      ) : (
-        <AuthForm
-          authForm={bannerContent}
-          checked={checked}
-          changeContent={changeContent}
-        />
-      )}
-    </>
+    <LandingPageBannerContext.Provider
+      value={{
+        checked,
+        setChecked,
+        bannerContent,
+        setBannerContent,
+        changeContent,
+      }}
+    >
+      {bannerContent === "default" ? <DefaultBanner /> : <AuthForm />}
+    </LandingPageBannerContext.Provider>
   );
 }
 

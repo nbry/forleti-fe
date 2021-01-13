@@ -13,17 +13,14 @@ import {
 import LockIcon from "@material-ui/icons/Lock";
 import CreateIcon from "@material-ui/icons/Create";
 import styled from "styled-components";
+import { useContext } from "react";
+import LandingPageBannerContext from "../LandingPageBannerContext";
 
-function AuthFormContent({
-  authForm,
-  changeContent,
-  formData,
-  handleChange,
-  handleSubmit,
-}) {
+function AuthFormContent({ formData, handleChange, handleSubmit }) {
   // Using a Boolean to dynamically change form fields between
   // Log In and Sign Up. Look for notes below that say "HERE"
-  const isLoginForm = authForm === "login";
+  const { bannerContent, changeContent } = useContext(LandingPageBannerContext);
+  const isLoginForm = bannerContent === "login";
 
   return (
     <Grid>

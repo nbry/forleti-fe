@@ -4,11 +4,12 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { IconButton, Button, Collapse, Grid } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
 import LoginContext from "../../LoginContext";
+import LandingPageBannerContext from "../LandingPageBannerContext";
 
-function DefaultBanner({ changeContent, checked }) {
+function DefaultBanner() {
   // Display landing page. Shows different content depending on if user
   // is logged in or not. Look for "HERE" notes to see differences
-
+  const { checked, changeContent } = useContext(LandingPageBannerContext);
   const { loggedIn } = useContext(LoginContext);
 
   return (

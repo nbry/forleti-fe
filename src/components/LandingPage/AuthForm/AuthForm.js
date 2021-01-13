@@ -3,8 +3,10 @@ import { Fade } from "@material-ui/core";
 import AuthFormContent from "./AuthFormContent";
 import LoginContext from "../../LoginContext";
 import BackendApi from "../../../helpers/BackendApi";
+import LandingPageBannerContext from "../LandingPageBannerContext";
 
-function AuthForm({ checked, authForm, changeContent }) {
+function AuthForm() {
+  const { checked } = useContext(LandingPageBannerContext);
   const { setLoggedIn } = useContext(LoginContext);
 
   // Initial state of the fields in authForm
@@ -43,8 +45,6 @@ function AuthForm({ checked, authForm, changeContent }) {
     <Fade in={checked} {...(checked ? { timeout: 750 } : {})}>
       <div>
         <AuthFormContent
-          authForm={authForm}
-          changeContent={changeContent}
           formData={formData}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
