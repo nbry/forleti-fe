@@ -6,7 +6,7 @@ import HeaderMenuList from "./HeaderMenuList";
 
 function Header() {
   return (
-    <StyledAppBar id="header" elevation={2}>
+    <StyledAppBar id="header" elevation={1}>
       <StyledToolbar>
         <Title>Forleti</Title>
         <HeaderMenuList />
@@ -20,9 +20,10 @@ export default Header;
 // STYLES:
 const Title = styled.h1`
   flex-grow: 1;
-  font-size: 1rem;
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.15rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   color: white;
+  font-family: "Raleway";
 `;
 
 const StyledAppBar = styled(AppBar)`
