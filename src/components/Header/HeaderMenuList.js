@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Button,
   ClickAwayListener,
@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import styled from "styled-components";
+import LoginContext from "../LoginContext";
 
 function HeaderMenuList() {
   const [open, setOpen] = React.useState(false);
@@ -42,6 +43,13 @@ function HeaderMenuList() {
 
     prevOpen.current = open;
   }, [open]);
+
+  // Log Out Functionality
+  const { logOut } = useContext(LoginContext);
+  function handleLogOut(event) {
+    handleClose(event);
+    logOut();
+  }
 
   return (
     <StyledRoot>
@@ -79,7 +87,7 @@ function HeaderMenuList() {
                   >
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
                     <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={handleLogOut}>Logout</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
