@@ -11,9 +11,8 @@ import ProfilePage from "./ProfilePage/ProfilePage";
 const Routes = () => {
   return (
     <Switch>
-
       {/* CHANGE AT PRODUCTION: this may be erroneous because it acts as a catch-all */}
-      <Route path="/:username">
+      <Route path="/home">
         <ProfilePage />
       </Route>
       <Route path="/new">
