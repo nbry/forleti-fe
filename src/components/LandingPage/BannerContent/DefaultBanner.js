@@ -1,18 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { IconButton, Button, Collapse, Grid } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
 
-function DefaultBanner({ setBannerContent, checked, setChecked }) {
-  useEffect(() => {
-    setChecked(true);
-  }, []);
-
+function DefaultBanner({ changeContent, checked, setChecked }) {
   return (
     <Collapse
       in={checked}
-      {...(checked ? { timeout: 1000 } : {})}
+      {...(checked ? { timeout: 600 } : {})}
       collapsedHeight={50}
     >
       <InnerWrapper>
@@ -23,7 +19,7 @@ function DefaultBanner({ setBannerContent, checked, setChecked }) {
           </Subtitle>
           <Description>(noun, informal). blogging made simple</Description>
           <StyledButton
-            onClick={() => setBannerContent("signup")}
+            onClick={() => changeContent("signup")}
             variant="contained"
             color="primary"
             size="large"
@@ -32,7 +28,7 @@ function DefaultBanner({ setBannerContent, checked, setChecked }) {
             Sign Up
           </StyledButton>
           <StyledButton
-            onClick={() => setBannerContent("login")}
+            onClick={() => changeContent("login")}
             variant="contained"
             size="large"
             fullWidth

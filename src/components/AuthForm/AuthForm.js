@@ -1,16 +1,21 @@
 import React from "react";
+import { Fade } from "@material-ui/core";
 import LoginForm from "./AuthFormLogin";
 import SignupForm from "./AuthFormSignup";
 
-function AuthForm({ authForm, setBannerContent }) {
+function AuthForm({ checked, authForm, changeContent }) {
   return (
-    <>
+    <Fade in={checked} {...(checked ? { timeout: 750 } : {})}>
       {authForm === "login" ? (
-        <LoginForm setBannerContent={setBannerContent} />
+        <div>
+          <LoginForm changeContent={changeContent} />
+        </div>
       ) : (
-        <SignupForm setBannerContent={setBannerContent} />
+        <div>
+          <SignupForm changeContent={changeContent} />
+        </div>
       )}
-    </>
+    </Fade>
   );
 }
 

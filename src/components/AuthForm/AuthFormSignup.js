@@ -15,7 +15,7 @@ import {
   StyledTitle,
 } from "./sharedAuthStyles";
 
-function SignUpForm({ setBannerContent }) {
+function SignUpForm({ changeContent }) {
   return (
     <Grid>
       <StyledFormPaper elevation={20}>
@@ -56,7 +56,7 @@ function SignUpForm({ setBannerContent }) {
           Submit
         </StyledButton>
         <StyledButton
-          onClick={() => setBannerContent("default")}
+          onClick={() => changeContent("default")}
           variant="contained"
           size="large"
           fullWidth
@@ -67,7 +67,7 @@ function SignUpForm({ setBannerContent }) {
           <Typography>
             {" "}
             Already have an account?{" "}
-            <Link component="button" onClick={() => setBannerContent("login")}>
+            <Link component="button" onClick={() => changeContent("login")}>
               Log In Here!
             </Link>
           </Typography>
