@@ -14,7 +14,7 @@ import LockIcon from "@material-ui/icons/Lock";
 import CreateIcon from "@material-ui/icons/Create";
 import styled from "styled-components";
 
-function AuthFormContent({ authForm, changeContent }) {
+function AuthFormContent({ authForm, changeContent, formData, handleChange }) {
   // Using a Boolean to dynamically change form fields between
   // Log In and Sign Up. Look for notes below that say "HERE"
   const isLoginForm = authForm === "login";
@@ -48,6 +48,9 @@ function AuthFormContent({ authForm, changeContent }) {
             {isLoginForm ? null : (
               <TextField
                 label="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Enter Email"
                 fullWidth
                 type="email"
@@ -56,12 +59,18 @@ function AuthFormContent({ authForm, changeContent }) {
             )}
             <TextField
               label="username"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
               placeholder="Enter Username"
               fullWidth
               required
             />
             <TextField
               label="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
               placeholder="Enter Password"
               type="password"
               fullWidth
@@ -69,13 +78,13 @@ function AuthFormContent({ authForm, changeContent }) {
             />
 
             {/* **********************************
-            HERE: Remember Me */}
-            {isLoginForm ? (
+            HERE: Remember Me. NOT IMPLEMENTED YET*/}
+            {/* {isLoginForm ? (
               <FormControlLabel
                 control={<Checkbox name="checkedB" color="primary" />}
                 label="Remember Me"
               />
-            ) : null}
+            ) : null} */}
           </StyledFormBox>
           <StyledButton
             type="submit"
