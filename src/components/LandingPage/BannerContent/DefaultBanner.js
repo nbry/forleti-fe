@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { IconButton, Button, Collapse, Grid } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
+import LoginContext from "../../LoginContext";
 
-function DefaultBanner({ changeContent, checked, setChecked }) {
+function DefaultBanner({ changeContent, checked }) {
+  // Display landing page. Shows different content depending on if user
+  // is logged in or not. Look for "HERE" notes to see differences
+
+  const { loggedIn } = useContext(LoginContext);
+
   return (
     <Collapse
       in={checked}
@@ -18,23 +24,30 @@ function DefaultBanner({ changeContent, checked, setChecked }) {
             <i>[ four-leh-tee ]</i>
           </Subtitle>
           <Description>(noun, informal). blogging made simple</Description>
-          <StyledButton
-            onClick={() => changeContent("signup")}
-            variant="contained"
-            color="primary"
-            size="large"
-            fullWidth
-          >
-            Sign Up
-          </StyledButton>
-          <StyledButton
-            onClick={() => changeContent("login")}
-            variant="contained"
-            size="large"
-            fullWidth
-          >
-            Log In
-          </StyledButton>
+
+          {/* *****************
+          HERE: Buttons */}
+          {loggedIn ? null : (
+            <>
+              <StyledButton
+                onClick={() => changeContent("signup")}
+                variant="contained"
+                color="primary"
+                size="large"
+                fullWidth
+              >
+                Sign Up
+              </StyledButton>
+              <StyledButton
+                onClick={() => changeContent("login")}
+                variant="contained"
+                size="large"
+                fullWidth
+              >
+                Log In
+              </StyledButton>
+            </>
+          )}
           <Scroll to="loading-page-info" smooth={true}>
             <IconButton>
               <StyledExpandMoreIcon />
