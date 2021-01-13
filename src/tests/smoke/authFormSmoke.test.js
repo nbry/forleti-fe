@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import AuthForm from "../components/AuthForm/AuthForm";
-import LoginForm from "../components/AuthForm/AuthFormLogin";
-import SignupForm from "../components/AuthForm/AuthFormSignup";
+import AuthForm from "../../components/AuthForm/AuthForm";
+import LoginForm from "../../components/AuthForm/AuthFormLogin";
+import SignupForm from "../../components/AuthForm/AuthFormSignup";
 
 it("AuthForm renders without crashing", function () {
   render(<AuthForm />);
