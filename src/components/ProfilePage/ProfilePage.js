@@ -2,23 +2,27 @@ import { Grid, Paper } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 import ProfilePageHeader from "./ProfilePageHeader";
+import PostCard from "./PostCard/PostCard";
 import myColors from "../../static/colors";
 
 function ProfilePage() {
   return (
-    <BackgroundWrapper>
-      <Grid container direction="row" justify="center">
-        <Board>
-          <ProfilePageHeader />
-        </Board>
-      </Grid>
+    <BackgroundWrapper container direction="row" justify="center">
+      <Board>
+        <ProfilePageHeader />
+        {/* Implement a loop later */}
+        <Grid container direction="row" justify="center">
+          {/* Implement a loop later */}
+          <PostCard />
+        </Grid>
+      </Board>
     </BackgroundWrapper>
   );
 }
 
 export default ProfilePage;
 
-const BackgroundWrapper = styled.div`
+const BackgroundWrapper = styled(Grid)`
   background-color: ${myColors.background};
   background-attachment: fixed;
   height: 100vh;
