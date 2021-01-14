@@ -33,7 +33,7 @@ const Title = styled.h1`
 
 const StyledAppBar = styled(AppBar)`
   background: ${myColors.background};
-  border-bottom: 1px solid ${myColors.seaGreen};
+  border-bottom: 1px solid ${myColors.border};
 `;
 
 const StyledToolbar = styled(Toolbar)`

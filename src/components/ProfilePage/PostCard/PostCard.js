@@ -7,7 +7,7 @@ function PostCard() {
     <StyledPaper elevation={5}>
       {/* Implement Dynamic card generation later */}
 
-      <PostCardTitle>Testing Post Title</PostCardTitle>
+      <PostCardTitle>Sample Post Title</PostCardTitle>
       <div className="postContent">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
@@ -33,7 +33,8 @@ export default PostCard;
 // STYLES:
 
 const PostCardTitle = styled.h3`
-  font-size: 1.8em;
+  font-family: "Raleway";
+  font-size: 1.6em;
   margin: 0px;
 `;
 

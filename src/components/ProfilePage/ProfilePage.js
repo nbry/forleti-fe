@@ -38,6 +38,6 @@ const Board = styled.div`
   width: 100vw;
   max-width: 800px;
   background: ${myColors.paper};
-  border-right: 1px solid #3cf38d;
-  border-left: 1px solid #3cf38d;
+  /* border-right: 1px solid ${myColors.border};
+  border-left: 1px solid ${myColors.border}; */
 `;
