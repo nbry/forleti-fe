@@ -15,13 +15,17 @@ function ProfilePage() {
 export default ProfilePage;
 
 const BackgroundWrapper = styled.div`
-  background-color: #0c0822;
+  background-color: #141125;
   background-attachment: fixed;
   height: 100vh;
 `;
 
 const Board = styled.div`
   min-height: 100vh;
-  width: 60%;
+  min-width: 400px;
+  width: 100vw;
+  max-width: 800px;
   background: white;
+  border-right: 1px solid #3cf38d;
+  border-left: 1px solid #3cf38d;
 `;

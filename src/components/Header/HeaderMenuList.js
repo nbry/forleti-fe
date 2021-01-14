@@ -7,9 +7,12 @@ import {
   Popper,
   MenuItem,
   MenuList,
+  IconButton,
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import styled from "styled-components";
+import AddBoxIcon from "@material-ui/icons/AddBox";
+import PersonIcon from "@material-ui/icons/Person";
+import HomeIcon from "@material-ui/icons/Home";
+import styled, { css } from "styled-components";
 import LoginContext from "../LoginContext";
 
 function HeaderMenuList() {
@@ -54,15 +57,21 @@ function HeaderMenuList() {
   return (
     <StyledRoot>
       <div>
-        <Button
+        <IconButton aria-label="home">
+          <StyledHomeIcon />
+        </IconButton>
+        <IconButton
           ref={anchorRef}
           aria-controls={open ? "menu-list-grow" : undefined}
           aria-haspopup="true"
+          aria-label="menu"
           onClick={handleToggle}
         >
-          <StyledMenuIcon />
-        </Button>
-
+          <SyledPersonIcon />
+        </IconButton>
+        <IconButton color="secondary">
+          <SyledAddBoxIcon />
+        </IconButton>
         <Popper
           open={open}
           anchorEl={anchorRef.current}
@@ -102,16 +111,31 @@ function HeaderMenuList() {
 export default HeaderMenuList;
 
 // STYLES:
-const StyledMenuIcon = styled(MenuIcon)`
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+
+const sharedIconStyles = css`
   font-size: 2.5rem;
   color: white;
   :hover {
-    transition: 400ms;
+    transition: 300ms;
     color: rgb(67, 238, 164);
   }
 `;
 
+const StyledHomeIcon = styled(HomeIcon)`
+  ${sharedIconStyles}
+`;
+const SyledPersonIcon = styled(PersonIcon)`
+  ${sharedIconStyles}
+`;
+
+const SyledAddBoxIcon = styled(AddBoxIcon)`
+  font-size: 3.4rem;
+  color: #f1739d;
+  :hover {
+    transition: 300ms;
+    color: #f2a4be;
+  }
+`;
 const StyledRoot = styled.div`
   display: flex;
 `;

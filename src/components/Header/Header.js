@@ -31,11 +31,11 @@ const Title = styled.h1`
 `;
 
 const StyledAppBar = styled(AppBar)`
-  background: #0c0822;
+  background: #141125;
   border-bottom: 1px solid #3cf38d;
 `;
 
 const StyledToolbar = styled(Toolbar)`
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 `;
