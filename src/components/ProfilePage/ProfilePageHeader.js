@@ -21,7 +21,7 @@ export default ProfilePageHeader;
 //STYLES
 const headerUrl = `${process.env.PUBLIC_URL + "/assets/blog.jpg"}`;
 const HeaderImageContainer = styled.div`
-  min-height: 300px;
+  min-height: 250px;
   width: 100%;
   background-image: url(${headerUrl});
   background-repeat: no-repeat;
