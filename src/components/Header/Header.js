@@ -3,6 +3,7 @@ import { AppBar, Toolbar } from "@material-ui/core";
 import styled from "styled-components";
 import HeaderMenuList from "./HeaderMenuList";
 import LoginContext from "../LoginContext";
+import NewBlogPostContext from "../NewBlogPostContext"
 import myColors from "../../static/colors";
 
 function Header() {
