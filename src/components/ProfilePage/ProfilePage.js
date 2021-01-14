@@ -1,17 +1,27 @@
+import { Grid, Paper } from "@material-ui/core";
 import React from "react";
-import Header from "../Header/Header";
+import styled from "styled-components";
 
 function ProfilePage() {
   return (
-    <>
-      <Header />
-
-      <h1>WELCOME TO PROFILE TESTING PAGE</h1>
-      <h1>WELCOME TO PROFILE TESTING PAGE</h1>
-      <h1>WELCOME TO PROFILE TESTING PAGE</h1>
-      <h1>WELCOME TO PROFILE TESTING PAGE</h1>
-    </>
+    <BackgroundWrapper>
+      <Grid container direction="row" justify="center">
+        <Board></Board>
+      </Grid>
+    </BackgroundWrapper>
   );
 }
 
 export default ProfilePage;
+
+const BackgroundWrapper = styled.div`
+  background-color: #0c0822;
+  background-attachment: fixed;
+  height: 100vh;
+`;
+
+const Board = styled.div`
+  min-height: 100vh;
+  width: 60%;
+  background: white;
+`;
