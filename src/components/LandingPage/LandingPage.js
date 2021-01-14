@@ -20,11 +20,11 @@ function LandingPage() {
 export default LandingPage;
 
 //STYLES:
-const backgroundURL = `${process.env.PUBLIC_URL + "/assets/typewriter-bg.jpg"}`;
+const backgroundUrl = `${process.env.PUBLIC_URL + "/assets/typewriter-bg.jpg"}`;
 
 const BackgroundContainer = styled.div`
   min-height: 100vh;
-  background-image: url(${backgroundURL});
+  background-image: url(${backgroundUrl});
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

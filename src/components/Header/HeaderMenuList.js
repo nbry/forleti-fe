@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import {
-  Button,
   ClickAwayListener,
   Grow,
   Paper,
@@ -113,10 +112,10 @@ export default HeaderMenuList;
 // STYLES:
 
 const sharedIconStyles = css`
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: white;
   :hover {
-    transition: 300ms;
+    transition: 50ms;
     color: rgb(67, 238, 164);
   }
 `;
@@ -129,10 +128,10 @@ const SyledPersonIcon = styled(PersonIcon)`
 `;
 
 const SyledAddBoxIcon = styled(AddBoxIcon)`
-  font-size: 3.4rem;
+  font-size: 2.5rem;
   color: #f1739d;
   :hover {
-    transition: 300ms;
+    transition: 50ms;
     color: #f2a4be;
   }
 `;

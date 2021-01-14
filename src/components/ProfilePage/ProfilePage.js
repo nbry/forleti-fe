@@ -1,12 +1,15 @@
 import { Grid, Paper } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
+import ProfilePageHeader from "./ProfilePageHeader";
 
 function ProfilePage() {
   return (
     <BackgroundWrapper>
       <Grid container direction="row" justify="center">
-        <Board></Board>
+        <Board>
+          <ProfilePageHeader />
+        </Board>
       </Grid>
     </BackgroundWrapper>
   );
