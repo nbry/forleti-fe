@@ -40,4 +40,5 @@ const PostCardTitle = styled.h3`
 const StyledPaper = styled(Paper)`
   padding: 20px;
   width: 95%;
+  margin-bottom: 20px;
 `;

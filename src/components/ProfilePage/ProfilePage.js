@@ -14,6 +14,9 @@ function ProfilePage() {
         <Grid container direction="row" justify="center">
           {/* Implement a loop later */}
           <PostCard />
+          <PostCard />
+          <PostCard />
+          <PostCard />
         </Grid>
       </Board>
     </BackgroundWrapper>
@@ -25,12 +28,13 @@ export default ProfilePage;
 const BackgroundWrapper = styled(Grid)`
   background-color: ${myColors.background};
   background-attachment: fixed;
-  height: 100vh;
+  height: 100%;
 `;
 
 const Board = styled.div`
   min-height: 100vh;
   min-width: 400px;
+  padding-bottom: 100px;
   width: 100vw;
   max-width: 800px;
   background: ${myColors.paper};
