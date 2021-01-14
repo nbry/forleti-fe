@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import LoginContext from "./components/LoginContext";
 import Routes from "./components/Routes";
 import Header from "./components/Header/Header";
+import "./App.css"
 
 function App() {
   // [LoginContext] CHECK IF USER IS LOGGED IN
