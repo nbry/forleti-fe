@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import { Avatar, Box, Grid } from "@material-ui/core";
+import myColors from "../../static/colors";
 
 function ProfilePageHeader() {
   return (
@@ -36,5 +37,5 @@ const StyledAvatar = styled(Avatar)`
   width: 150px;
   height: 150px;
   margin-top: -75px;
-  border: 5px solid white;
+  border: 5px solid ${myColors.paper};
 `;

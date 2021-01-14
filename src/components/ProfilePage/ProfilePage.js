@@ -29,7 +29,7 @@ const Board = styled.div`
   min-width: 400px;
   width: 100vw;
   max-width: 800px;
-  background: white;
+  background: ${myColors.paper};
   border-right: 1px solid #3cf38d;
   border-left: 1px solid #3cf38d;
 `;
