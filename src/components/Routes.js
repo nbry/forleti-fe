@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import BlogPostEditor from "./Header/NewBlogPost/BlogPostEditor";
+import BlogPostEditor from "./Header/NewBlogPost/NewBlogPostEditor";
 import LandingPage from "./LandingPage/LandingPage";
 import LoginContext from "./LoginContext";
 import ProfilePage from "./ProfilePage/ProfilePage";

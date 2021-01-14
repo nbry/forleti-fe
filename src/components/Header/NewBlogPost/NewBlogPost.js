@@ -10,8 +10,9 @@ import {
   DialogTitle,
 } from "@material-ui/core";
 import AddBoxIcon from "@material-ui/icons/AddBox";
-import BlogPostEditor from "./BlogPostEditor";
+import BlogPostEditor from "./NewBlogPostEditor";
 import styled, { css } from "styled-components";
+import myColors from "../../../static/colors";
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
@@ -25,8 +26,8 @@ export default function FormDialog() {
   };
 
   return (
-    <div>
-      <IconButton>
+    <>
+      <IconButton onClick={handleClickOpen}>
         <SyledAddBoxIcon />
       </IconButton>
       <Dialog
@@ -34,22 +35,30 @@ export default function FormDialog() {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+        <DialogTitle id="form-dialog-title">New Post</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
-          </DialogContentText>
           <TextField
             autoFocus
             margin="dense"
-            id="name"
-            label="Email Address"
+            id="title"
+            name="title"
+            label="Title"
             type="email"
             fullWidth
           />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="subtitle"
+            name="subtitle"
+            label="Subtitle"
+            type="email"
+            fullWidth
+          />
+          <BlogPostEditor />
         </DialogContent>
         <DialogActions>
+          {/* EDIT THESE: */}
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
@@ -58,7 +67,7 @@ export default function FormDialog() {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 }
 

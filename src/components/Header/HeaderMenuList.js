@@ -4,6 +4,7 @@ import AddBoxIcon from "@material-ui/icons/AddBox";
 import HomeIcon from "@material-ui/icons/Home";
 import styled, { css } from "styled-components";
 import AccountMenu from "./AccountMenu/AccountMenu";
+import NewBlogPost from "./NewBlogPost/NewBlogPost";
 import myColors from "../../static/colors";
 
 function HeaderMenuList() {
@@ -14,9 +15,7 @@ function HeaderMenuList() {
           <StyledHomeIcon />
         </IconButton>
         <AccountMenu />
-        <IconButton color="secondary">
-          <SyledAddBoxIcon />
-        </IconButton>
+        <NewBlogPost />
       </div>
     </StyledRoot>
   );

@@ -8,9 +8,8 @@ function BlogPostEditor() {
   const [text, setText] = useState("");
 
   return (
-    <Grid>
-      <StyledBox>
-        <StyledCKEditor
+    <>
+        <CKEditor
           editor={ClassicEditor}
           data={text}
           onChange={(event, editor) => {
@@ -18,19 +17,18 @@ function BlogPostEditor() {
             setText(data);
           }}
         />
-      </StyledBox>
-    </Grid>
+    </>
   );
 }
 
 export default BlogPostEditor;
 
 //STYLES:
-const StyledBox = styled(Box)`
-  margin: 5em;
-  grid-template-columns: 1fr 1fr;
-`;
+// const StyledBox = styled(Box)`
+//   margin: 5em;
+//   grid-template-columns: 1fr 1fr;
+// `;
 
-const StyledCKEditor = styled(CKEditor)`
-  max-width: 800px;
-`;
+// const StyledCKEditor = styled(CKEditor)`
+//   max-width: 100%;
+// `;
