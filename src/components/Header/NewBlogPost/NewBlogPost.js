@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Button,
+  IconButton,
   TextField,
   Dialog,
   DialogActions,
@@ -8,7 +9,9 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@material-ui/core";
+import AddBoxIcon from "@material-ui/icons/AddBox";
 import BlogPostEditor from "./BlogPostEditor";
+import styled, { css } from "styled-components";
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
@@ -23,9 +26,9 @@ export default function FormDialog() {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open form dialog
-      </Button>
+      <IconButton>
+        <SyledAddBoxIcon />
+      </IconButton>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -58,3 +61,13 @@ export default function FormDialog() {
     </div>
   );
 }
+
+// STYLES:
+const SyledAddBoxIcon = styled(AddBoxIcon)`
+  font-size: 2.5rem;
+  color: ${myColors.lightRed};
+  :hover {
+    transition: 50ms;
+    color: #f2a4be;
+  }
+`;
