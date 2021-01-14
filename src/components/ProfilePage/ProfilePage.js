@@ -2,6 +2,7 @@ import { Grid, Paper } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 import ProfilePageHeader from "./ProfilePageHeader";
+import myColors from "../../static/colors";
 
 function ProfilePage() {
   return (
@@ -18,7 +19,7 @@ function ProfilePage() {
 export default ProfilePage;
 
 const BackgroundWrapper = styled.div`
-  background-color: #141125;
+  background-color: ${myColors.background};
   background-attachment: fixed;
   height: 100vh;
 `;

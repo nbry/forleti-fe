@@ -13,6 +13,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import HomeIcon from "@material-ui/icons/Home";
 import styled, { css } from "styled-components";
 import LoginContext from "../LoginContext";
+import myColors from "../../static/colors";
 
 function HeaderMenuList() {
   const [open, setOpen] = React.useState(false);
@@ -116,7 +117,7 @@ const sharedIconStyles = css`
   color: white;
   :hover {
     transition: 50ms;
-    color: rgb(67, 238, 164);
+    color: ${myColors.seaGreen};
   }
 `;
 
@@ -129,7 +130,7 @@ const SyledPersonIcon = styled(PersonIcon)`
 
 const SyledAddBoxIcon = styled(AddBoxIcon)`
   font-size: 2.5rem;
-  color: #f1739d;
+  color: ${myColors.lightRed};
   :hover {
     transition: 50ms;
     color: #f2a4be;

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { AppBar, Toolbar } from "@material-ui/core";
 import styled from "styled-components";
-
 import HeaderMenuList from "./HeaderMenuList";
 import LoginContext from "../LoginContext";
+import myColors from "../../static/colors";
 
 function Header() {
   const { loggedIn } = useContext(LoginContext);
@@ -32,8 +32,8 @@ const Title = styled.h1`
 `;
 
 const StyledAppBar = styled(AppBar)`
-  background: #141125;
-  border-bottom: 1px solid #3cf38d;
+  background: ${myColors.background};
+  border-bottom: 1px solid ${myColors.seaGreen};
 `;
 
 const StyledToolbar = styled(Toolbar)`
