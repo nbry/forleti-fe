@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import { Avatar, Box, Grid } from "@material-ui/core";
+import { Avatar, Grid } from "@material-ui/core";
 import myColors from "../../static/colors";
 
 function ProfilePageHeader() {

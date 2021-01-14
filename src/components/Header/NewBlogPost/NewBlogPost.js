@@ -6,12 +6,11 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
 } from "@material-ui/core";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import BlogPostEditor from "./NewBlogPostEditor";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import myColors from "../../../static/colors";
 
 export default function FormDialog() {

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
-import { Box, Grid } from "@material-ui/core";
-import styled from "styled-components";
+// import { Box, Grid } from "@material-ui/core";
+// import styled from "styled-components";
 
 function BlogPostEditor() {
   const [text, setText] = useState("");

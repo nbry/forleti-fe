@@ -1,6 +1,5 @@
 import React from "react";
 import { IconButton } from "@material-ui/core";
-import AddBoxIcon from "@material-ui/icons/AddBox";
 import HomeIcon from "@material-ui/icons/Home";
 import styled, { css } from "styled-components";
 import AccountMenu from "./AccountMenu/AccountMenu";
@@ -38,14 +37,6 @@ const StyledHomeIcon = styled(HomeIcon)`
   ${sharedIconStyles}
 `;
 
-const SyledAddBoxIcon = styled(AddBoxIcon)`
-  font-size: 2.5rem;
-  color: ${myColors.lightRed};
-  :hover {
-    transition: 50ms;
-    color: #f2a4be;
-  }
-`;
 const StyledRoot = styled.div`
   display: flex;
 `;
