@@ -8,6 +8,7 @@ function LandingPage() {
   return (
     <>
       <BackgroundContainer>
+        <Version>0.1.0-alpha</Version>
         <Wrapper>
           <LandingPageBanner />
         </Wrapper>
@@ -35,4 +36,9 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+`;
+
+const Version = styled.small`
+  color: white;
+  font-size: 0.8rem;
 `;
