@@ -6,7 +6,7 @@ import BackendApi from "../../../helpers/BackendApi";
 import LandingPageBannerContext from "../LandingPageBannerContext";
 
 function AuthForm() {
-  const { checked } = useContext(LandingPageBannerContext);
+  const { bannerContent, checked } = useContext(LandingPageBannerContext);
   const { setLoggedIn } = useContext(LoginContext);
 
   // Initial state of the fields in authForm
@@ -29,16 +29,19 @@ function AuthForm() {
   // Function to handle form submission
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    async function login({ username, password }) {
+    async function submitAuthForm({ username, password, email }) {
       try {
-        const res = await BackendApi.login({ username, password });
+        const res =
+          bannerContent === "login"
+            ? await BackendApi.login({ username, password })
+            : await BackendApi.signup({ username, password, email });
         localStorage.setItem("_token", res.token);
         setLoggedIn(true);
       } catch (e) {
         alert(e);
       }
     }
-    login({ ...formData });
+    submitAuthForm({ ...formData });
   };
 
   return (

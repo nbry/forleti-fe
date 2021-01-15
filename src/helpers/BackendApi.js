@@ -31,6 +31,15 @@ class BackendAPI {
     }
   }
 
+  static async signup({ username, password, email }) {
+    let res = await this.request(
+      "signup",
+      { username, password, email },
+      "post"
+    );
+    return res;
+  }
+
   static async login({ username, password }) {
     let res = await this.request("login", { username, password }, "post");
     return res;
