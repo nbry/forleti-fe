@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import BlogPostEditor from "./Header/NewBlogPost/NewBlogPostEditor";
 import LandingPage from "./LandingPage/LandingPage";
 import LoginContext from "./LoginContext";
-import ProfilePage from "./ProfilePage/ProfilePage";
+import LoggedInWrapper from "./LoggedInWrapper/LoggedInWrapper";
 
 // DEPRACATED: LOGIN/SIGNUP ON HOME PAGE
 // import LoginForm from "./AuthForm/AuthFormLogin";
@@ -22,7 +22,7 @@ const Routes = () => {
             <BlogPostEditor />
           </Route>
           <Route path="/home">
-            <ProfilePage />
+            <LoggedInWrapper />
           </Route>
           <Redirect to="/home" />
         </>

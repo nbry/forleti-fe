@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import { Avatar, Grid } from "@material-ui/core";
-import myColors from "../../static/colors";
+import myColors from "../../../static/colors";
 
 function ProfilePageHeader() {
   return (
