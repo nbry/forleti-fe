@@ -9,6 +9,7 @@ import {
   Link,
   TextField,
   Typography,
+  Divider,
 } from "@material-ui/core";
 import LockIcon from "@material-ui/icons/Lock";
 import CreateIcon from "@material-ui/icons/Create";
@@ -128,6 +129,18 @@ function AuthFormContent({ formData, handleChange, handleSubmit }) {
             </Typography>
           )}
         </Box>
+        <Box mt={2}>
+          <Divider />
+          <p>
+            <small>
+              NOTICE: Forleti is in pre-release. We are still tinkering
+              with core components and undergoing requirements analysis. Any
+              accounts made prior to official release may be lost. Follow us on{" "}
+              <a href="https://twitter.com/forleti">Twitter</a> to receive
+              updates on development!
+            </small>
+          </p>
+        </Box>
       </StyledFormPaper>
     </Grid>
   );
@@ -156,7 +169,7 @@ const StyledFormBox = styled(Box)`
 const StyledFormPaper = styled(Paper)`
   margin: 100px auto;
   padding: 30px;
-  height: 500px;
+  /* height: 540px; */
   width: 380px;
 `;
 
