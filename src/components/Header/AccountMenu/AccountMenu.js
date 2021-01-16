@@ -94,7 +94,7 @@ function AccountMenu() {
                     to={"/u/" + loggedInUser.username}
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    <MenuItem>Profile</MenuItem>
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
                   </StyledNavLink>
                   <MenuItem onClick={handleClose}>Settings</MenuItem>
                   <MenuItem onClick={handleLogOut}>Logout</MenuItem>
