@@ -20,14 +20,12 @@ const jss = create({
 });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <StylesProvider jss={jss}>
-      <CssBaseline />
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </StylesProvider>
-  </React.StrictMode>,
+  <StylesProvider jss={jss}>
+    <CssBaseline />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StylesProvider>,
   document.getElementById("root")
 );
 
