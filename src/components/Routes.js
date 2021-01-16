@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import BlogPostEditor from "./Header/NewBlogPost/NewBlogPostEditor";
 import LandingPage from "./LandingPage/LandingPage";
 import LoginContext from "./LoginContext";
 import LoggedInWrapper from "./LoggedInWrapper/LoggedInWrapper";
@@ -10,7 +9,7 @@ import LoggedInWrapper from "./LoggedInWrapper/LoggedInWrapper";
 // import SignUpForm from "./AuthForm/AuthFormSignup";
 
 const Routes = () => {
-  const { loggedIn, loggedInUser } = useContext(LoginContext);
+  const { loggedIn } = useContext(LoginContext);
 
   return (
     <>
