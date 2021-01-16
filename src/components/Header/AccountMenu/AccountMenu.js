@@ -12,6 +12,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import styled, { css } from "styled-components";
 import LoginContext from "../../LoginContext";
 import myColors from "../../../static/colors";
+import { NavLink } from "react-router-dom";
 
 function AccountMenu() {
   const [open, setOpen] = React.useState(false);
@@ -52,6 +53,9 @@ function AccountMenu() {
     logOut();
   }
 
+  // Curently logged in User from LoginContext
+  const { loggedInUser } = useContext(LoginContext);
+
   return (
     <>
       <IconButton
@@ -86,7 +90,12 @@ function AccountMenu() {
                   id="menu-list-grow"
                   onKeyDown={handleListKeyDown}
                 >
-                  <MenuItem onClick={handleClose}>Profile</MenuItem>
+                  <StyledNavLink
+                    to={"/u/" + loggedInUser.username}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    <MenuItem>Profile</MenuItem>
+                  </StyledNavLink>
                   <MenuItem onClick={handleClose}>Settings</MenuItem>
                   <MenuItem onClick={handleLogOut}>Logout</MenuItem>
                 </MenuList>
@@ -111,9 +120,11 @@ const sharedIconStyles = css`
   }
 `;
 
+const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: black;
+`;
 
 const SyledPersonIcon = styled(PersonIcon)`
   ${sharedIconStyles}
 `;
-
-

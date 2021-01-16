@@ -11,7 +11,8 @@ function App() {
     localStorage.getItem("_token") !== null
   );
 
-  let [loggedInUser, setLoggedInUser] = useState({});
+  // State storage for some user data (username, bio, etc.)
+  const [loggedInUser, setLoggedInUser] = useState({});
 
   const logOut = () => {
     localStorage.clear();
@@ -19,14 +20,13 @@ function App() {
   };
 
   useEffect(() => {
-    async function getLoggedInUser() {
+    async function provideLoggedInUserContext() {
       if (localStorage.getItem("_token")) {
         let res = await BackendApi.getLoggedInUser();
         setLoggedInUser(res.user);
-        setLoggedIn(true);
       }
     }
-    getLoggedInUser();
+    provideLoggedInUserContext();
   }, [loggedIn]);
   // [END LoginCOntext]
 
