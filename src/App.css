@@ -1,4 +1,9 @@
 .ck-editor__editable_inline {
   height: 65vh;
   width: "auto";
+  z-index: 9999 !important;
+}
+
+.ck-balloon-panel {
+  z-index: 9999 !important;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   IconButton,
@@ -11,8 +11,10 @@ import BlogPostEditor from "./NewBlogPostEditor";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import myColors from "../../../static/colors";
+import BackendApi from "../../../helpers/BackendApi";
 
 export default function FormDialog() {
+  // Handling opening and closing of dialog:
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -23,6 +25,37 @@ export default function FormDialog() {
     setOpen(false);
   };
 
+  // Handling state of the NewBlogPostForm
+  const INITIAL_STATE = {
+    title: "",
+    content: "",
+  };
+
+  const [formData, setFormData] = useState(INITIAL_STATE);
+
+  // Listen to changes written on the form and update formData state
+  const handleChange = (evt) => {
+    const { name, value } = evt.target;
+    setFormData((formData) => ({
+      ...formData,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    async function submitBlogPostForm({ title, content }) {
+      try {
+        const res = await BackendApi.createNewBlogPost({ title, content });
+        console.log(res);
+      } catch (e) {
+        alert(e);
+      }
+    }
+    submitBlogPostForm({ ...formData });
+  };
+
   return (
     <>
       <IconButton onClick={handleClickOpen}>
@@ -30,39 +63,52 @@ export default function FormDialog() {
       </IconButton>
 
       <Dialog
+        disableBackdropClick
+        disableEscapeKeyDown
         open={open}
+        onClose={handleClose}
         aria-labelledby="form-dialog-title"
         fullWidth
         maxWidth={"md"}
-      >
-        <div style={{ padding: 20, overflow: "hidden" }}>
-          <TopRow>
-            <CloseButton aria-label="close" onClick={handleClose}>
-              <CloseIcon />
-            </CloseButton>
+        disableEnforceFocus={true}>
+        <form onSubmit={handleSubmit}>
+          <div style={{ padding: 20, overflow: "hidden" }}>
+            <TopRow>
+              <CloseButton aria-label="close" onClick={handleClose}>
+                <CloseIcon />
+              </CloseButton>
+              <textarea
+                id="content"
+                name="content"
+                value={formData.content}
+                readOnly
+                style={{ display: "none" }}></textarea>
+              <TextField
+                autoFocus
+                id="title"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                label="Title"
+                placeholder="Title for your new post"
+                type="text"
+                required
+              />
+            </TopRow>
 
-            <TextField
-              autoFocus
-              id="title"
-              name="title"
-              label="Title"
-              placeholder="Title for your new post"
-              type="text"
-              required
-            />
-          </TopRow>
-          <BlogPostEditor />
-        </div>
+            <BlogPostEditor formData={formData} setFormData={setFormData} />
+          </div>
 
-        <DialogActions>
-          {/* EDIT THESE: */}
-          <Button variant="contained" onClick={handleClose} color="secondary">
-            Discard
-          </Button>
-          <Button variant="contained" onClick={handleClose} color="primary">
-            Submit Post
-          </Button>
-        </DialogActions>
+          <DialogActions>
+            {/* EDIT THESE: */}
+            <Button variant="contained" onClick={handleClose} color="secondary">
+              Discard
+            </Button>
+            <Button variant="contained" type="submit" color="primary">
+              Submit Post
+            </Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </>
   );
@@ -71,7 +117,8 @@ export default function FormDialog() {
 // STYLES:
 const CloseButton = styled(IconButton)`
   position: absolute;
-  right: 0%;
+  right: -2%;
+  margin-top: -15px;
 `;
 
 const SyledAddBoxIcon = styled(AddBoxIcon)`

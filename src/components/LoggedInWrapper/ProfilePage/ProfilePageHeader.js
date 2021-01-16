@@ -4,7 +4,6 @@ import { Avatar, Grid } from "@material-ui/core";
 import myColors from "../../../static/colors";
 
 function ProfilePageHeader({ userData }) {
-  console.log(userData);
   return (
     <HeaderContainer>
       <HeaderImageContainer />

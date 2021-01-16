@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 // import styled from "styled-components";
 
-function BlogPostEditor() {
-  const [text, setText] = useState("");
-
+function BlogPostEditor({ formData, setFormData }) {
   return (
     <CKEditor
+      value={formData.content}
       editor={ClassicEditor}
-      data={text}
+      data={formData.content}
       onChange={(event, editor) => {
         const data = editor.getData();
-        setText(data);
+        setFormData((formData) => ({
+          ...formData,
+          content: data,
+        }));
       }}
     />
   );

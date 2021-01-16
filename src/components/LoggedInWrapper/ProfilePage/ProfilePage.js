@@ -1,7 +1,7 @@
-import { Grid, Fade } from "@material-ui/core";
+import { Fade } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import ProfilePageHeader from "./ProfilePageHeader";
-import PostCard from "./PostCard/PostCard";
+import ProfilePagePosts from "./ProfilePagePosts";
 import { useParams } from "react-router-dom";
 import BackendApi from "../../../helpers/BackendApi";
 
@@ -20,16 +20,16 @@ function ProfilePage() {
   const [userData, setUserData] = useState(INITIAL_PROFILE_STATE);
 
   useEffect(() => {
-    async function setProfilePage(user) {
-      const res = await BackendApi.getUserByUsername(user);
+    async function setProfilePage(name) {
+      const res = await BackendApi.getUserByUsername(name);
       if (res.status === 404) {
         setUserData({ status: "not found" });
       } else {
-        setUserData(res.user);
+        setUserData({ ...res.user });
       }
-      setPageLoaded(true);
     }
     setProfilePage(username);
+    setPageLoaded(true);
   }, [username]);
 
   return (
@@ -43,16 +43,7 @@ function ProfilePage() {
               <>
                 {/* Render a profile with the userData object */}
                 <ProfilePageHeader userData={userData} />
-
-                <Grid container direction="row" justify="center">
-                  {/* User hasn't posted? Show appropriate message. Else, create
-                  post cards for all user posts */}
-                  {userData["posts"] ? (
-                    <div>User has not posted anything</div>
-                  ) : (
-                    userData["posts"].map((post) => <PostCard info={post} />)
-                  )}
-                </Grid>
+                <ProfilePagePosts userPosts={userData.posts} />
               </>
             ) : (
               <div> NO ONE FOUND </div>

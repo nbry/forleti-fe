@@ -52,20 +52,27 @@ class BackendAPI {
   }
 
   // ********************
-  // USER/BLOGPOSTS
+  // USER
   static async getLoggedInUser() {
     // This method takes advantage of the /home route on the backend and the
     // funcationality of this.request attaching a token to the header. The token
     // has the logged in user's id in the payload, which is why no arguments need
     // to be passed in to this function.
 
-    let user_info = await this.request("/home");
+    let user_info = await this.request("home");
     return user_info;
   }
 
   static async getUserByUsername(username) {
     let user_info = await this.request(`user/${username}`);
     return user_info;
+  }
+
+  // ********************
+  // BLOG POST
+  static async createNewBlogPost({ title, content }) {
+    let blog_post = await this.request("bp/new", { title, content }, "post");
+    return blog_post;
   }
 }
 
