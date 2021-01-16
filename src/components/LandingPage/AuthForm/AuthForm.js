@@ -17,7 +17,7 @@ function AuthForm() {
   };
   const [formData, setFormData] = useState(INITIAL_STATE);
 
-  // Function to listen to changes write on the form and to update formData state
+  // Listen to changes written on the form and update formData state
   const handleChange = (evt) => {
     const { name, value } = evt.target;
     setFormData((formData) => ({
@@ -26,7 +26,7 @@ function AuthForm() {
     }));
   };
 
-  // Function to handle form submission
+  // Handle form submission
   const handleSubmit = (evt) => {
     evt.preventDefault();
     async function submitAuthForm({ username, password, email }) {
