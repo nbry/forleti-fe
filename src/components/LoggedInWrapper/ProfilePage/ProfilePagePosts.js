@@ -8,10 +8,10 @@ function ProfilePagePosts({ userPosts }) {
     <Grid container direction="row" justify="center">
       {/* User hasn't posted? Show appropriate message. Else, create
                   post cards for all user posts */}
-      {userPosts ? (
+      {userPosts.length ? (
         userPosts.map((post) => <PostCard post={post} key={post.title} />)
       ) : (
-        <p>User has not posted anything yet!</p>
+        <p aria-label="message">User has not posted anything yet!</p>
       )}
     </Grid>
   );
