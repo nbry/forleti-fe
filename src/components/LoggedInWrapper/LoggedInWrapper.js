@@ -1,14 +1,14 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
-import ProfilePage from "./ProfilePage/ProfilePage";
 import myColors from "../../static/colors";
+import LoggedInRoutes from "./RoutesLoggedIn";
 
 function LoggedInWrapper() {
   return (
     <BackgroundWrapper container direction="row" justify="center">
       <Board>
-        <ProfilePage />
+        <LoggedInRoutes />
       </Board>
     </BackgroundWrapper>
   );

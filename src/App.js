@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LoginContext from "./components/LoginContext";
-import Routes from "./components/Routes";
 import Header from "./components/Header/Header";
 import "./App.css";
 import BackendApi from "./helpers/BackendApi";
+import LoggedInWrapper from "./components/LoggedInWrapper/LoggedInWrapper";
+import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
   // [LoginContext] CHECK IF USER IS LOGGED IN
@@ -31,14 +32,12 @@ function App() {
   // [END LoginCOntext]
 
   return (
-    <>
-      <LoginContext.Provider
-        value={{ loggedIn, setLoggedIn, logOut, loggedInUser }}
-      >
-        <Header />
-        <Routes />
-      </LoginContext.Provider>
-    </>
+    <LoginContext.Provider
+      value={{ loggedIn, setLoggedIn, logOut, loggedInUser }}
+    >
+      <Header />
+      {loggedIn ? <LoggedInWrapper /> : <LandingPage />}
+    </LoginContext.Provider>
   );
 }
 

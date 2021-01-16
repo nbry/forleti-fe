@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
-import LandingPageBanner from "./LandingPageBanner";
 import LandingPageInfo from "./LandingPageInfo";
+import LoggedOutRoutes from "./RoutesLandingPage";
 
 function LandingPage() {
   return (
@@ -10,7 +9,7 @@ function LandingPage() {
       <BackgroundContainer>
         <Version>0.1.0-alpha</Version>
         <Wrapper>
-          <LandingPageBanner />
+          <LoggedOutRoutes />
         </Wrapper>
       </BackgroundContainer>
       <LandingPageInfo />
