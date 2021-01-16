@@ -6,7 +6,10 @@ const LoggedInRoutes = () => {
   return (
     <Switch>
       <Route exact path="/home">
-        <div>Welcome to home Page</div>
+        <div>Welcome to Home Page</div>
+      </Route>
+      <Route exact path="/settings">
+        <div>Welcome to Settings Page</div>
       </Route>
       <Route path="/u/:username">
         <ProfilePage />

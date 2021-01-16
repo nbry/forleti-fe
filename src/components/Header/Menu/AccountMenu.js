@@ -96,7 +96,12 @@ function AccountMenu() {
                   >
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
                   </StyledNavLink>
-                  <MenuItem onClick={handleClose}>Settings</MenuItem>
+                  <StyledNavLink
+                    to={"/settings"}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    <MenuItem onClick={handleClose}>Settings</MenuItem>
+                  </StyledNavLink>
                   <MenuItem onClick={handleLogOut}>Logout</MenuItem>
                 </MenuList>
               </ClickAwayListener>
