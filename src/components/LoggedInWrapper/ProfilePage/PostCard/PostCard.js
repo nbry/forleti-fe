@@ -7,9 +7,7 @@ function PostCard({ post }) {
   return (
     <StyledPaper elevation={5}>
       <PostCardTitle>{post.title}</PostCardTitle>
-      <div className="postContent">
-        <p>{parse(post.content)}</p>
-      </div>
+      <div className="postContent">{parse(post.content)}</div>
     </StyledPaper>
   );
 }
