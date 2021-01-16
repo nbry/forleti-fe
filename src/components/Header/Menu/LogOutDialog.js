@@ -48,7 +48,7 @@ export default function FormDialog() {
         onClose={handleClose}
         onKeyDown={stopPropagationForTab}
         maxWidth={"xs"}
-        fullwidth
+        fullwidth="true"
         aria-labelledby="simple-dialog"
         py={2}>
         <Box my={3}>
@@ -56,7 +56,7 @@ export default function FormDialog() {
             <StyledAvatar>
               <ExitToAppRoundedIcon />
             </StyledAvatar>
-            <DialogTitle>
+            <DialogTitle disableTypography>
               <Typography variant="h4">Log out of Forleti?</Typography>
             </DialogTitle>
             <DialogContent>
