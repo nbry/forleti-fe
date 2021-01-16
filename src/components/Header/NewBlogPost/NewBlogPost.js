@@ -56,10 +56,10 @@ export default function FormDialog() {
 
         <DialogActions>
           {/* EDIT THESE: */}
-          <Button onClick={handleClose} color="primary">
+          <Button variant="contained" onClick={handleClose} color="secondary">
             Discard
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button variant="contained" onClick={handleClose} color="primary">
             Submit Post
           </Button>
         </DialogActions>
