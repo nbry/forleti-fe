@@ -10,31 +10,32 @@ import LoggedInWrapper from "./LoggedInWrapper/LoggedInWrapper";
 // import SignUpForm from "./AuthForm/AuthFormSignup";
 
 const Routes = () => {
-  const { loggedIn } = useContext(LoginContext);
+  const { loggedIn, loggedInUser } = useContext(LoginContext);
+
   return (
-    <Switch>
-      {/* Not the DRYest code, but keep two explicit sets of routes
+    <>
+      {/* Not the DRYest code, but keep two explicit sets of SWITCH routes
       depending on loggedIn context */}
 
       {loggedIn ? (
-        <>
-          <Route path="/new">
-            <BlogPostEditor />
+        <Switch>
+          <Route exact path="/home">
+            <div>Welcome to home Page</div>
           </Route>
-          <Route path="/home">
+          <Route path="/u/:username">
             <LoggedInWrapper />
           </Route>
           <Redirect to="/home" />
-        </>
+        </Switch>
       ) : (
-        <>
-          <Route path="/">
+        <Switch>
+          <Route exact path="/">
             <LandingPage />
           </Route>
           <Redirect to="/" />
-        </>
+        </Switch>
       )}
-    </Switch>
+    </>
   );
 };
 
