@@ -11,6 +11,7 @@ import {
 import PersonIcon from "@material-ui/icons/Person";
 import styled, { css } from "styled-components";
 import LoginContext from "../../LoginContext";
+import LogOutDialog from "./LogOutDialog";
 import myColors from "../../../static/colors";
 import { NavLink } from "react-router-dom";
 
@@ -102,7 +103,7 @@ function AccountMenu() {
                   >
                     <MenuItem onClick={handleClose}>Settings</MenuItem>
                   </StyledNavLink>
-                  <MenuItem onClick={handleLogOut}>Logout</MenuItem>
+                  <LogOutDialog onClick={handleClose} />
                 </MenuList>
               </ClickAwayListener>
             </Paper>
