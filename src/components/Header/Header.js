@@ -30,7 +30,7 @@ export default Header;
 const Title = styled.h1`
   flex-grow: 1;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.5em;
   font-family: "Raleway";
 `;
 
