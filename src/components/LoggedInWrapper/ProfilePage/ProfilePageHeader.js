@@ -3,7 +3,8 @@ import React from "react";
 import { Avatar, Grid } from "@material-ui/core";
 import myColors from "../../../static/colors";
 
-function ProfilePageHeader() {
+function ProfilePageHeader({ userData }) {
+  console.log(userData);
   return (
     <HeaderContainer>
       <HeaderImageContainer />
@@ -12,11 +13,10 @@ function ProfilePageHeader() {
       </AvatarGrid>
       <header>
         <Grid container direction="column" alignItems="center">
-          <ProfileName>Testing Username</ProfileName>
-          <ProfileDescription>
-            I'm a test user. I like books and coffee. My favorite colors are
-            navy and sea green. Feel free to DM me about my blogs. WOoh!
-          </ProfileDescription>
+          <ProfileName>{userData.username}</ProfileName>
+          <ProfileBio aria-label="bio">
+            {userData.bio ? userData.bio : <p aria-label="bio">No Bio</p>}
+          </ProfileBio>
         </Grid>
       </header>
     </HeaderContainer>
@@ -49,7 +49,7 @@ const ProfileName = styled.h1`
   margin-bottom: 10px;
 `;
 
-const ProfileDescription = styled.div`
+const ProfileBio = styled.div`
   min-width: 420px;
   width: 60%;
   text-align: center;
