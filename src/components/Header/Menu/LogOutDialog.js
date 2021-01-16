@@ -49,9 +49,8 @@ export default function FormDialog() {
         onKeyDown={stopPropagationForTab}
         maxWidth={"xs"}
         fullwidth
-        aria-labelledby="form-dialog-title"
-        py={2}
-      >
+        aria-labelledby="simple-dialog"
+        py={2}>
         <Box my={3}>
           <Grid container direction="column" alignItems="center">
             <StyledAvatar>
@@ -76,8 +75,7 @@ export default function FormDialog() {
               <Button
                 variant="contained"
                 onClick={handleLogOut}
-                color="primary"
-              >
+                color="primary">
                 Log Out
               </Button>
             </DialogActions>
