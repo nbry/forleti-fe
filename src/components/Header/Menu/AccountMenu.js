@@ -47,13 +47,6 @@ function AccountMenu() {
     prevOpen.current = open;
   }, [open]);
 
-  // Log Out Functionality
-  const { logOut } = useContext(LoginContext);
-  function handleLogOut(event) {
-    handleClose(event);
-    logOut();
-  }
-
   // Curently logged in User from LoginContext
   const { loggedInUser } = useContext(LoginContext);
 
@@ -103,7 +96,7 @@ function AccountMenu() {
                   >
                     <MenuItem onClick={handleClose}>Settings</MenuItem>
                   </StyledNavLink>
-                  <LogOutDialog onClick={handleClose} />
+                  <LogOutDialog />
                 </MenuList>
               </ClickAwayListener>
             </Paper>
