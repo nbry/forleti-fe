@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import ProfilePage from "./ProfilePage/ProfilePage";
+import SettingsPage from "./SettingsPage/SettingsPage";
 
 const LoggedInRoutes = () => {
   return (
@@ -9,7 +10,7 @@ const LoggedInRoutes = () => {
         <div>Welcome to Home Page</div>
       </Route>
       <Route exact path="/settings">
-        <div>Welcome to Settings Page</div>
+        <SettingsPage />
       </Route>
       <Route path="/u/:username">
         <ProfilePage />
