@@ -9,7 +9,7 @@ function ProfilePagePosts({ userPosts }) {
       {/* User hasn't posted? Show appropriate message. Else, create
                   post cards for all user posts */}
       {userPosts.length ? (
-        userPosts.map((post) => <PostCard post={post} key={post.title} />)
+        userPosts.map((post) => <PostCard post={post} key={post.id} />)
       ) : (
         <p aria-label="message">User has not posted anything yet!</p>
       )}
