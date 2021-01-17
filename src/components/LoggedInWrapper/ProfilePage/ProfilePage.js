@@ -1,13 +1,13 @@
 import { Fade } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ProfilePageHeader from "./ProfilePageHeader";
 import ProfilePagePosts from "./ProfilePagePosts";
 import { useParams } from "react-router-dom";
 import BackendApi from "../../../helpers/BackendApi";
+import PageLoadedContext from "../PageLoadedContext";
 
 function ProfilePage() {
-  // State for if profile is loaded or not:
-  const [pageLoaded, setPageLoaded] = useState(false);
+  const { pageLoaded, setPageLoaded } = useContext(PageLoadedContext);
 
   // State for detials of the user profile being viewed
   const { username } = useParams();
