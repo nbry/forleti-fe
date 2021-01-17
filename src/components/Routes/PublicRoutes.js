@@ -1,11 +1,9 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import LandingPageWrapper from "../Wrappers/LandingPageWrapper";
+import ProfileWrapper from "../Wrappers/ProfileWrapper";
 
-const NotLoggedInRoutes = () => {
-  //  Weird name, but name is to notate that user is "not logged in",
-  // not necessarily logged out
-
+const PublicRoutes = () => {
   return (
     <Switch>
       <Route exact path="/">
@@ -17,9 +15,12 @@ const NotLoggedInRoutes = () => {
       <Route exact path="/signup">
         <LandingPageWrapper setBanner="signup" />
       </Route>
+      <Route exact path="/u/:username">
+        <ProfileWrapper setContent="profile" />
+      </Route>
       <Redirect to="/" />
     </Switch>
   );
 };
 
-export default NotLoggedInRoutes;
+export default PublicRoutes;
