@@ -6,6 +6,8 @@ import styled from "styled-components";
 import PageLoadedContext from "../PageLoadedContext";
 
 function HomePage() {
+  document.title = "Forleti Home";
+
   const { pageLoaded, setPageLoaded } = useContext(PageLoadedContext);
 
   useEffect(() => {

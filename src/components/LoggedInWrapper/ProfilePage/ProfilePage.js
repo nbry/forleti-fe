@@ -11,6 +11,8 @@ function ProfilePage() {
 
   // State for detials of the user profile being viewed
   const { username } = useParams();
+  document.title = `${username}'s Forleti Page`;
+
   const INITIAL_PROFILE_STATE = {
     username: "",
     posts: [],

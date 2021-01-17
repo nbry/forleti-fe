@@ -6,6 +6,8 @@ import LoggedInWrapper from "./components/LoggedInWrapper/LoggedInWrapper";
 import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
+  document.title = "Forleti";
+
   // [LoginContext] CHECK IF USER IS LOGGED IN
   const [loggedIn, setLoggedIn] = useState(
     localStorage.getItem("_token") !== null

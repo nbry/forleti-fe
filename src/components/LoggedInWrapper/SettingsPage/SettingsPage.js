@@ -6,7 +6,8 @@ import SettingsPageList from "./SettingsPageList";
 import PageLoadedContext from "../PageLoadedContext";
 
 function SettingsPage() {
-  console.log("RENDERING SETTINGS");
+  document.title = "Forleti Settings";
+
   const { pageLoaded, setPageLoaded } = useContext(PageLoadedContext);
 
   useEffect(() => {
