@@ -1,14 +1,14 @@
 import { Paper } from "@material-ui/core";
 import React from "react";
 import parse from "html-react-parser";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import formatDate from "../../../../helpers/functions/formatDate";
 
 function PostCard({ post }) {
   return (
     <StyledPaper elevation={5}>
-      <PostCardTitle>{post.title}</PostCardTitle>
-      <div className="postContent">{parse(post.content)}</div>
+      <PostCardTitle component="h2">{post.title}</PostCardTitle>
+      <Content className="postContent">{parse(post.content)}</Content>
       <CreatedDate>{formatDate(post.created)}</CreatedDate>
     </StyledPaper>
   );
@@ -17,10 +17,20 @@ function PostCard({ post }) {
 export default PostCard;
 
 // STYLES:
-
-const PostCardTitle = styled.h3`
+const sharedFontStyles = css`
   font-family: "Raleway";
-  font-size: 1.6em;
+  word-wrap: break-word;
+`;
+const Content = styled.div`
+  ${sharedFontStyles}
+`;
+
+const PostCardTitle = styled.h2`
+  ${sharedFontStyles}
+  text-align: center;
+  border-bottom: 1px dotted #a5a5a5;
+  font-style: italic;
+  font-size: 1.8rem;
   margin: 0px;
 `;
 
