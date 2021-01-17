@@ -1,9 +1,8 @@
 import { Fade, Grid, Typography } from "@material-ui/core";
 import React, { useContext, useEffect } from "react";
-import WorkingPaper from "../../../utils/WorkingPaper";
+import WorkingPaper from "utils/WorkingPaper";
 import styled from "styled-components";
-
-import PageLoadedContext from "../../PageLoadedContext";
+import PageLoadedContext from "components/PageLoadedContext";
 
 function HomePage() {
   document.title = "Forleti Home";
@@ -28,6 +27,7 @@ function HomePage() {
 
 export default HomePage;
 
+//STYLES:
 const Title = styled(Typography)`
   font-family: "Raleway";
 `;
