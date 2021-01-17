@@ -1,16 +1,20 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
+import Header from "./Header/Header";
 import myColors from "../../static/colors";
 import LoggedInRoutes from "./RoutesLoggedIn";
 
 function LoggedInWrapper() {
   return (
-    <BackgroundWrapper container direction="row" justify="center">
-      <Board>
-        <LoggedInRoutes />
-      </Board>
-    </BackgroundWrapper>
+    <>
+      <Header />
+      <BackgroundWrapper container direction="row" justify="center">
+        <Board>
+          <LoggedInRoutes />
+        </Board>
+      </BackgroundWrapper>
+    </>
   );
 }
 

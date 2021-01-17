@@ -12,7 +12,7 @@ import {
   Avatar,
 } from "@material-ui/core";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
-import LoginContext from "../../LoginContext";
+import LoginContext from "../../../LoginContext";
 import styled from "styled-components";
 
 export default function FormDialog() {

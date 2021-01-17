@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { AppBar, Toolbar } from "@material-ui/core";
 import styled from "styled-components";
 import HeaderMenuList from "./HeaderMenuList";
-import LoginContext from "../LoginContext";
-import myColors from "../../static/colors";
+import LoginContext from "../../LoginContext";
+import myColors from "../../../static/colors";
 import { NavLink } from "react-router-dom";
 
 function Header() {

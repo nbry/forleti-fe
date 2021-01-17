@@ -1,19 +1,14 @@
+// prettier-ignore
+import {Button, IconButton, TextField, Dialog, DialogActions } from "@material-ui/core";
 import React, { useContext, useState } from "react";
-import {
-  Button,
-  IconButton,
-  TextField,
-  Dialog,
-  DialogActions,
-} from "@material-ui/core";
 import AddBoxIcon from "@material-ui/icons/AddBox";
-import BlogPostEditor from "./NewBlogPostEditor";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
-import myColors from "../../../static/colors";
-import BackendApi from "../../../helpers/BackendApi";
+import myColors from "../../../../static/colors";
+import BlogPostEditor from "./NewBlogPostEditor";
+import BackendApi from "../../../../helpers/BackendApi";
 import { useHistory } from "react-router-dom";
-import LoginContext from "../../LoginContext";
+import LoginContext from "../../../LoginContext";
 
 export default function FormDialog() {
   // Handling opening and closing of dialog:
@@ -59,6 +54,7 @@ export default function FormDialog() {
     }
     submitBlogPostForm({ ...formData });
     handleClose();
+    setFormData(INITIAL_STATE);
     history.push(`/u/${loggedInUser.username}`);
   };
 

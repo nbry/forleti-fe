@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import LoginContext from "./components/LoginContext";
-import Header from "./components/Header/Header";
 import "./App.css";
 import BackendApi from "./helpers/BackendApi";
 import LoggedInWrapper from "./components/LoggedInWrapper/LoggedInWrapper";
@@ -33,9 +32,7 @@ function App() {
 
   return (
     <LoginContext.Provider
-      value={{ loggedIn, setLoggedIn, logOut, loggedInUser }}
-    >
-      <Header />
+      value={{ loggedIn, setLoggedIn, logOut, loggedInUser }}>
       {loggedIn ? <LoggedInWrapper /> : <LandingPage />}
     </LoginContext.Provider>
   );

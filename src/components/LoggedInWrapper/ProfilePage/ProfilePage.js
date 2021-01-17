@@ -30,7 +30,7 @@ function ProfilePage() {
     }
     setProfilePage(username);
     setPageLoaded(true);
-  }, [username]);
+  }, [username, pageLoaded]);
 
   return (
     <>
