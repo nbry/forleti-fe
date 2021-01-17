@@ -1,21 +1,12 @@
-import {
-  Avatar,
-  Button,
-  Paper,
-  Box,
-  // Checkbox,
-  // FormControlLabel,
-  Grid,
-  Link,
-  TextField,
-  Typography,
-  Divider,
-} from "@material-ui/core";
+// prettier-ignore
+import { Avatar, Button, Paper, Box, // Checkbox, // FormControlLabel,
+  Grid, Link, TextField, Typography, Divider } from "@material-ui/core";
 import LockIcon from "@material-ui/icons/Lock";
 import CreateIcon from "@material-ui/icons/Create";
 import styled from "styled-components";
 import { useContext } from "react";
 import LandingPageBannerContext from "../LandingPageBannerContext";
+import PreReleaseNotice from "../../../static/PreReleaseNotice";
 
 function AuthFormContent({ formData, handleChange, handleSubmit }) {
   // Using a Boolean to dynamically change form fields between
@@ -95,8 +86,7 @@ function AuthFormContent({ formData, handleChange, handleSubmit }) {
             color="primary"
             variant="contained"
             size="large"
-            fullWidth
-          >
+            fullWidth>
             Submit
           </StyledButton>
         </form>
@@ -104,8 +94,7 @@ function AuthFormContent({ formData, handleChange, handleSubmit }) {
           onClick={() => changeContent("default")}
           variant="contained"
           size="large"
-          fullWidth
-        >
+          fullWidth>
           Return Home
         </StyledButton>
         <Box mt={1} textAlign="center">
@@ -132,13 +121,7 @@ function AuthFormContent({ formData, handleChange, handleSubmit }) {
         <Box mt={2}>
           <Divider />
           <p>
-            <small>
-              NOTICE: Forleti is in pre-release. We are still tinkering
-              with core components and undergoing requirements analysis. Any
-              accounts made prior to official release may be lost. Follow us on{" "}
-              <a href="https://twitter.com/forleti">Twitter</a> to receive
-              updates on development!
-            </small>
+            <PreReleaseNotice />
           </p>
         </Box>
       </StyledFormPaper>
