@@ -1,10 +1,10 @@
 import { Box, Fade, Grid, Typography } from "@material-ui/core";
 import React, { useContext, useEffect } from "react";
-import WorkingPaper from "../../../utils/WorkingPaper";
 import styled from "styled-components";
 import SettingsPageList from "./SettingsPageList";
-import PageLoadedContext from "../../PageLoadedContext";
+import PageLoadedContext from "components/PageLoadedContext";
 import PreReleaseNotice from "utils/PreReleaseNotice";
+import WorkingPaper from "utils/WorkingPaper";
 
 function SettingsPage() {
   document.title = "Forleti Settings";
@@ -33,6 +33,7 @@ function SettingsPage() {
 
 export default SettingsPage;
 
+// STYLES:
 const Title = styled(Typography)`
   font-family: "Raleway";
 `;
