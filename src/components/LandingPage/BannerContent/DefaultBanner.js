@@ -9,6 +9,10 @@ import LandingPageBannerContext from "../LandingPageBannerContext";
 function DefaultBanner() {
   document.title = "Forleti";
 
+  // Set loading to top of page. Landing page height is set to 100vh. This allows for a seemless
+  // transition if user logs out from another route and is scrolled lower in the page.
+  window.scrollTo(0, 0);
+
   // Display landing page. Shows different content depending on if user
   // is logged in or not. Look for "HERE" notes to see differences
   const { checked, changeContent } = useContext(LandingPageBannerContext);
