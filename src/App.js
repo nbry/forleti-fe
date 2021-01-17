@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import LoginContext from "./components/LoginContext";
 import "./App.css";
 import BackendApi from "./helpers/BackendApi";
-import LoggedInWrapper from "./components/LoggedInWrapper/LoggedInWrapper";
-import LandingPage from "./components/LandingPage/LandingPage";
+import PublicRoutes from "./components/Routes/PrivateRoutes";
+import PrivateRoutes from "./components/Routes/PublicRoutes";
 
 function App() {
   document.title = "Forleti";
@@ -35,7 +35,7 @@ function App() {
   return (
     <LoginContext.Provider
       value={{ loggedIn, setLoggedIn, logOut, loggedInUser }}>
-      {loggedIn ? <LoggedInWrapper /> : <LandingPage />}
+      {!loggedIn ? <PrivateRoutes /> : <PublicRoutes />}
     </LoginContext.Provider>
   );
 }

@@ -9,7 +9,7 @@ import BlogPostEditor from "./NewBlogPostEditor";
 import BackendApi from "../../../../helpers/BackendApi";
 import { useHistory } from "react-router-dom";
 import LoginContext from "../../../LoginContext";
-import PageLoadedContext from "../../PageLoadedContext";
+import PageLoadedContext from "../../../PageLoadedContext";
 
 export default function FormDialog() {
   // Handling opening and closing of dialog:

@@ -1,12 +1,14 @@
 import { Grid } from "@material-ui/core";
 import React, { useState } from "react";
 import styled from "styled-components";
-import Header from "./Header/Header";
+import Header from "../Private/Header/Header";
 import myColors from "../../static/colors";
-import LoggedInRoutes from "./RoutesLoggedIn";
-import PageLoadedContext from "./PageLoadedContext";
+import ProfilePage from "../Public/ProfilePage/ProfilePage";
+import HomePage from "../Private/HomePage/HomePage";
+import SettingsPage from "../Private/SettingsPage/SettingsPage";
+import PageLoadedContext from "../PageLoadedContext";
 
-function LoggedInWrapper() {
+function BackgroundWrapper({ setContent }) {
   // Store the state for the loading a page and forcing a re-render of a component
   // within the loggedInWrapper WHILE avoiding a re-render of the BackgroundWrapper and Board
   const [pageLoaded, setPageLoaded] = useState(false);
@@ -14,18 +16,20 @@ function LoggedInWrapper() {
   return (
     <PageLoadedContext.Provider value={{ pageLoaded, setPageLoaded }}>
       <Header />
-      <BackgroundWrapper container direction="row" justify="center">
+      <BackgroundColor container direction="row" justify="center">
         <Board>
-          <LoggedInRoutes />
+          {setContent === "home" && <HomePage />}
+          {setContent === "settings" && <SettingsPage />}
+          {setContent === "profile" && <ProfilePage />}
         </Board>
-      </BackgroundWrapper>
+      </BackgroundColor>
     </PageLoadedContext.Provider>
   );
 }
 
-export default LoggedInWrapper;
+export default BackgroundWrapper;
 
-const BackgroundWrapper = styled(Grid)`
+const BackgroundColor = styled(Grid)`
   background-color: ${myColors.background};
   background-attachment: fixed;
   height: 100%;

@@ -1,7 +1,7 @@
+//prettier-ignore
+import { ClickAwayListener, Grow, Paper, Popper,
+  MenuItem, MenuList, IconButton, } from "@material-ui/core";
 import React, { useContext } from "react";
-//prettify-ignore
-import { ClickAwayListener, Grow, Paper, 
-  Popper, MenuItem, MenuList, IconButton, } from "@material-ui/core";
 import PersonIcon from "@material-ui/icons/Person";
 import styled, { css } from "styled-components";
 import LoginContext from "../../../LoginContext";

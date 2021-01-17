@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppBar, Toolbar } from "@material-ui/core";
 import styled from "styled-components";
-import HeaderMenuList from "./HeaderMenuList";
+import HeaderMenu from "./HeaderMenu";
 import LoginContext from "../../LoginContext";
 import myColors from "../../../static/colors";
 import { NavLink } from "react-router-dom";
@@ -16,7 +16,7 @@ function Header() {
             <Title>
               <StyledNavLink to="/home">Forleti</StyledNavLink>
             </Title>
-            <HeaderMenuList />
+            <HeaderMenu />
           </StyledToolbar>
         </StyledAppBar>
       ) : null}

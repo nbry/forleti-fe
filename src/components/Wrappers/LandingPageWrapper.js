@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import LandingPageInfo from "./LandingPageInfo";
-import LoggedOutRoutes from "./RoutesLandingPage";
+import LandingPageBanner from "../Public/LandingPage/LandingPageBanner";
+import LandingPageInfo from "../Public/LandingPage/LandingPageInfo";
 
-function LandingPage() {
+function LandingPage({ setBanner }) {
   return (
     <>
       <BackgroundContainer>
         <Version>0.1.0-alpha</Version>
         <Wrapper>
-          <LoggedOutRoutes />
+          <LandingPageBanner setBanner={setBanner} />
         </Wrapper>
       </BackgroundContainer>
       <LandingPageInfo />

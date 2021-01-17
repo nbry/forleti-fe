@@ -4,7 +4,7 @@ import ProfilePageHeader from "./ProfilePageHeader";
 import ProfilePagePosts from "./ProfilePagePosts";
 import { useParams } from "react-router-dom";
 import BackendApi from "../../../helpers/BackendApi";
-import PageLoadedContext from "../PageLoadedContext";
+import PageLoadedContext from "../../PageLoadedContext";
 
 function ProfilePage() {
   const { pageLoaded, setPageLoaded } = useContext(PageLoadedContext);
