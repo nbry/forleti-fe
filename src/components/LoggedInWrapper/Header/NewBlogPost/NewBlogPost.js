@@ -9,6 +9,7 @@ import BlogPostEditor from "./NewBlogPostEditor";
 import BackendApi from "../../../../helpers/BackendApi";
 import { useHistory } from "react-router-dom";
 import LoginContext from "../../../LoginContext";
+import PageLoadedContext from "../../PageLoadedContext";
 
 export default function FormDialog() {
   // Handling opening and closing of dialog:
@@ -42,20 +43,22 @@ export default function FormDialog() {
   // Handle form submission
   const history = useHistory();
   const { loggedInUser } = useContext(LoginContext);
+  const { setPageLoaded } = useContext(PageLoadedContext);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     async function submitBlogPostForm({ title, content }) {
       try {
         await BackendApi.createNewBlogPost({ title, content });
+        setFormData(INITIAL_STATE);
+        setPageLoaded(false);
+        history.push(`/u/${loggedInUser.username}`);
       } catch (e) {
         alert(e);
       }
     }
     submitBlogPostForm({ ...formData });
     handleClose();
-    setFormData(INITIAL_STATE);
-    history.push(`/u/${loggedInUser.username}`);
   };
 
   return (
