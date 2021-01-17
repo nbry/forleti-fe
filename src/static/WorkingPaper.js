@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 //STYLES
 const WorkingPaper = styled(Paper)`
-  margin: 10px;
-  padding: 20px;
+  margin: 20px;
+  padding: 50px;
   height: 91vh;
 `;
 

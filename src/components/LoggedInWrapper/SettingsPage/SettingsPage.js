@@ -2,12 +2,11 @@ import { Fade, Grid, Typography } from "@material-ui/core";
 import React, { useContext, useEffect } from "react";
 import WorkingPaper from "../../../static/WorkingPaper";
 import styled from "styled-components";
-import LoginContext from "../../LoginContext";
+import SettingsPageList from "./SettingsPageList";
 import PageLoadedContext from "../PageLoadedContext";
 
 function SettingsPage() {
   console.log("RENDERING SETTINGS");
-  const { loggedInUser } = useContext(LoginContext);
   const { pageLoaded, setPageLoaded } = useContext(PageLoadedContext);
 
   useEffect(() => {
@@ -17,8 +16,9 @@ function SettingsPage() {
   return (
     <Fade in={pageLoaded} {...(pageLoaded ? { timeout: 1000 } : {})}>
       <WorkingPaper elevation={10}>
-        <Grid container>
-          <Title variant="h2">{loggedInUser.username}'s Settings</Title>
+        <Grid container direction="column">
+          <Title variant="h2">Settings</Title>
+          <SettingsPageList elevation={5} />
         </Grid>
       </WorkingPaper>
     </Fade>
