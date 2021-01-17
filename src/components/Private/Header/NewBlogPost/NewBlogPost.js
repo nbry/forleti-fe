@@ -1,17 +1,17 @@
 // prettier-ignore
 import {Button, IconButton, TextField, Dialog, DialogActions } from "@material-ui/core";
-import React, { useContext, useState } from "react";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import CloseIcon from "@material-ui/icons/Close";
+import React, { useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import myColors from "utils/static/colors";
 import BlogPostEditor from "./NewBlogPostEditor";
 import BackendApi from "utils/BackendApi";
-import { useHistory } from "react-router-dom";
 import LoginContext from "components/LoginContext";
 import PageLoadedContext from "components/PageLoadedContext";
+import myColors from "utils/static/colors";
 
-export default function FormDialog() {
+function NewBlogPost() {
   // Handling opening and closing of dialog:
   const [open, setOpen] = React.useState(false);
 
@@ -120,6 +120,8 @@ export default function FormDialog() {
     </>
   );
 }
+
+export default NewBlogPost;
 
 // STYLES:
 const CloseButton = styled(IconButton)`
