@@ -2,7 +2,7 @@ import { Grid } from "@material-ui/core";
 import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "../Private/Header/Header";
-import myColors from "../../static/colors";
+import myColors from "utils/static/colors";
 import ProfilePage from "../Public/ProfilePage/ProfilePage";
 import HomePage from "../Private/HomePage/HomePage";
 import SettingsPage from "../Private/SettingsPage/SettingsPage";

@@ -1,10 +1,10 @@
 import { Box, Fade, Grid, Typography } from "@material-ui/core";
 import React, { useContext, useEffect } from "react";
-import WorkingPaper from "../../../static/WorkingPaper";
+import WorkingPaper from "../../../utils/WorkingPaper";
 import styled from "styled-components";
 import SettingsPageList from "./SettingsPageList";
 import PageLoadedContext from "../../PageLoadedContext";
-import PreReleaseNotice from "../../../static/PreReleaseNotice";
+import PreReleaseNotice from "utils/PreReleaseNotice";
 
 function SettingsPage() {
   document.title = "Forleti Settings";

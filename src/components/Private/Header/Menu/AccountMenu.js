@@ -1,13 +1,13 @@
 //prettier-ignore
 import { ClickAwayListener, Grow, Paper, Popper,
   MenuItem, MenuList, IconButton, } from "@material-ui/core";
-import React, { useContext } from "react";
 import PersonIcon from "@material-ui/icons/Person";
-import styled, { css } from "styled-components";
-import LoginContext from "../../../LoginContext";
-import LogOutDialog from "./LogOutDialog";
-import myColors from "../../../../static/colors";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import styled, { css } from "styled-components";
+import LoginContext from "components/LoginContext";
+import LogOutDialog from "./LogOutDialog";
+import myColors from "utils/static/colors";
 
 function AccountMenu() {
   const [open, setOpen] = React.useState(false);

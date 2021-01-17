@@ -3,7 +3,7 @@ import { Box, Button, Dialog, DialogActions, DialogContent, MenuItem,
   Grid, DialogTitle, Typography, Avatar } from "@material-ui/core";
 import React, { useContext } from "react";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
-import LoginContext from "../../../LoginContext";
+import LoginContext from "components/LoginContext";
 import styled from "styled-components";
 
 export default function FormDialog() {

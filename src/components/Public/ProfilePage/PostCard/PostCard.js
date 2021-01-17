@@ -2,7 +2,7 @@ import { Paper } from "@material-ui/core";
 import React from "react";
 import parse from "html-react-parser";
 import styled, { css } from "styled-components";
-import formatDate from "../../../../helpers/functions/formatDate";
+import formatDate from "utils/functions/formatDate";
 
 function PostCard({ post }) {
   return (

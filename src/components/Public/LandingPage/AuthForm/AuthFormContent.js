@@ -6,7 +6,7 @@ import CreateIcon from "@material-ui/icons/Create";
 import styled from "styled-components";
 import { useContext } from "react";
 import LandingPageBannerContext from "../LandingPageBannerContext";
-import PreReleaseNotice from "../../../../static/PreReleaseNotice";
+import PreReleaseNotice from "utils/PreReleaseNotice";
 
 function AuthFormContent({ formData, handleChange, handleSubmit }) {
   // Using a Boolean to dynamically change form fields between

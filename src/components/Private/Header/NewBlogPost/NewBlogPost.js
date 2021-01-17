@@ -4,12 +4,12 @@ import React, { useContext, useState } from "react";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
-import myColors from "../../../../static/colors";
+import myColors from "utils/static/colors";
 import BlogPostEditor from "./NewBlogPostEditor";
-import BackendApi from "../../../../helpers/BackendApi";
+import BackendApi from "utils/BackendApi";
 import { useHistory } from "react-router-dom";
-import LoginContext from "../../../LoginContext";
-import PageLoadedContext from "../../../PageLoadedContext";
+import LoginContext from "components/LoginContext";
+import PageLoadedContext from "components/PageLoadedContext";
 
 export default function FormDialog() {
   // Handling opening and closing of dialog:

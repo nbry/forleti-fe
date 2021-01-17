@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import ProfilePageHeader from "./ProfilePageHeader";
 import ProfilePagePosts from "./ProfilePagePosts";
 import { useParams } from "react-router-dom";
-import BackendApi from "../../../helpers/BackendApi";
+import BackendApi from "utils/BackendApi";
 import PageLoadedContext from "../../PageLoadedContext";
 
 function ProfilePage() {
