@@ -9,7 +9,13 @@ const NotLoggedInRoutes = () => {
   return (
     <Switch>
       <Route exact path="/">
-        <LandingPageBanner />
+        <LandingPageBanner setBanner="default" />
+      </Route>
+      <Route exact path="/login">
+        <LandingPageBanner setBanner="login" />
+      </Route>
+      <Route exact path="/signup">
+        <LandingPageBanner setBanner="signup" />
       </Route>
       <Redirect to="/" />
     </Switch>

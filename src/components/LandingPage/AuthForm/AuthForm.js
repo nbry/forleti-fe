@@ -7,6 +7,18 @@ import LandingPageBannerContext from "../LandingPageBannerContext";
 
 function AuthForm() {
   const { bannerContent, checked } = useContext(LandingPageBannerContext);
+
+  // Keep this a ternary operator. It'll take time for the state to be updated, and
+  // removing the conditional will have the tab say "Forleti Default" for a split second,
+  // which we don't want.
+  console.log("auth: ", bannerContent);
+  document.title =
+    bannerContent === "default"
+      ? "Forleti"
+      : `Forleti ${
+          bannerContent.charAt(0).toUpperCase() + bannerContent.slice(1)
+        }`;
+
   const { setLoggedIn } = useContext(LoginContext);
 
   // Initial state of the fields in authForm

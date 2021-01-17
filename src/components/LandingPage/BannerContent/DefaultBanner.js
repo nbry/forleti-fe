@@ -7,6 +7,8 @@ import LoginContext from "../../LoginContext";
 import LandingPageBannerContext from "../LandingPageBannerContext";
 
 function DefaultBanner() {
+  document.title = "Forleti";
+
   // Display landing page. Shows different content depending on if user
   // is logged in or not. Look for "HERE" notes to see differences
   const { checked, changeContent } = useContext(LandingPageBannerContext);
@@ -16,8 +18,7 @@ function DefaultBanner() {
     <Collapse
       in={checked}
       {...(checked ? { timeout: 600 } : {})}
-      collapsedHeight={50}
-    >
+      collapsedHeight={50}>
       <InnerWrapper>
         <Grid>
           <Title>Forleti</Title>
@@ -35,16 +36,14 @@ function DefaultBanner() {
                 variant="contained"
                 color="primary"
                 size="large"
-                fullWidth
-              >
+                fullWidth>
                 Sign Up
               </StyledButton>
               <StyledButton
                 onClick={() => changeContent("login")}
                 variant="contained"
                 size="large"
-                fullWidth
-              >
+                fullWidth>
                 Log In
               </StyledButton>
             </>
