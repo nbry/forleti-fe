@@ -27,9 +27,13 @@ function DefaultBanner() {
         <Grid>
           <Title>Forleti</Title>
           <Subtitle>
-            <i>[ four-leh-tee ]</i>
+            <i>[ FOR-leh-tee ]</i>
           </Subtitle>
-          <Description>(noun, informal). blogging made simple</Description>
+          <Description>
+            Start your blog <br />
+            Stay in the loop <br />
+            Blogging made simple
+          </Description>
 
           {/* *****************
           HERE: Buttons */}
@@ -99,23 +103,22 @@ const sharedFontStyle = css`
   color: white;
   text-shadow: 3px 4px 5px rgba(0, 0, 0);
   font-family: "Raleway";
+  text-align: center;
 `;
 
 const Description = styled.div`
   ${sharedFontStyle}
   font-size: 1.1rem;
-  text-align: start;
   margin-bottom: 10px;
 `;
 
 const Subtitle = styled.h3`
   ${sharedFontStyle}
-  font-size: 1.2rem;
-  text-align: start;
+  font-size: 1.4rem;
 `;
 
 const Title = styled.h2`
   ${sharedFontStyle}
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 20px;
 `;
