@@ -5,7 +5,6 @@ import Header from "./Header/Header";
 import myColors from "../../static/colors";
 import LoggedInRoutes from "./RoutesLoggedIn";
 import PageLoadedContext from "./PageLoadedContext";
-import PreReleaseNotice from "../../static/PreReleaseNotice";
 
 function LoggedInWrapper() {
   // Store the state for the loading a page and forcing a re-render of a component
@@ -18,9 +17,6 @@ function LoggedInWrapper() {
       <BackgroundWrapper container direction="row" justify="center">
         <Board>
           <LoggedInRoutes />
-          <Notice>
-            <PreReleaseNotice />
-          </Notice>
         </Board>
       </BackgroundWrapper>
     </PageLoadedContext.Provider>
@@ -42,9 +38,5 @@ const Board = styled.div`
   width: 100vw;
   max-width: 800px;
   background: ${myColors.paper};
-`;
-
-const Notice = styled.p`
-  margin-top: 30px;
-  margin-left: 30px;
+  word-wrap: break-word;
 `;

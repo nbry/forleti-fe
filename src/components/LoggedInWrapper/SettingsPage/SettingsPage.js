@@ -1,9 +1,10 @@
-import { Fade, Grid, Typography } from "@material-ui/core";
+import { Box, Fade, Grid, Typography } from "@material-ui/core";
 import React, { useContext, useEffect } from "react";
 import WorkingPaper from "../../../static/WorkingPaper";
 import styled from "styled-components";
 import SettingsPageList from "./SettingsPageList";
 import PageLoadedContext from "../PageLoadedContext";
+import PreReleaseNotice from "../../../static/PreReleaseNotice";
 
 function SettingsPage() {
   document.title = "Forleti Settings";
@@ -22,6 +23,9 @@ function SettingsPage() {
           <Title variant="h2">Settings</Title>
           <SettingsPageList elevation={5} />
         </Grid>
+        <Box mt={5}>
+          <PreReleaseNotice />
+        </Box>
       </WorkingPaper>
     </Fade>
   );
