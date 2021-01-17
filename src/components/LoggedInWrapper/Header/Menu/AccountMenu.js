@@ -1,13 +1,7 @@
 import React, { useContext } from "react";
-import {
-  ClickAwayListener,
-  Grow,
-  Paper,
-  Popper,
-  MenuItem,
-  MenuList,
-  IconButton,
-} from "@material-ui/core";
+//prettify-ignore
+import { ClickAwayListener, Grow, Paper, 
+  Popper, MenuItem, MenuList, IconButton, } from "@material-ui/core";
 import PersonIcon from "@material-ui/icons/Person";
 import styled, { css } from "styled-components";
 import LoginContext from "../../../LoginContext";
@@ -57,8 +51,7 @@ function AccountMenu() {
         aria-controls={open ? "menu-list-grow" : undefined}
         aria-haspopup="true"
         aria-label="menu"
-        onClick={handleToggle}
-      >
+        onClick={handleToggle}>
         <SyledPersonIcon />
       </IconButton>
 
@@ -67,33 +60,28 @@ function AccountMenu() {
         anchorEl={anchorRef.current}
         role={undefined}
         transition
-        disablePortal
-      >
+        disablePortal>
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
             style={{
               transformOrigin:
                 placement === "bottom" ? "center top" : "center bottom",
-            }}
-          >
+            }}>
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
                   id="menu-list-grow"
-                  onKeyDown={handleListKeyDown}
-                >
+                  onKeyDown={handleListKeyDown}>
                   <StyledNavLink
                     to={"/u/" + loggedInUser.username}
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
+                    style={{ textDecoration: "none", color: "black" }}>
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
                   </StyledNavLink>
                   <StyledNavLink
                     to={"/settings"}
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
+                    style={{ textDecoration: "none", color: "black" }}>
                     <MenuItem onClick={handleClose}>Settings</MenuItem>
                   </StyledNavLink>
                   <LogOutDialog />
