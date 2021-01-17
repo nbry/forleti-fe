@@ -7,6 +7,7 @@ import PageLoadedContext from "../PageLoadedContext";
 
 function HomePage() {
   document.title = "Forleti Home";
+  window.scrollTo(0, 0);
 
   const { pageLoaded, setPageLoaded } = useContext(PageLoadedContext);
 

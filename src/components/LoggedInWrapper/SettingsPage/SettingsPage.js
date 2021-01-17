@@ -7,6 +7,7 @@ import PageLoadedContext from "../PageLoadedContext";
 
 function SettingsPage() {
   document.title = "Forleti Settings";
+  window.scrollTo(0, 0);
 
   const { pageLoaded, setPageLoaded } = useContext(PageLoadedContext);
 
