@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Button,
   IconButton,
@@ -12,6 +12,8 @@ import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import myColors from "../../../static/colors";
 import BackendApi from "../../../helpers/BackendApi";
+import { useHistory } from "react-router-dom";
+import LoginContext from "../../LoginContext";
 
 export default function FormDialog() {
   // Handling opening and closing of dialog:
@@ -43,17 +45,21 @@ export default function FormDialog() {
   };
 
   // Handle form submission
+  const history = useHistory();
+  const { loggedInUser } = useContext(LoginContext);
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     async function submitBlogPostForm({ title, content }) {
       try {
-        const res = await BackendApi.createNewBlogPost({ title, content });
-        console.log(res);
+        await BackendApi.createNewBlogPost({ title, content });
       } catch (e) {
         alert(e);
       }
     }
     submitBlogPostForm({ ...formData });
+    handleClose();
+    history.push(`/u/${loggedInUser.username}`);
   };
 
   return (
