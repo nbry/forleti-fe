@@ -1,16 +1,7 @@
+// prettier-ignore
+import { Box, Button, Dialog, DialogActions, DialogContent, MenuItem,
+  Grid, DialogTitle, Typography, Avatar } from "@material-ui/core";
 import React, { useContext } from "react";
-import {
-  Box,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  MenuItem,
-  Grid,
-  DialogTitle,
-  Typography,
-  Avatar,
-} from "@material-ui/core";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
 import LoginContext from "../../../LoginContext";
 import styled from "styled-components";
