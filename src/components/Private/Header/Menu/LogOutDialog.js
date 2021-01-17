@@ -1,12 +1,12 @@
 // prettier-ignore
 import { Box, Button, Dialog, DialogActions, DialogContent, MenuItem,
   Grid, DialogTitle, Typography, Avatar } from "@material-ui/core";
-import React, { useContext } from "react";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
-import LoginContext from "components/LoginContext";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import LoginContext from "components/LoginContext";
 
-export default function FormDialog() {
+function LogOutDialog() {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -76,6 +76,8 @@ export default function FormDialog() {
     </>
   );
 }
+
+export default LogOutDialog;
 
 // STYLES:
 const StyledAvatar = styled(Avatar)`
