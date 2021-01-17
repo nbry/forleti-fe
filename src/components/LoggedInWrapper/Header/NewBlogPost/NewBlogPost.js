@@ -95,8 +95,10 @@ export default function FormDialog() {
                 value={formData.title}
                 onChange={handleChange}
                 label="Title"
-                placeholder="Title for your new post"
+                placeholder="Title for your new post (100 character max)"
                 type="text"
+                inputProps={{ maxLength: 100 }}
+                fullWidth
                 required
               />
             </TopRow>
@@ -138,6 +140,6 @@ const SyledAddBoxIcon = styled(AddBoxIcon)`
 const TopRow = styled.div`
   position: relative;
   width: 100%;
-  padding-left: 20px;
+  padding-right: 100px;
   margin-bottom: 20px;
 `;

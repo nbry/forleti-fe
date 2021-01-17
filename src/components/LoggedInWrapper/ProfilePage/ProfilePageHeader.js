@@ -42,7 +42,7 @@ const HeaderImageContainer = styled.div`
 `;
 
 const ProfileName = styled.h1`
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-family: "Raleway";
   margin-top: 0px;
   margin-bottom: 10px;
