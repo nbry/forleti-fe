@@ -16,17 +16,20 @@ const userSettings = [
       {
         title: "Username",
         value: "username",
-        description: "the settings description goes here",
+        description:
+          "Your username is displayed on your profile. It must be unique and longer than 6 characters. Changing your username will change the URL of your blog profile.",
       },
       {
         title: "Email",
         value: "email",
-        description: "the settings description goes here",
+        description:
+          "At the moment, we do not allow changes to email address tied to your account.",
       },
       {
         title: "Password",
         value: "password",
-        description: "the settings description goes here",
+        description:
+          "Your password must be 8 characters or longer. We recommend mixing letters, numbers, and symbols for a stronger password.",
       },
     ],
   },
@@ -36,22 +39,23 @@ const userSettings = [
       {
         title: "Bio",
         value: "bio",
-        description: "the settings description goes here",
+        description:
+          "Your bio is displayed on your profile for others to see. It can be 200 characters long.",
       },
       {
         title: "Theme",
         value: "theme",
-        description: "the settings description goes here",
+        description: "",
       },
       {
         title: "Avatar",
         value: "avatar_url",
-        description: "the settings description goes here",
+        description: "",
       },
       {
         title: "Header Picture",
         value: "header_url",
-        description: "the settings description goes here",
+        description: "",
       },
     ],
   },
@@ -61,7 +65,7 @@ const userSettings = [
       {
         title: "Dark Mode",
         value: "dark_mode",
-        description: "the settings description goes here",
+        description: "",
       },
     ],
   },
@@ -71,7 +75,8 @@ const userSettings = [
       {
         title: null,
         value: "remove_account",
-        description: "the settings description goes here",
+        description:
+          "We're sad to see you go, but we understand if you need to move on. Please note that your account configurations and posts will be deleted. Your account cannot be recovered after deletion. Are you sure you wish to proceed?",
       },
     ],
   },
