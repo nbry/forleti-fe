@@ -74,6 +74,20 @@ class BackendAPI {
     let blog_post = await this.request("bp/new", { title, content }, "post");
     return blog_post;
   }
+
+  static async deleteBlogPost({ blogpost_id }) {
+    let res = await this.request(`bp/${blogpost_id}/delete`, {}, "delete");
+    return res;
+  }
+
+  static async editBlogPost({ blogpost_id, title, content }) {
+    let res = await this.request(
+      `bp/${blogpost_id}/edit`,
+      { title, content },
+      "patch"
+    );
+    return res;
+  }
 }
 
 export default BackendAPI;
