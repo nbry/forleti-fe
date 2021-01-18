@@ -8,8 +8,7 @@ import styled from "styled-components";
 
 function FormAccount() {
   const { setting, handleClose } = useContext(ChangeSettingsContext);
-  const { loggedInUser } = useContext(PageLoadedContext);
-  const { setPageLoaded } = useContext(PageLoadedContext);
+  const { loggedInUser, setLoggedInUser } = useContext(PageLoadedContext);
 
   // STATE for form data. Store category, setting value, and changeTo.
   // DEFAULT changeTo to user's current setting.
@@ -50,7 +49,7 @@ function FormAccount() {
         });
         console.log(res);
         handleClose();
-        setPageLoaded(false);
+        setLoggedInUser(null);
       } catch (e) {
         alert(e);
       }
