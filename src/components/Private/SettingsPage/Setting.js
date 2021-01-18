@@ -3,9 +3,11 @@ import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 import parseSetting from "utils/functions/parseSetting";
 import LoginContext from "components/LoginContext";
+import ChangeSettingsContext from "./ChangeSettingsContext";
 
 function AccountSetting({ setting }) {
   const { loggedInUser } = useContext(LoginContext);
+  const { setSetting, handleClickOpen } = useContext(ChangeSettingsContext);
 
   return (
     <SettingGrid container direction="row" alignItems="flex-start">
@@ -16,7 +18,14 @@ function AccountSetting({ setting }) {
       <Box pt={1} mr={1}>
         {/* IF SETTING IS NOT DARK MODE OR REMOVE ACCOUNT, SHOW A BUTTON */}
         {setting[1] !== "dark_mode" && setting[1] !== "remove_account" ? (
-          <Button variant="outlined">Change</Button>
+          <Button
+            variant="outlined"
+            onClick={() => {
+              setSetting(setting);
+              handleClickOpen();
+            }}>
+            Change
+          </Button>
         ) : null}
 
         {/* IF SETTING IS DARK MODE, SHOW A TOGGLE */}
