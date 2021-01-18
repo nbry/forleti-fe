@@ -1,25 +1,37 @@
-import { Button, Paper } from "@material-ui/core";
-import React from "react";
+import { IconButton, Grid, Paper } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
+import React, { useContext } from "react";
 import parse from "html-react-parser";
 import styled, { css } from "styled-components";
 import formatDate from "utils/functions/formatDate";
+import LoginContext from "components/LoginContext";
 
 function PostCard({ post, handleClickOpen, setTargetPostId }) {
+  const { loggedIn, loggedInUser } = useContext(LoginContext);
+  console.log("post user: ", post.user_id);
+  console.log("user_id", loggedInUser.id);
+
   return (
     <StyledPaper elevation={5}>
-      <Button
-        variant="contained"
-        onClick={() => {
-          setTargetPostId(post.id);
-          handleClickOpen();
-        }}>
-        DELETE
-      </Button>
       <PostCardTitle component="h2">{post.title}</PostCardTitle>
       <Content className="postContent">{parse(post.content)}</Content>
-      <CreatedDate>
-        {formatDate(post.created)} {post.edited ? "(Edited)" : null}
-      </CreatedDate>
+      <Grid container direction="row" alignItems="flex-end">
+        <CreatedDate>
+          {formatDate(post.created)} {post.edited ? "(Edited)" : null}
+        </CreatedDate>
+
+        {/* ONLY SHOW BUTTON IF USER IS LOGGED IN AND USER IS THE AUTHOR OF THE BLOG POST */}
+        {loggedIn && post.user_id === loggedInUser.id && (
+          <IconButton
+            variant="contained"
+            onClick={() => {
+              setTargetPostId(post.id);
+              handleClickOpen();
+            }}>
+            <DeleteIcon />
+          </IconButton>
+        )}
+      </Grid>
     </StyledPaper>
   );
 }
@@ -46,6 +58,7 @@ const PostCardTitle = styled.h2`
 
 const CreatedDate = styled.small`
   color: gray;
+  flex-grow: 1;
 `;
 
 const StyledPaper = styled(Paper)`
