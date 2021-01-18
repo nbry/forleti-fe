@@ -9,14 +9,14 @@ function SettingsPageList() {
     <>
       {/* Map through userSettings array */}
       {userSettings.map((setting) => (
-        <>
+        <div key={setting.category}>
           <Category variant="h5">{setting.category}</Category>
 
           {/* Map through each settings category values*/}
           {setting.values.map((value) => (
             <Setting setting={value} key={value[1]} />
           ))}
-        </>
+        </div>
       ))}
     </>
   );
