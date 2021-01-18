@@ -1,15 +1,25 @@
-import { Paper } from "@material-ui/core";
+import { Button, Paper } from "@material-ui/core";
 import React from "react";
 import parse from "html-react-parser";
 import styled, { css } from "styled-components";
 import formatDate from "utils/functions/formatDate";
 
-function PostCard({ post }) {
+function PostCard({ post, handleClickOpen, setTargetPostId }) {
   return (
     <StyledPaper elevation={5}>
+      <Button
+        variant="contained"
+        onClick={() => {
+          setTargetPostId(post.id);
+          handleClickOpen();
+        }}>
+        DELETE
+      </Button>
       <PostCardTitle component="h2">{post.title}</PostCardTitle>
       <Content className="postContent">{parse(post.content)}</Content>
-      <CreatedDate>{formatDate(post.created)}</CreatedDate>
+      <CreatedDate>
+        {formatDate(post.created)} {post.edited ? "(Edited)" : null}
+      </CreatedDate>
     </StyledPaper>
   );
 }

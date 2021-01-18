@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class BackendAPI {
+class BackendApi {
   // Function to provide backbone for making HTTP requests to the Backend API
   static async request(endpoint, paramsOrData = {}, verb = "get") {
     const BASE_URL = process.env.REACT_APP_BASE_URL || "http://127.0.0.1:5000";
@@ -75,7 +75,7 @@ class BackendAPI {
     return blog_post;
   }
 
-  static async deleteBlogPost({ blogpost_id }) {
+  static async deleteBlogPost(blogpost_id) {
     let res = await this.request(`bp/${blogpost_id}/delete`, {}, "delete");
     return res;
   }
@@ -90,4 +90,4 @@ class BackendAPI {
   }
 }
 
-export default BackendAPI;
+export default BackendApi;
