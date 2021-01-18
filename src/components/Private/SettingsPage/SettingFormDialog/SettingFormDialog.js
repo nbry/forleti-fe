@@ -5,6 +5,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import ChangeSettingsContext from "../ChangeSettingsContext";
+import FormAccount from "./FormAccount";
 
 function DeletePostDialog() {
   const { setting, changeDialogOpen, handleClose } = useContext(
@@ -19,36 +20,22 @@ function DeletePostDialog() {
       fullwidth="true"
       aria-labelledby="delete-dialog"
       py={2}>
-      <Box my={3}>
+      <Box m={3}>
         <Grid container direction="column" alignItems="center">
           <StyledAvatar>
             <SettingsIcon />
           </StyledAvatar>
           <DialogTitle disableTypography>
-            <Typography variant="h4">Change {setting[0]}</Typography>
+            <Typography variant="h4">Change {setting.title}</Typography>
           </DialogTitle>
-          <DialogContent>
-            {/* THIS IS WHERE THE CHANGE SETTINGS FORMS GO.
-            SHOULD BE DYNAMIC, BASED ON THE SETTING. */}
-            <Box textAlign="center">
-              <Typography variant="body1">
-                CHANGE STUFF HERE!
-              </Typography>
-            </Box>
-          </DialogContent>
+          
+          <Box textAlign="center">
+            <Typography variant="body1">{setting.description}</Typography>
+          </Box>
 
-          <DialogActions>
-            {/* EDIT THESE: */}
-            <Button variant="contained" onClick={handleClose}>
-              Cancel
-            </Button>
-            <Button
-              variant="contained"
-              // onClick={handleDeletion}
-              color="primary">
-              Delete
-            </Button>
-          </DialogActions>
+          {/* THIS IS WHERE THE CHANGE SETTINGS FORMS GO.
+            SHOULD BE DYNAMIC, BASED ON THE SETTING. */}
+          {setting.form === "account" && <FormAccount />}
         </Grid>
       </Box>
     </Dialog>

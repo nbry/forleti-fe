@@ -1,7 +1,7 @@
 import { Box, Fade, Grid, Typography } from "@material-ui/core";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import BackendApi from "utils/BackendApi";
+// import BackendApi from "utils/BackendApi";
 import PageLoadedContext from "components/PageLoadedContext";
 import PreReleaseNotice from "utils/PreReleaseNotice";
 import SettingFormDialog from "./SettingFormDialog/SettingFormDialog";
@@ -11,11 +11,13 @@ import ChangeSettingsContext from "./ChangeSettingsContext";
 
 function SettingsPage() {
   document.title = "Forleti Settings";
-  window.scrollTo(0, 0);
 
   const { pageLoaded, setPageLoaded } = useContext(PageLoadedContext);
 
   useEffect(() => {
+    // Scroll to top of the page when loading. Keep here to avoid
+    // complications with SettingsFormDialog.
+    window.scrollTo(0, 0);
     setPageLoaded(true);
   }, [pageLoaded, setPageLoaded]);
 
@@ -59,7 +61,9 @@ function SettingsPage() {
           </Box>
         </WorkingPaper>
       </Fade>
-      <SettingFormDialog />
+      <Grid>
+        <SettingFormDialog />
+      </Grid>
     </ChangeSettingsContext.Provider>
   );
 }

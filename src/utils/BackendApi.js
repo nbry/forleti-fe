@@ -52,7 +52,7 @@ class BackendApi {
   }
 
   // ********************
-  // USER
+  // USER AUTH AND PROFILE
   static async getLoggedInUser() {
     // This method takes advantage of the /home route on the backend and the
     // funcationality of this.request attaching a token to the header. The token
@@ -66,6 +66,17 @@ class BackendApi {
   static async getUserByUsername(username) {
     let user_info = await this.request(`user/${username}`);
     return user_info;
+  }
+
+  // ********************
+  // USER SETTINGS
+  static async changeSetting({ category, setting, changeTo, password = null }) {
+    let res = await this.request(
+      "settings/change",
+      { category, setting, changeTo, password },
+      "post"
+    );
+    return res;
   }
 
   // ********************
