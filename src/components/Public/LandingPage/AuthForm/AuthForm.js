@@ -56,7 +56,7 @@ function AuthForm() {
   };
 
   return (
-    <Fade in={checked} {...(checked ? { timeout: 750 } : {})}>
+    <Fade in={checked} {...(checked ? { timeout: 500 } : {})}>
       <div>
         <AuthFormContent
           formData={formData}

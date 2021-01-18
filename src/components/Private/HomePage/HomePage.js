@@ -15,7 +15,7 @@ function HomePage() {
   }, [pageLoaded, setPageLoaded]);
 
   return (
-    <Fade in={pageLoaded} {...(pageLoaded ? { timeout: 1000 } : {})}>
+    <Fade in={pageLoaded} {...(pageLoaded ? { timeout: 500 } : {})}>
       <WorkingPaper elevation={10}>
         <Grid container direction="column">
           <Title variant="h2">Welcome to Forleti</Title>

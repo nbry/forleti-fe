@@ -38,7 +38,7 @@ function ProfilePage() {
     <>
       {/* Is Profile loaded? If yes, show profile. No? Show as empty */}
       {pageLoaded ? (
-        <Fade in={pageLoaded} {...(pageLoaded ? { timeout: 1000 } : {})}>
+        <Fade in={pageLoaded} {...(pageLoaded ? { timeout: 500 } : {})}>
           <div>
             {/* Was a user found? Show profile of user. No? Show 404 */}
             {userData.status !== "not found" ? (
