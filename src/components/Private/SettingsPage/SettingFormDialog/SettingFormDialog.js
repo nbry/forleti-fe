@@ -1,6 +1,5 @@
 // prettier-ignore
-import { Box, Button, Dialog, DialogActions, DialogContent,
-    Grid, DialogTitle, Typography, Avatar } from "@material-ui/core";
+import { Box, Dialog, Grid, DialogTitle, Typography, Avatar } from "@material-ui/core";
 import SettingsIcon from "@material-ui/icons/Settings";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -28,7 +27,7 @@ function DeletePostDialog() {
           <DialogTitle disableTypography>
             <Typography variant="h4">Change {setting.title}</Typography>
           </DialogTitle>
-          
+
           <Box textAlign="center">
             <Typography variant="body1">{setting.description}</Typography>
           </Box>

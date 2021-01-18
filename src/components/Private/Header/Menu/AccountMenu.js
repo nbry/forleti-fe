@@ -5,13 +5,14 @@ import PersonIcon from "@material-ui/icons/Person";
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
-import LoginContext from "components/LoginContext";
 import LogOutDialog from "./LogOutDialog";
 import myColors from "utils/static/colors";
+import PageLoadedContext from "components/PageLoadedContext";
 
 function AccountMenu() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
+  const { loggedInUser } = useContext(PageLoadedContext);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -40,9 +41,6 @@ function AccountMenu() {
 
     prevOpen.current = open;
   }, [open]);
-
-  // Curently logged in User from LoginContext
-  const { loggedInUser } = useContext(LoginContext);
 
   return (
     <>

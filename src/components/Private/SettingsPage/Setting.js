@@ -2,11 +2,11 @@ import { Box, Button, Grid, Switch, Typography } from "@material-ui/core";
 import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 import parseSetting from "utils/functions/parseSetting";
-import LoginContext from "components/LoginContext";
+import PageLoadedContext from "components/PageLoadedContext";
 import ChangeSettingsContext from "./ChangeSettingsContext";
 
 function AccountSetting({ setting }) {
-  const { loggedInUser } = useContext(LoginContext);
+  const { loggedInUser } = useContext(PageLoadedContext);
   const { setSetting, handleClickOpen } = useContext(ChangeSettingsContext);
 
   return (

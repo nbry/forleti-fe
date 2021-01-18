@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
 import LoginContext from "./components/LoginContext";
 import "./App.css";
-import BackendApi from "./utils/BackendApi";
 import PublicRoutes from "./components/Routes/PrivateRoutes";
 import PrivateRoutes from "./components/Routes/PublicRoutes";
 
 function App() {
   document.title = "Forleti";
 
-  // [LoginContext] CHECK IF USER IS LOGGED IN
+  // [LoginContext] Check if there is a cookie called _token
   const [loggedIn, setLoggedIn] = useState(
     localStorage.getItem("_token") !== null
   );
-
-  // State storage for some user data (username, bio, etc.)
-  const [loggedInUser, setLoggedInUser] = useState({});
 
   const logOut = () => {
     localStorage.clear();
@@ -22,19 +18,13 @@ function App() {
   };
 
   useEffect(() => {
-    async function provideLoggedInUserContext() {
-      if (localStorage.getItem("_token")) {
-        let res = await BackendApi.getLoggedInUser();
-        setLoggedInUser(res.user);
-      }
+    if (localStorage.getItem("_token")) {
+      setLoggedIn(true);
     }
-    provideLoggedInUserContext();
   }, [loggedIn]);
-  // [END LoginCOntext]
 
   return (
-    <LoginContext.Provider
-      value={{ loggedIn, setLoggedIn, logOut, loggedInUser }}>
+    <LoginContext.Provider value={{ loggedIn, setLoggedIn, logOut }}>
       {!loggedIn ? <PrivateRoutes /> : <PublicRoutes />}
     </LoginContext.Provider>
   );

@@ -5,9 +5,11 @@ import parse from "html-react-parser";
 import styled, { css } from "styled-components";
 import formatDate from "utils/functions/formatDate";
 import LoginContext from "components/LoginContext";
+import PageLoadedContext from "components/PageLoadedContext";
 
 function PostCard({ post, handleClickOpen, setTargetPostId }) {
-  const { loggedIn, loggedInUser } = useContext(LoginContext);
+  const { loggedIn } = useContext(LoginContext);
+  const { loggedInUser } = useContext(PageLoadedContext);
   console.log("post user: ", post.user_id);
   console.log("user_id", loggedInUser.id);
 

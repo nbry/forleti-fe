@@ -33,14 +33,6 @@ function SettingsPage() {
     setChangeDialogOpen(false);
   }
 
-  async function handleSettingChange() {
-    // const res = await BackendApi.deleteBlogPost(targetPostId);
-    // if (res) {
-    //   handleClose();
-    //   setPageLoaded(false);
-    // }
-  }
-
   return (
     <ChangeSettingsContext.Provider
       value={{

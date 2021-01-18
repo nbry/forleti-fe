@@ -1,6 +1,7 @@
 import { Grid } from "@material-ui/core";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import BackendApi from "utils/BackendApi";
 import Header from "../Private/Header/Header";
 import myColors from "utils/static/colors";
 import ProfilePage from "../Public/ProfilePage/ProfilePage";
@@ -15,14 +16,33 @@ function BackgroundWrapper({ setContent }) {
   const [pageLoaded, setPageLoaded] = useState(false);
   const { loggedIn } = useContext(LoginContext);
 
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  useEffect(() => {
+    async function setAllContext() {
+      if (!loggedInUser) {
+        let res = await BackendApi.getLoggedInUser();
+        setLoggedInUser(res.user ? res.user : null);
+      }
+      setPageLoaded(true);
+    }
+    setAllContext();
+  }, [pageLoaded, loggedInUser]);
+
   return (
-    <PageLoadedContext.Provider value={{ pageLoaded, setPageLoaded }}>
+    <PageLoadedContext.Provider
+      value={{ pageLoaded, setPageLoaded, loggedInUser, setLoggedInUser }}>
       {loggedIn && <Header />}
       <BackgroundColor container direction="row" justify="center">
         <Board>
-          {setContent === "home" && <HomePage />}
-          {setContent === "settings" && <SettingsPage />}
-          {setContent === "profile" && <ProfilePage />}
+          {/* KEEP pageLoaded CONTEXT WITHIN BOARD TO PREVENT RE-RENDER OF VISUALS */}
+          {pageLoaded && loggedInUser && setContent === "home" && <HomePage />}
+          {pageLoaded && loggedInUser && setContent === "settings" && (
+            <SettingsPage />
+          )}
+
+          {/* PROFILE PAGE IS PUBLIC, SO loggedInUser context is not required */}
+          {pageLoaded && setContent === "profile" && <ProfilePage />}
         </Board>
       </BackgroundColor>
     </PageLoadedContext.Provider>

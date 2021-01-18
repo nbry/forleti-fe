@@ -9,7 +9,7 @@ import PageLoadedContext from "../../PageLoadedContext";
 function ProfilePage() {
   const { pageLoaded, setPageLoaded } = useContext(PageLoadedContext);
 
-  // State for detials of the user profile being viewed
+  // State for details of the user profile being viewed
   const { username } = useParams();
   document.title = `${username}'s Forleti Page`;
 

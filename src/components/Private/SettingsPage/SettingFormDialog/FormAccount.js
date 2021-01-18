@@ -1,11 +1,5 @@
-import {
-  Button,
-  DialogActions,
-  DialogContent,
-  Grid,
-  TextField,
-} from "@material-ui/core";
-import LoginContext from "components/LoginContext";
+// prettier-ignore
+import { Button, DialogActions, DialogContent, Grid, TextField, } from "@material-ui/core";
 import PageLoadedContext from "components/PageLoadedContext";
 import React, { useContext, useState } from "react";
 import ChangeSettingsContext from "../ChangeSettingsContext";
@@ -14,7 +8,7 @@ import styled from "styled-components";
 
 function FormAccount() {
   const { setting, handleClose } = useContext(ChangeSettingsContext);
-  const { loggedInUser } = useContext(LoginContext);
+  const { loggedInUser } = useContext(PageLoadedContext);
   const { setPageLoaded } = useContext(PageLoadedContext);
 
   // STATE for form data. Store category, setting value, and changeTo.
@@ -36,7 +30,6 @@ function FormAccount() {
       ...formData,
       [name]: value,
     }));
-    console.log(formData);
   };
 
   // Handle form submission. Reset page if successful
@@ -56,6 +49,7 @@ function FormAccount() {
           password,
         });
         console.log(res);
+        handleClose();
         setPageLoaded(false);
       } catch (e) {
         alert(e);
