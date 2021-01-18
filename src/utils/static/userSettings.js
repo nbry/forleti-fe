@@ -19,9 +19,15 @@ const userSettings = {
     ["Header Picture", "header_url"],
   ],
 
+  // prettier-ignore
   other: [
       ["Dark Mode", "dark_mode"]
-  ]
+  ],
+
+  // prettier-ignore
+  remove_account: [
+    [null, "remove_account"]
+  ],
 };
 
 export default userSettings;

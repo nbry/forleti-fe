@@ -9,6 +9,10 @@ function parseSetting(setting, user) {
     const themeIndex = user[setting] - 1;
     const theme = profileThemes[themeIndex] || "default";
     currentlySetTo = theme.name;
+  } else if (setting === "dark_mode") {
+    currentlySetTo = user[setting] ? "On" : "Off";
+  } else if (setting === "remove_account") {
+    currentlySetTo = null;
   } else {
     currentlySetTo = user[setting] || "None";
   }
