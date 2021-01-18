@@ -12,12 +12,12 @@ function AccountSetting({ setting }) {
   return (
     <SettingGrid container direction="row" alignItems="flex-start">
       <StyledBox>
-        <Setting variant="h6">{setting[0] ? setting[0] + ":" : null}</Setting>
-        <StyledP>{parseSetting(setting[1], loggedInUser)}</StyledP>
+        <Setting variant="h6">{setting.title ? setting.title + ":" : null}</Setting>
+        <StyledP>{parseSetting(setting.value, loggedInUser)}</StyledP>
       </StyledBox>
       <Box pt={1} mr={1}>
         {/* IF SETTING IS NOT DARK MODE OR REMOVE ACCOUNT, SHOW A BUTTON */}
-        {setting[1] !== "dark_mode" && setting[1] !== "remove_account" ? (
+        {setting.value !== "dark_mode" && setting.value !== "remove_account" ? (
           <Button
             variant="outlined"
             onClick={() => {
@@ -29,10 +29,10 @@ function AccountSetting({ setting }) {
         ) : null}
 
         {/* IF SETTING IS DARK MODE, SHOW A TOGGLE */}
-        {setting[1] === "dark_mode" && <Switch />}
+        {setting.value === "dark_mode" && <Switch />}
 
         {/* IF SETTING IS REMOVE ACCOUNT. SHOW A BUTTON */}
-        {setting[1] === "remove_account" && (
+        {setting.value === "remove_account" && (
           <Button variant="outlined" color="secondary">
             Delete Your Forleti Account
           </Button>
