@@ -5,6 +5,7 @@ import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import LoginContext from "components/LoginContext";
+import { useHistory } from "react-router-dom";
 
 function LogOutDialog() {
   const [open, setOpen] = React.useState(false);
@@ -26,9 +27,11 @@ function LogOutDialog() {
 
   // Log Out Functionality
   const { logOut } = useContext(LoginContext);
+  const history = useHistory();
   function handleLogOut(event) {
     handleClose(event);
     logOut();
+    history.push("/");
   }
 
   return (
