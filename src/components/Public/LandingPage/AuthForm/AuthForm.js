@@ -3,6 +3,7 @@ import { Fade } from "@material-ui/core";
 import AuthFormContent from "./AuthFormContent";
 import LoginContext from "components/LoginContext";
 import BackendApi from "utils/BackendApi";
+import capitalize from "utils/functions/capitalize";
 import LandingPageBannerContext from "../LandingPageBannerContext";
 
 function AuthForm() {
@@ -15,9 +16,7 @@ function AuthForm() {
   document.title =
     bannerContent === "default"
       ? "Forleti"
-      : `Forleti ${
-          bannerContent.charAt(0).toUpperCase() + bannerContent.slice(1)
-        }`;
+      : `Forleti ${capitalize(bannerContent)}`;
 
   const { setLoggedIn } = useContext(LoginContext);
 
