@@ -79,7 +79,7 @@ function FormAccount() {
 
 export default FormAccount;
 
-//STYLES:
+// STYLES:
 const FullWidthBox = styled(Box)`
   width: 100%;
 `;

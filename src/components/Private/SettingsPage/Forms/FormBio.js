@@ -5,7 +5,6 @@ import React, { useContext, useState } from "react";
 import ChangeSettingsContext from "../ChangeSettingsContext";
 import BackendApi from "utils/BackendApi";
 import styled from "styled-components";
-import LoginContext from "components/LoginContext";
 
 function FormAccount() {
   const { setting, handleClose } = useContext(ChangeSettingsContext);
