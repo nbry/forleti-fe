@@ -48,7 +48,14 @@ function AccountSetting({ setting }) {
 
             {/* IF SETTING IS REMOVE ACCOUNT. SHOW A BUTTON */}
             {setting.value === "remove_account" && (
-              <Button variant="outlined" color="secondary">
+              <Button
+                color="secondary"
+                variant="outlined"
+                aria-label="edit-button"
+                onClick={() => {
+                  setSetting(setting);
+                  handleClickOpen();
+                }}>
                 Delete Your Forleti Account
               </Button>
             )}

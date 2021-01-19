@@ -1,6 +1,5 @@
 // prettier-ignore
 import { Button, DialogActions, DialogContent, Grid, TextField, } from "@material-ui/core";
-import PageLoadedContext from "components/PageLoadedContext";
 import React, { useContext, useState } from "react";
 import ChangeSettingsContext from "../ChangeSettingsContext";
 import BackendApi from "utils/BackendApi";
@@ -26,7 +25,6 @@ function FormAccount() {
       ...formData,
       [name]: value,
     }));
-    console.log(formData);
   };
 
   // Handle form submission. Reset page if successful
@@ -36,8 +34,12 @@ function FormAccount() {
       try {
         const res = await BackendApi.removeAccount({ password });
         console.log(res);
-        handleClose();
-        logOut();
+        if (res[1] === 400) {
+          alert(res[0].message);
+        } else {
+          handleClose();
+          logOut();
+        }
       } catch (e) {
         alert(e);
       }

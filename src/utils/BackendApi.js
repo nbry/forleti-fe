@@ -80,6 +80,7 @@ class BackendApi {
   }
 
   static async removeAccount({ password }) {
+    console.log(password);
     let res = await this.request("account/remove", { password }, "delete");
     return res;
   }
