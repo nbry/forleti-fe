@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import LandingPageWrapper from "../Wrappers/LandingPageWrapper";
-import ProfileWrapper from "../Wrappers/ProfileWrapper";
+import ProfileWrapper from "../Wrappers/BackgroundWrapper";
 
 const PublicRoutes = () => {
   return (

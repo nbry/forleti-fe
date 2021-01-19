@@ -19,8 +19,12 @@ function BackgroundWrapper({ setContent }) {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
+    // ONLY do this conditional if there IS a cookie AND there is no loggedInUser in state.
+    // ONLY use this effect for page reloads and intial login.
+    // REMEMBER profiles should be able to be viewed publicly BUT Home and Setting are priate.
+    // HOWEVER, Home and Setting use the same BackgroundWrapper as a user's profile.
     async function setAllContext() {
-      if (!loggedInUser) {
+      if (!loggedInUser && localStorage.getItem("_token")) {
         let res = await BackendApi.getLoggedInUser();
         setLoggedInUser(res.user ? res.user : null);
       }

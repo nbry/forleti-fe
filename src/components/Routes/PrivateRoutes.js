@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import ProfileWrapper from "../Wrappers/ProfileWrapper";
+import ProfileWrapper from "../Wrappers/BackgroundWrapper";
 // import HomePage from "../LoggedInWrapper/HomePage/HomePage";
 // import ProfilePage from "../Public/ProfilePage/ProfilePage";
 // import SettingsPage from "../LoggedInWrapper/SettingsPage/SettingsPage";
