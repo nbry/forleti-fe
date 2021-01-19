@@ -57,6 +57,7 @@ function AuthFormContent({ formData, handleChange, handleSubmit }) {
               name="username"
               value={formData.username}
               onChange={handleChange}
+              inputProps={{ minLength: 6, maxLength: 15 }}
               placeholder="Enter Username"
               fullWidth
               required
@@ -68,6 +69,7 @@ function AuthFormContent({ formData, handleChange, handleSubmit }) {
               onChange={handleChange}
               placeholder="Enter Password"
               type="password"
+              inputProps={{ minLength: 8, maxLength: 50 }}
               fullWidth
               required
             />
