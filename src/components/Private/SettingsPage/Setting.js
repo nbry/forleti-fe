@@ -12,12 +12,15 @@ function AccountSetting({ setting }) {
   return (
     <SettingGrid container direction="row" alignItems="flex-start">
       <StyledBox>
-        <Setting variant="h6">{setting.title ? setting.title + ":" : null}</Setting>
+        <Setting variant="h6">
+          {setting.title ? setting.title + ":" : null}
+        </Setting>
         <StyledP>{parseSetting(setting.value, loggedInUser)}</StyledP>
       </StyledBox>
       <Box pt={1} mr={1}>
         {/* IF SETTING IS NOT DARK MODE OR REMOVE ACCOUNT, SHOW A BUTTON */}
-        {setting.value !== "dark_mode" && setting.value !== "remove_account" ? (
+        {setting.changeable &&
+        (setting.inputType === "text" || setting.inputType === "password") ? (
           <Button
             variant="outlined"
             onClick={() => {
@@ -30,6 +33,9 @@ function AccountSetting({ setting }) {
 
         {/* IF SETTING IS DARK MODE, SHOW A TOGGLE */}
         {setting.value === "dark_mode" && <Switch />}
+
+        {/* IF SETTING IS NOT CURRENTLY CHANGEABLE, SHOW A MESSAGE */}
+        {!setting.changeable && <small>Cannot change</small>}
 
         {/* IF SETTING IS REMOVE ACCOUNT. SHOW A BUTTON */}
         {setting.value === "remove_account" && (

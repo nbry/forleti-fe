@@ -18,6 +18,7 @@ const userSettings = [
     settings: [
       {
         title: "Username",
+        changeable: true,
         form: "account",
         inputType: "text",
         value: "username",
@@ -26,6 +27,7 @@ const userSettings = [
       },
       {
         title: "Email",
+        changeable: false,
         form: "account",
         inputType: "email",
         value: "email",
@@ -34,6 +36,7 @@ const userSettings = [
       },
       {
         title: "Password",
+        changeable: true,
         form: "account",
         inputType: "password",
         value: "password",
@@ -47,6 +50,7 @@ const userSettings = [
     settings: [
       {
         title: "Bio",
+        changeable: true,
         form: "bio",
         inputType: "text",
         value: "bio",
@@ -55,6 +59,7 @@ const userSettings = [
       },
       {
         title: "Theme",
+        changeable: false,
         form: "",
         inputType: "",
         value: "theme",
@@ -62,6 +67,7 @@ const userSettings = [
       },
       {
         title: "Avatar",
+        changeable: false,
         form: "",
         inputType: "",
         value: "avatar_url",
@@ -69,6 +75,7 @@ const userSettings = [
       },
       {
         title: "Header Picture",
+        changeable: false,
         form: "",
         inputType: "",
         value: "header_url",
@@ -81,6 +88,7 @@ const userSettings = [
     settings: [
       {
         title: "Dark Mode",
+        changeable: false,
         form: "",
         inputType: "",
         value: "dark_mode",
@@ -93,6 +101,7 @@ const userSettings = [
     settings: [
       {
         title: null,
+        changeable: true,
         form: "account",
         inputType: "",
         value: "remove_account",
