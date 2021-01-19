@@ -1,5 +1,5 @@
 // prettier-ignore
-import { Button, DialogActions, DialogContent, Grid, TextField, } from "@material-ui/core";
+import { Box, Button, DialogActions, DialogContent, Grid, TextField, } from "@material-ui/core";
 import PageLoadedContext from "components/PageLoadedContext";
 import React, { useContext, useState } from "react";
 import ChangeSettingsContext from "../ChangeSettingsContext";
@@ -57,49 +57,53 @@ function FormAccount() {
     submitAccountChange({ ...formData });
   }
   return (
-    <StyledGrid container justify="center">
-      <form onSubmit={handleSubmit}>
-        <DialogContent>
-          <TextField
-            label={
-              setting.value !== "password" ? setting.title : "New Password"
-            }
-            name="changeTo"
-            value={formData.changeTo}
-            onChange={handleChange}
-            inputProps={{ maxLength: setting.textConstraint }}
-            placeholder={"Change your " + setting.title + " to..."}
-            fullWidth
-            type={setting.inputType}
-            required
-          />
+    <Grid container justify="center">
+      <FullWidthBox>
+        <form onSubmit={handleSubmit}>
+          <DialogContent>
+            <TextField
+              label={
+                setting.value !== "password" ? setting.title : "New Password"
+              }
+              name="changeTo"
+              value={formData.changeTo}
+              onChange={handleChange}
+              inputProps={{ maxLength: setting.textConstraint }}
+              placeholder={"Change your " + setting.title + " to..."}
+              fullWidth
+              type={setting.inputType}
+              required
+            />
 
-          <TextField
-            label="Current Password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            inputProps={{ maxLength: setting.textConstraint }}
-            placeholder="Enter current password to submit change"
-            type="password"
-            fullWidth
-            required
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button variant="contained" onClick={handleClose}>
-            Cancel
-          </Button>
-          <Button variant="contained" type="submit" color="primary">
-            Submit
-          </Button>
-        </DialogActions>
-      </form>
-    </StyledGrid>
+            <TextField
+              label="Current Password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              inputProps={{ maxLength: setting.textConstraint }}
+              placeholder="Enter current password to submit change"
+              type="password"
+              fullWidth
+              required
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button variant="contained" onClick={handleClose}>
+              Cancel
+            </Button>
+            <Button variant="contained" type="submit" color="primary">
+              Submit
+            </Button>
+          </DialogActions>
+        </form>
+      </FullWidthBox>
+    </Grid>
   );
 }
 
 export default FormAccount;
 
 // STYLES:
-const StyledGrid = styled(Grid)``;
+const FullWidthBox = styled(Box)`
+  width: 100%;
+`;

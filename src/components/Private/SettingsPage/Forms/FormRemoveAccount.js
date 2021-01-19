@@ -1,9 +1,10 @@
 // prettier-ignore
-import { Button, DialogActions, DialogContent, Grid, TextField, } from "@material-ui/core";
+import { Box, Button, DialogActions, DialogContent, Grid, TextField, } from "@material-ui/core";
 import React, { useContext, useState } from "react";
 import ChangeSettingsContext from "../ChangeSettingsContext";
 import BackendApi from "utils/BackendApi";
 import LoginContext from "components/LoginContext";
+import styled from "styled-components";
 
 function FormAccount() {
   const { handleClose } = useContext(ChangeSettingsContext);
@@ -47,31 +48,38 @@ function FormAccount() {
   }
   return (
     <Grid container justify="center">
-      <form onSubmit={handleSubmit}>
-        <DialogContent>
-          <TextField
-            label="Password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            inputProps={{ maxLength: 50 }}
-            placeholder="Enter current password to submit change"
-            type="password"
-            fullWidth
-            required
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button variant="contained" onClick={handleClose}>
-            Cancel
-          </Button>
-          <Button variant="contained" type="submit" color="primary">
-            Submit
-          </Button>
-        </DialogActions>
-      </form>
+      <FullWidthBox>
+        <form onSubmit={handleSubmit}>
+          <DialogContent>
+            <TextField
+              label="Password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              inputProps={{ maxLength: 50 }}
+              placeholder="Enter current password to submit change"
+              type="password"
+              fullWidth
+              required
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button variant="contained" onClick={handleClose}>
+              Cancel
+            </Button>
+            <Button variant="contained" type="submit" color="primary">
+              Submit
+            </Button>
+          </DialogActions>
+        </form>
+      </FullWidthBox>
     </Grid>
   );
 }
 
 export default FormAccount;
+
+//STYLES:
+const FullWidthBox = styled(Box)`
+  width: 100%;
+`;
