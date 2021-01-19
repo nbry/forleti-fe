@@ -17,7 +17,7 @@ function FormAccount() {
   const INITIAL_STATE = {
     category: "account",
     setting: setting.value,
-    changeTo: loggedInUser[setting.value],
+    changeTo: loggedInUser[setting.value] || "",
     password: "",
   };
   const [formData, setFormData] = useState(INITIAL_STATE);
@@ -29,6 +29,7 @@ function FormAccount() {
       ...formData,
       [name]: value,
     }));
+    console.log(formData);
   };
 
   // Handle form submission. Reset page if successful
@@ -61,18 +62,20 @@ function FormAccount() {
       <form onSubmit={handleSubmit}>
         <DialogContent>
           <TextField
-            label={setting.title}
+            label={
+              setting.value !== "password" ? setting.title : "New Password"
+            }
             name="changeTo"
             value={formData.changeTo}
             onChange={handleChange}
-            placeholder={"Change " + setting.title + " to..."}
+            placeholder={"Change your " + setting.title + " to..."}
             fullWidth
-            type="text"
+            type={setting.inputType}
             required
           />
 
           <TextField
-            label="password"
+            label="Current Password"
             name="password"
             value={formData.password}
             onChange={handleChange}
