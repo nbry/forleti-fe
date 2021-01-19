@@ -34,8 +34,8 @@ function FormAccount() {
       try {
         const res = await BackendApi.removeAccount({ password });
         console.log(res);
-        if (res[1] === 400) {
-          alert(res[0].message);
+        if (res === 400) {
+          alert(res.message);
         } else {
           handleClose();
           logOut();
