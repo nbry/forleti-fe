@@ -67,6 +67,7 @@ function FormAccount() {
             name="changeTo"
             value={formData.changeTo}
             onChange={handleChange}
+            inputProps={{ maxLength: setting.textConstraint }}
             placeholder={"Change your " + setting.title + " to..."}
             fullWidth
             type={setting.inputType}
@@ -78,6 +79,7 @@ function FormAccount() {
             name="password"
             value={formData.password}
             onChange={handleChange}
+            inputProps={{ maxLength: setting.textConstraint }}
             placeholder="Enter current password to submit change"
             type="password"
             fullWidth

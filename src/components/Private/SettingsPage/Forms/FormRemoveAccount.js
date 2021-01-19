@@ -54,6 +54,7 @@ function FormAccount() {
             name="password"
             value={formData.password}
             onChange={handleChange}
+            inputProps={{ maxLength: 50 }}
             placeholder="Enter current password to submit change"
             type="password"
             fullWidth

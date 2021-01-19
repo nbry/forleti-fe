@@ -69,7 +69,7 @@ function FormAccount() {
             label={setting.value}
             multiline
             rows={7}
-            inputProps={{ maxLength: 200 }}
+            inputProps={{ maxLength: setting.textConstraint }}
             variant="outlined"
             name="changeTo"
             value={formData.changeTo}
