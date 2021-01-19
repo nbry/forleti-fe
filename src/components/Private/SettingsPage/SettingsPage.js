@@ -49,6 +49,9 @@ function SettingsPage() {
             <SettingsPageList elevation={5} />
           </Grid>
           <Box mt={5}>
+            <small>*These features will be implemented shortly!</small>
+          </Box>
+          <Box mt={2}>
             <PreReleaseNotice />
           </Box>
         </WorkingPaper>
