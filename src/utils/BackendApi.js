@@ -79,6 +79,11 @@ class BackendApi {
     return res;
   }
 
+  static async removeAccount({ password }) {
+    let res = await this.request("account/remove", { password }, "delete");
+    return res;
+  }
+
   // ********************
   // BLOG POST
   static async createNewBlogPost({ title, content }) {
