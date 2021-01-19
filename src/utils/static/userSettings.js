@@ -102,7 +102,7 @@ const userSettings = [
       {
         title: null,
         changeable: true,
-        form: "account",
+        form: "remove_account",
         inputType: "",
         value: "remove_account",
         description:
