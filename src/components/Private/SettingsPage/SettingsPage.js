@@ -4,7 +4,7 @@ import styled from "styled-components";
 // import BackendApi from "utils/BackendApi";
 import PageLoadedContext from "components/PageLoadedContext";
 import PreReleaseNotice from "utils/PreReleaseNotice";
-import SettingFormDialog from "./SettingFormDialog/SettingFormDialog";
+import SettingFormDialog from "./SettingFormDialog";
 import SettingsPageList from "./SettingsPageList";
 import WorkingPaper from "utils/WorkingPaper";
 import ChangeSettingsContext from "./ChangeSettingsContext";

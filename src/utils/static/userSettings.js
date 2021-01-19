@@ -55,7 +55,7 @@ const userSettings = [
         inputType: "text",
         value: "bio",
         description:
-          "Your bio is displayed on your profile for others to see. It can be 200 characters long.",
+          "Describe yourself in 200 characters! Your bio is displayed on your profile for others to see.",
       },
       {
         title: "Theme",

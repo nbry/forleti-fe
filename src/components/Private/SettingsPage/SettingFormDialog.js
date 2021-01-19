@@ -3,8 +3,9 @@ import { Box, Dialog, Grid, DialogTitle, Typography, Avatar } from "@material-ui
 import SettingsIcon from "@material-ui/icons/Settings";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import ChangeSettingsContext from "../ChangeSettingsContext";
-import FormAccount from "./FormAccount";
+import ChangeSettingsContext from "./ChangeSettingsContext";
+import FormAccount from "./Forms/FormAccount";
+import FormBio from "./Forms/FormBio";
 
 function DeletePostDialog() {
   const { setting, changeDialogOpen, handleClose } = useContext(
@@ -35,6 +36,7 @@ function DeletePostDialog() {
           {/* THIS IS WHERE THE CHANGE SETTINGS FORMS GO.
             SHOULD BE DYNAMIC, BASED ON THE SETTING. */}
           {setting.form === "account" && <FormAccount />}
+          {setting.form === "bio" && <FormBio />}
         </Grid>
       </Box>
     </Dialog>
