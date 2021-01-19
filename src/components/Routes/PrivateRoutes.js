@@ -1,21 +1,18 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import ProfileWrapper from "../Wrappers/BackgroundWrapper";
-// import HomePage from "../LoggedInWrapper/HomePage/HomePage";
-// import ProfilePage from "../Public/ProfilePage/ProfilePage";
-// import SettingsPage from "../LoggedInWrapper/SettingsPage/SettingsPage";
+import BackgroundWrapper from "../Wrappers/BackgroundWrapper";
 
 const LoggedInRoutes = () => {
   return (
     <Switch>
       <Route exact path="/home">
-        <ProfileWrapper setContent="home" />
+        <BackgroundWrapper setContent="home" />
       </Route>
       <Route exact path="/settings">
-        <ProfileWrapper setContent="settings" />
+        <BackgroundWrapper setContent="settings" />
       </Route>
       <Route path="/u/:username">
-        <ProfileWrapper setContent="profile" />
+        <BackgroundWrapper setContent="profile" />
       </Route>
       <Redirect to="/home" />
     </Switch>

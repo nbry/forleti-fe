@@ -23,7 +23,16 @@ const userSettings = [
         inputType: "text",
         value: "username",
         description:
-          "Your username is displayed on your profile. It must be unique and longer than 6 characters. Changing your username will change the URL of your blog profile.",
+          "Your username must be must be unique and longer than 6 characters. Changing your username will change the URL of your blog profile.",
+      },
+      {
+        title: "Display Name",
+        changeable: true,
+        form: "account",
+        inputType: "text",
+        value: "display_name",
+        description:
+          "Your display name is shown on your profile. It can be your name, a pseudonym, or the title of your blog! It can be up to 20 characters long.",
       },
       {
         title: "Email",
