@@ -74,11 +74,12 @@ const userSettings = [
       },
       {
         title: "Theme",
-        changeable: false,
-        form: "",
-        inputType: "",
+        changeable: true,
+        form: "theme",
+        inputType: "select",
         value: "theme",
-        description: "",
+        description: `Personalize your blog by changing the color of the background and "board".
+        Changes to your theme will reflect on the appearance of your profile to visitors.`,
       },
       {
         title: "Avatar",

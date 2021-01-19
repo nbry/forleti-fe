@@ -6,8 +6,8 @@ function parseTheme(themeNumber = null) {
   let board = myColors.defaultBoard;
 
   if (themeNumber) {
-    background = profileThemes[themeNumber - 1].background;
-    board = profileThemes[themeNumber - 1].board;
+    background = profileThemes[themeNumber].background;
+    board = profileThemes[themeNumber].board;
   }
 
   return { background, board };

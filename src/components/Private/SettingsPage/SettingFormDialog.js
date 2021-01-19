@@ -7,6 +7,7 @@ import ChangeSettingsContext from "./ChangeSettingsContext";
 import FormAccount from "./Forms/FormAccount";
 import FormBio from "./Forms/FormBio";
 import FormRemoveAccount from "./Forms/FormRemoveAccount";
+import FormTheme from "./Forms/FormTheme";
 
 function DeletePostDialog() {
   const { setting, changeDialogOpen, handleClose } = useContext(
@@ -39,10 +40,11 @@ function DeletePostDialog() {
           </Box>
 
           {/* THIS IS WHERE THE CHANGE SETTINGS FORMS GO.
-            SHOULD BE DYNAMIC, BASED ON THE SETTING. */}
+           FOR NOW, RENDERING USE STATIC CONDITIONALS FOR RENDERING */}
           {setting.form === "account" && <FormAccount />}
           {setting.form === "bio" && <FormBio />}
           {setting.form === "remove_account" && <FormRemoveAccount />}
+          {setting.form === "theme" && <FormTheme />}
         </Grid>
       </Box>
     </Dialog>

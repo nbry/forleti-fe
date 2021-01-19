@@ -26,9 +26,7 @@ function AccountSetting({ setting }) {
           </StyledBox>
           <Box pt={1} mr={1}>
             {/* IF SETTING IS NOT DARK MODE OR REMOVE ACCOUNT, SHOW A BUTTON */}
-            {setting.changeable &&
-            (setting.inputType === "text" ||
-              setting.inputType === "password") ? (
+            {setting.changeable && setting.value !== "dark_mode" ? (
               <StyledIconButton
                 variant="outlined"
                 aria-label="edit-button"
@@ -46,7 +44,7 @@ function AccountSetting({ setting }) {
             {/* IF SETTING IS NOT CURRENTLY CHANGEABLE, SHOW A MESSAGE */}
             {!setting.changeable && <small>Cannot change*</small>}
 
-            {/* IF SETTING IS REMOVE ACCOUNT. SHOW A BUTTON */}
+            {/* IF SETTING IS REMOVE ACCOUNT. SHOW THE REMOVE BUTTON BUTTON */}
             {setting.value === "remove_account" && (
               <Button
                 color="secondary"
