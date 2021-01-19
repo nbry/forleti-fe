@@ -12,7 +12,6 @@ function AuthForm() {
   // Keep this a ternary operator. It'll take time for the state to be updated, and
   // removing the conditional will have the tab say "Forleti Default" for a split second,
   // which we don't want.
-  console.log("auth: ", bannerContent);
   document.title =
     bannerContent === "default"
       ? "Forleti"

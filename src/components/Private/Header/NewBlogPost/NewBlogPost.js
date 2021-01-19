@@ -7,7 +7,6 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import BlogPostEditor from "./NewBlogPostEditor";
 import BackendApi from "utils/BackendApi";
-import LoginContext from "components/LoginContext";
 import PageLoadedContext from "components/PageLoadedContext";
 import myColors from "utils/static/colors";
 
@@ -42,8 +41,7 @@ function NewBlogPost() {
 
   // Handle form submission
   const history = useHistory();
-  const { loggedInUser } = useContext(LoginContext);
-  const { setPageLoaded } = useContext(PageLoadedContext);
+  const { setPageLoaded , loggedInUser} = useContext(PageLoadedContext);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
