@@ -13,6 +13,7 @@ function ProfilePageHeader({ userData }) {
       <header>
         <Grid container direction="column" alignItems="center">
           <ProfileName>{userData.display_name}</ProfileName>
+          <ProfileUserName>@{userData.username}</ProfileUserName>
           <ProfileBio aria-label="bio">
             {userData.bio ? userData.bio : <p aria-label="bio">No Bio</p>}
           </ProfileBio>
@@ -45,13 +46,19 @@ const ProfileName = styled.h1`
   font-size: 2rem;
   font-family: "Raleway";
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 `;
 
 const ProfileBio = styled.div`
   min-width: 420px;
   width: 60%;
   text-align: center;
+  margin-top: 10px;
+`;
+
+const ProfileUserName = styled.small`
+  color: gray;
+  font-size: 1rem;
 `;
 
 const AvatarGrid = styled(Grid)`
