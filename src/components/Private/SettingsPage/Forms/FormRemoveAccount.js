@@ -33,7 +33,6 @@ function FormAccount() {
     async function removeAccount({ password }) {
       try {
         const res = await BackendApi.removeAccount({ password });
-        console.log(res);
         if (res === 400) {
           alert(res.message);
         } else {
