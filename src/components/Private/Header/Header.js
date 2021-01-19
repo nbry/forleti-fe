@@ -28,7 +28,7 @@ export default Header;
 
 // STYLES:
 const StyledAppBar = styled(AppBar)`
-  background: ${myColors.background};
+  background: ${myColors.defaultBackground};
   border-bottom: 1px solid ${myColors.border};
 `;
 

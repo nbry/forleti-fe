@@ -3,24 +3,18 @@ import colors from "./colors";
 const profileThemes = [
   {
     name: "default",
-    colors: {
-      background: colors.background,
-      board: colors.paper,
-    },
+    background: colors.defaultBackground,
+    board: colors.defaultBoard,
   },
   {
     name: "plainAndSimple",
-    colors: {
-      background: "black",
-      board: "white",
-    },
+    background: "black",
+    board: "white",
   },
   {
     name: "ranger",
-    colors: {
-      background: "green",
-      board: "orange",
-    },
+    background: "green",
+    board: "orange",
   },
 ];
 
