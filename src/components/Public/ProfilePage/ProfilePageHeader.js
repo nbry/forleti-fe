@@ -12,7 +12,7 @@ function ProfilePageHeader({ userData }) {
       </AvatarGrid>
       <header>
         <Grid container direction="column" alignItems="center">
-          <ProfileName>{userData.username}</ProfileName>
+          <ProfileName>{userData.display_name}</ProfileName>
           <ProfileBio aria-label="bio">
             {userData.bio ? userData.bio : <p aria-label="bio">No Bio</p>}
           </ProfileBio>
