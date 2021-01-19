@@ -10,8 +10,6 @@ import PageLoadedContext from "components/PageLoadedContext";
 function PostCard({ post, handleClickOpen, setTargetPostId }) {
   const { loggedIn } = useContext(LoginContext);
   const { loggedInUser } = useContext(PageLoadedContext);
-  console.log("post user: ", post.user_id);
-  console.log("user_id", loggedInUser.id);
 
   return (
     <StyledPaper elevation={5}>
