@@ -26,7 +26,9 @@ function AccountSetting({ setting }) {
           </StyledBox>
           <Box pt={1} mr={1}>
             {/* IF SETTING IS NOT DARK MODE OR REMOVE ACCOUNT, SHOW A BUTTON */}
-            {setting.changeable && setting.value !== "dark_mode" ? (
+            {setting.changeable &&
+            setting.value !== "dark_mode" &&
+            setting.value !== "remove_account" ? (
               <StyledIconButton
                 variant="outlined"
                 aria-label="edit-button"
