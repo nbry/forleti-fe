@@ -41,7 +41,7 @@ function NewBlogPost() {
 
   // Handle form submission
   const history = useHistory();
-  const { loggedInUser, setLoggedIn } = useContext(LoginContext);
+  const { loggedInUser } = useContext(LoginContext);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -49,8 +49,7 @@ function NewBlogPost() {
       try {
         await BackendApi.createNewBlogPost({ title, content });
         setFormData(INITIAL_STATE);
-        setLoggedIn(false);
-        history.push(`/u/${loggedInUser.username}`);
+        history.go(`/u/${loggedInUser.username}`);
       } catch (e) {
         alert(e);
       }

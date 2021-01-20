@@ -5,10 +5,12 @@ import ChangeSettingsContext from "../ChangeSettingsContext";
 import BackendApi from "utils/BackendApi";
 import styled from "styled-components";
 import LoginContext from "components/LoginContext";
+import { useHistory } from "react-router-dom";
 
 function FormAccount() {
   const { setting, handleClose } = useContext(ChangeSettingsContext);
-  const { loggedInUser, setLoggedIn } = useContext(LoginContext);
+  const { loggedInUser } = useContext(LoginContext);
+  const history = useHistory();
 
   // STATE for form data. Store category, setting value, and changeTo.
   // DEFAULT changeTo to user's current setting.
@@ -49,7 +51,7 @@ function FormAccount() {
         });
         console.log(res);
         handleClose();
-        setLoggedIn(false);
+        history.go(0);
       } catch (e) {
         alert(e);
       }
