@@ -1,15 +1,12 @@
 import { Fade, Grid } from "@material-ui/core";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Header from "./Header/Header";
-import LoginContext from "./LoginContext";
 import parseTheme from "utils/functions/parseTheme";
 import WorkingPaper from "utils/WorkingPaper";
 
 function BackgroundWrapper({ user, children, setContent }) {
   // Store the state for the loading a page and forcing a re-render of a component
   // within the loggedInWrapper WHILE avoiding a re-render of the BackgroundWrapper and Board
-  const { loggedIn } = useContext(LoginContext);
   const theme = parseTheme(user.theme);
   const [fadeStart, setFadeStart] = useState(false);
 

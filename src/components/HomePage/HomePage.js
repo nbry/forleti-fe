@@ -1,6 +1,5 @@
 import { Grid, Typography } from "@material-ui/core";
 import React, { useContext, useEffect } from "react";
-import WorkingPaper from "utils/WorkingPaper";
 import styled from "styled-components";
 import BackgroundWrapper from "components/BackgroundWrapper";
 import LoginContext from "components/LoginContext";
