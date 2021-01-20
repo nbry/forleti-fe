@@ -4,11 +4,11 @@ import CreateIcon from "@material-ui/icons/Create";
 import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 import parseSetting from "utils/functions/parseSetting";
-import PageLoadedContext from "components/PageLoadedContext";
 import ChangeSettingsContext from "./ChangeSettingsContext";
+import LoginContext from "components/LoginContext";
 
 function AccountSetting({ setting }) {
-  const { loggedInUser } = useContext(PageLoadedContext);
+  const { loggedInUser } = useContext(LoginContext);
   const { setSetting, handleClickOpen } = useContext(ChangeSettingsContext);
 
   return (

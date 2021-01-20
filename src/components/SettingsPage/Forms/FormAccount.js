@@ -1,21 +1,21 @@
 // prettier-ignore
-import { Box, Button, DialogActions, DialogContent, Grid, TextField } from "@material-ui/core";
-import PageLoadedContext from "components/PageLoadedContext";
+import { Box, Button, DialogActions, DialogContent, Grid, TextField, } from "@material-ui/core";
 import React, { useContext, useState } from "react";
 import ChangeSettingsContext from "../ChangeSettingsContext";
 import BackendApi from "utils/BackendApi";
 import styled from "styled-components";
+import LoginContext from "components/LoginContext";
 
 function FormAccount() {
   const { setting, handleClose } = useContext(ChangeSettingsContext);
-  const { loggedInUser, setLoggedInUser } = useContext(PageLoadedContext);
+  const { loggedInUser, setLoggedIn } = useContext(LoginContext);
 
   // STATE for form data. Store category, setting value, and changeTo.
   // DEFAULT changeTo to user's current setting.
   // NOTE account settings REQUIRES authentication, which is handled on
   // the backend. ACCOUNT SETTINGS MUST BE SET WITH A CATEGORY OF ACCOUNT!
   const INITIAL_STATE = {
-    category: "profile",
+    category: "account",
     setting: setting.value,
     changeTo: loggedInUser[setting.value] || "",
     password: "",
@@ -49,7 +49,7 @@ function FormAccount() {
         });
         console.log(res);
         handleClose();
-        setLoggedInUser(null);
+        setLoggedIn(false);
       } catch (e) {
         alert(e);
       }
@@ -57,23 +57,33 @@ function FormAccount() {
     submitAccountChange({ ...formData });
   }
   return (
-    <Grid container direction="column" justify="center" alignItems="center">
-      <small>Remaining: {200 - formData.changeTo.length}</small>
+    <Grid container justify="center">
       <FullWidthBox>
         <form onSubmit={handleSubmit}>
           <DialogContent>
             <TextField
-              label={setting.value}
-              multiline
-              rows={7}
-              inputProps={{ maxLength: setting.textConstraint }}
-              variant="outlined"
+              label={
+                setting.value !== "password" ? setting.title : "New Password"
+              }
               name="changeTo"
               value={formData.changeTo}
               onChange={handleChange}
+              inputProps={{ maxLength: setting.textConstraint }}
               placeholder={"Change your " + setting.title + " to..."}
               fullWidth
               type={setting.inputType}
+              required
+            />
+
+            <TextField
+              label="Current Password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              inputProps={{ maxLength: setting.textConstraint }}
+              placeholder="Enter current password to submit change"
+              type="password"
+              fullWidth
               required
             />
           </DialogContent>

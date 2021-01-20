@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import PostCard from "./PostCard/PostCard";
 import { Grid } from "@material-ui/core";
 import BackendApi from "utils/BackendApi";
-import PageLoadedContext from "components/PageLoadedContext";
 import DeletePostDialog from "./DeletePostDialog";
+import LoginContext from "components/LoginContext";
 
 function ProfilePagePosts({ userPosts }) {
   // Use state for delete dialog and pageLoaded context to handle post deletion.
@@ -14,7 +14,7 @@ function ProfilePagePosts({ userPosts }) {
 
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [targetPostId, setTargetPostId] = useState(null);
-  const { setPageLoaded } = useContext(PageLoadedContext);
+  const { setLoggedIn } = useContext(LoginContext);
 
   function handleClickOpen() {
     setDeleteDialogOpen(true);
@@ -28,7 +28,7 @@ function ProfilePagePosts({ userPosts }) {
     const res = await BackendApi.deleteBlogPost(targetPostId);
     if (res) {
       handleClose();
-      setPageLoaded(false);
+      setLoggedIn(false);
     }
   }
 

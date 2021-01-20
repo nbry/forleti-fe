@@ -1,19 +1,19 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import LandingPageWrapper from "../Wrappers/LandingPageWrapper";
-import BackgroundWrapper from "../Wrappers/BackgroundWrapper";
+import LandingPage from "components/LandingPage/LandingPage";
+import BackgroundWrapper from "../BackgroundWrapper";
 
 const PublicRoutes = () => {
   return (
     <Switch>
       <Route exact path="/">
-        <LandingPageWrapper setBanner="default" />
+        <LandingPage setBanner="default" />
       </Route>
       <Route exact path="/login">
-        <LandingPageWrapper setBanner="login" />
+        <LandingPage setBanner="login" />
       </Route>
       <Route exact path="/signup">
-        <LandingPageWrapper setBanner="signup" />
+        <LandingPage setBanner="signup" />
       </Route>
       <Route exact path="/u/:username">
         <BackgroundWrapper setContent="profile" />

@@ -5,11 +5,9 @@ import parse from "html-react-parser";
 import styled, { css } from "styled-components";
 import formatDate from "utils/functions/formatDate";
 import LoginContext from "components/LoginContext";
-import PageLoadedContext from "components/PageLoadedContext";
 
 function PostCard({ post, handleClickOpen, setTargetPostId }) {
-  const { loggedIn } = useContext(LoginContext);
-  const { loggedInUser } = useContext(PageLoadedContext);
+  const { loggedIn, loggedInUser } = useContext(LoginContext);
 
   return (
     <StyledPaper elevation={5}>

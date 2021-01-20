@@ -7,12 +7,12 @@ import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 import LogOutDialog from "./LogOutDialog";
 import myColors from "utils/static/colors";
-import PageLoadedContext from "components/PageLoadedContext";
+import LoginContext from "components/LoginContext";
 
 function AccountMenu() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-  const { loggedInUser } = useContext(PageLoadedContext);
+  const { loggedInUser } = useContext(LoginContext);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);

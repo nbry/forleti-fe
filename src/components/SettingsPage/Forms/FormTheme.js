@@ -2,16 +2,16 @@
 import { Box, Button, DialogActions, DialogContent, Grid, Radio,
   RadioGroup, FormControlLabel, FormControl, FormLabel, } from "@material-ui/core";
 import Brightness1Icon from "@material-ui/icons/Brightness1";
-import PageLoadedContext from "components/PageLoadedContext";
 import React, { useContext, useState } from "react";
 import ChangeSettingsContext from "../ChangeSettingsContext";
 import BackendApi from "utils/BackendApi";
 import profileThemes from "utils/static/profileThemes";
 import styled from "styled-components";
+import LoginContext from "components/LoginContext";
 
 function FormTheme() {
   const { handleClose } = useContext(ChangeSettingsContext);
-  const { loggedInUser, setLoggedInUser } = useContext(PageLoadedContext);
+  const { loggedInUser, setLoggedIn } = useContext(LoginContext);
 
   // STATE for form data. Store category, setting value, and changeTo.
   // DEFAULT changeTo to user's current setting.
@@ -50,7 +50,7 @@ function FormTheme() {
         });
         console.log(res);
         handleClose();
-        setLoggedInUser(null);
+        setLoggedIn(false);
       } catch (e) {
         alert(e);
       }

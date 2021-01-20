@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import LoginContext from "./components/LoginContext";
 import "./App.css";
-import PublicRoutes from "./components/Routes/PrivateRoutes";
-import PrivateRoutes from "./components/Routes/PublicRoutes";
+import PrivateRoutes from "./components/Routes/PrivateRoutes";
+import PublicRoutes from "./components/Routes/PublicRoutes";
 import BackendApi from "utils/BackendApi";
 
 function App() {
@@ -13,27 +13,51 @@ function App() {
     localStorage.getItem("_token") !== null
   );
 
+  // Saving state for loggedInUser (to be used for themes, info, etc.)
+  const [loggedInUser, setLoggedInUser] = useState(false);
+
   const logOut = () => {
     localStorage.clear();
     setLoggedIn(false);
   };
 
   useEffect(() => {
-    // Check local storage and set loggedIn state
-    if (localStorage.getItem("_token")) {
-      setLoggedIn(true);
-    } else {
+    async function getLoggedInUser() {
+      // Check local storage and set loggedIn state
+      // Get loggedInUser. Back end will provide user info based on the token
+      if (loggedIn) {
+        const res = await BackendApi.getLoggedInUser();
+        setLoggedInUser(res.user);
+        console.log("From App.js, loggedInUser = ", res.user);
+      }
       // Ping the back end when user visits a page.
       // Sometimes deployed apps can "go to sleep" if there's no traffic.
       // The result doesn't matter, so don't handle the promise.
-      BackendApi.request("poke");
+      else {
+        BackendApi.request("poke");
+        setLoggedInUser("default");
+      }
     }
+    getLoggedInUser();
   }, [loggedIn]);
 
   return (
-    <LoginContext.Provider value={{ loggedIn, setLoggedIn, logOut }}>
-      {!loggedIn ? <PrivateRoutes /> : <PublicRoutes />}
-    </LoginContext.Provider>
+    <>
+      {!loggedInUser ? (
+        <div>Loading</div>
+      ) : (
+        <LoginContext.Provider
+          value={{
+            loggedIn,
+            setLoggedIn,
+            setLoggedInUser,
+            logOut,
+            loggedInUser,
+          }}>
+          {loggedIn ? <PrivateRoutes /> : <PublicRoutes />}
+        </LoginContext.Provider>
+      )}
+    </>
   );
 }
 

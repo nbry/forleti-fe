@@ -6,11 +6,9 @@ import HeaderMenu from "./HeaderMenu";
 import LoginContext from "components/LoginContext";
 import myColors from "utils/static/colors";
 import parseTheme from "utils/functions/parseTheme";
-import PageLoadedContext from "components/PageLoadedContext";
 
 function Header() {
-  const { loggedIn } = useContext(LoginContext);
-  const { loggedInUser } = useContext(PageLoadedContext);
+  const { loggedIn, loggedInUser } = useContext(LoginContext);
 
   // SHOW DYNAMIC STYLING FOR HEADER COLOR, BASED ON USER'S THEME
   const theme = parseTheme(loggedInUser ? loggedInUser.theme : null);

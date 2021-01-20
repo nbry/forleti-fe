@@ -7,8 +7,8 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import BlogPostEditor from "./NewBlogPostEditor";
 import BackendApi from "utils/BackendApi";
-import PageLoadedContext from "components/PageLoadedContext";
 import myColors from "utils/static/colors";
+import LoginContext from "components/LoginContext";
 
 function NewBlogPost() {
   // Handling opening and closing of dialog:
@@ -41,7 +41,7 @@ function NewBlogPost() {
 
   // Handle form submission
   const history = useHistory();
-  const { setPageLoaded , loggedInUser} = useContext(PageLoadedContext);
+  const { loggedInUser, setLoggedIn } = useContext(LoginContext);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -49,7 +49,7 @@ function NewBlogPost() {
       try {
         await BackendApi.createNewBlogPost({ title, content });
         setFormData(INITIAL_STATE);
-        setPageLoaded(false);
+        setLoggedIn(false);
         history.push(`/u/${loggedInUser.username}`);
       } catch (e) {
         alert(e);
