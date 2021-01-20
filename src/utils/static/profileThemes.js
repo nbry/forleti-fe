@@ -10,21 +10,51 @@ import colors from "./colors";
 const profileThemes = {
   1: {
     value: "default",
-    title: "Default - Navy & Pink",
+    title: "Forleti Default",
     background: colors.defaultBackground,
     board: colors.defaultBoard,
   },
+
   2: {
-    value: "plainAndSimple",
-    title: "Plain & Simple",
-    background: "black",
-    board: "white",
-  },
-  3: {
     value: "ranger",
     title: "Ranger",
-    background: "green",
-    board: "orange",
+    background: "#303831",
+    board: "#7daf84",
+  },
+
+  3: {
+    value: "Aqua",
+    title: "Aqua",
+    background: "#0d292e",
+    board: "#c3cfd1",
+  },
+
+  4: {
+    value: "grayScale",
+    title: "Grayscale",
+    background: "#1b1b1b",
+    board: "#cdcdcd",
+  },
+
+  5: {
+    value: "warmLibrary",
+    title: "Warm Library",
+    background: "#281313",
+    board: "#594949",
+  },
+
+  6: {
+    value: "blackberryPie",
+    title: "Blackberry",
+    background: "#1b1425",
+    board: "#dbc9d5",
+  },
+
+  7: {
+    value: "earthtone",
+    title: "Earth tone",
+    background: "#110600",
+    board: "#dfd2b4",
   },
 };
 

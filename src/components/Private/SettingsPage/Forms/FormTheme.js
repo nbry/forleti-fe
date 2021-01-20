@@ -32,7 +32,6 @@ function FormTheme() {
       ...formData,
       [name]: value,
     }));
-    console.log(formData);
   };
 
   // Handle form submission. Reset page if successful
