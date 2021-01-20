@@ -29,7 +29,7 @@ function ProfilePage() {
   return (
     <>
       {userBeingViewed && (
-        <BackgroundWrapper user={userBeingViewed}>
+        <BackgroundWrapper user={userBeingViewed} setContent="profile">
           <ProfilePageHeader userData={userBeingViewed} />
           <ProfilePagePosts userPosts={userBeingViewed.posts} />
         </BackgroundWrapper>

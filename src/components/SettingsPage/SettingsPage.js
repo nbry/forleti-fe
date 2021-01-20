@@ -10,7 +10,6 @@ import BackgroundWrapper from "components/BackgroundWrapper";
 import LoginContext from "components/LoginContext";
 
 function SettingsPage() {
-  const [thisPageLoaded, setThisPageLoaded] = useState(false)
   const { loggedInUser } = useContext(LoginContext);
 
   useEffect(() => {
@@ -18,8 +17,7 @@ function SettingsPage() {
     // complications with SettingsFormDialog.
     document.title = "Forleti Settings";
     window.scrollTo(0, 0);
-    setThisPageLoaded(true);
-  }, [thisPageLoaded, setThisPageLoaded]);
+  }, []);
 
   // STATE FOR CHANGING SETTING DIALOG
   const [changeDialogOpen, setChangeDialogOpen] = useState(false);
@@ -34,7 +32,7 @@ function SettingsPage() {
   }
 
   return (
-    <BackgroundWrapper user={loggedInUser}>
+    <BackgroundWrapper user={loggedInUser} setContent="settings">
       <ChangeSettingsContext.Provider
         value={{
           changeDialogOpen,
@@ -43,7 +41,7 @@ function SettingsPage() {
           setting,
           setSetting,
         }}>
-        <WorkingPaper elevation={10}>
+       
           <Grid container direction="column">
             <Title variant="h2">Settings</Title>
             <SettingsPageList elevation={5} />
@@ -54,7 +52,7 @@ function SettingsPage() {
           <Box mt={2}>
             <PreReleaseNotice />
           </Box>
-        </WorkingPaper>
+    
         <Grid>
           <SettingFormDialog />
         </Grid>

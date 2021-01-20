@@ -13,12 +13,12 @@ function HomePage() {
   }, []);
 
   return (
-    <BackgroundWrapper user={loggedInUser}>
-      <WorkingPaper elevation={10}>
+    <BackgroundWrapper user={loggedInUser} setContent="home">
+
         <Grid container direction="column">
           <Title variant="h2">Welcome to Forleti</Title>
         </Grid>
-      </WorkingPaper>
+
     </BackgroundWrapper>
 
     // <Fade in={pageLoaded} {...(pageLoaded ? { timeout: 500 } : {})}>
