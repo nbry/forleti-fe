@@ -45,8 +45,11 @@ function AuthForm() {
           bannerContent === "login"
             ? await BackendApi.login({ username, password })
             : await BackendApi.signup({ username, password, email });
-        localStorage.setItem("_token", res.token);
-        setLoggedIn(true);
+
+        if (res.status !== 400) {
+          localStorage.setItem("_token", res.token);
+          setLoggedIn(true);
+        }
       } catch (e) {
         alert(e);
       }
