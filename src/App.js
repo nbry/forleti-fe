@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LoginContext from "./components/LoginContext";
 import "./App.css";
+import Header from "components/Header/Header";
 import PrivateRoutes from "./components/Routes/PrivateRoutes";
 import PublicRoutes from "./components/Routes/PublicRoutes";
 import BackendApi from "utils/BackendApi";
@@ -54,7 +55,14 @@ function App() {
             logOut,
             loggedInUser,
           }}>
-          {loggedIn ? <PrivateRoutes /> : <PublicRoutes />}
+          {loggedIn ? (
+            <>
+              <Header />
+              <PrivateRoutes />
+            </>
+          ) : (
+            <PublicRoutes />
+          )}
         </LoginContext.Provider>
       )}
     </>

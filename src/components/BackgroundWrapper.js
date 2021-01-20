@@ -19,9 +19,6 @@ function BackgroundWrapper({ user, children, setContent }) {
 
   return (
     <>
-      {/* SHOW HEADER IF THERE IS A LOGGED IN USER */}
-      {loggedIn && <Header />}
-
       {/* BACKGROUND COLOR WILL CHANGE BASED OFF OF RESULT OF parseTheme */}
       <BackgroundColor
         container
@@ -38,7 +35,7 @@ function BackgroundWrapper({ user, children, setContent }) {
               </Fade>
             </WorkingPaper>
           ) : (
-            <Fade in={fadeStart} {...(fadeStart ? { timeout: 300 } : {})}>
+            <Fade in={fadeStart} {...(fadeStart ? { timeout: 500 } : {})}>
               <div>{children}</div>
             </Fade>
           )}
