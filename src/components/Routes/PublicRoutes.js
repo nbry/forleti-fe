@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import LandingPage from "components/LandingPage/LandingPage";
-import BackgroundWrapper from "../BackgroundWrapper";
+import ProfilePage from "components/ProfilePage/ProfilePage";
 
 const PublicRoutes = () => {
   return (
@@ -16,7 +16,7 @@ const PublicRoutes = () => {
         <LandingPage setBanner="signup" />
       </Route>
       <Route exact path="/u/:username">
-        <BackgroundWrapper setContent="profile" />
+        <ProfilePage />
       </Route>
       <Redirect to="/" />
     </Switch>
