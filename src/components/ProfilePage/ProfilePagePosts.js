@@ -4,6 +4,7 @@ import { Grid } from "@material-ui/core";
 import BackendApi from "utils/BackendApi";
 import DeletePostDialog from "./DeletePostDialog";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 
 function ProfilePagePosts({ userPosts }) {
   // Use state for delete dialog and pageLoaded context to handle post deletion.
@@ -33,7 +34,7 @@ function ProfilePagePosts({ userPosts }) {
   }
 
   return (
-    <Grid container direction="row" justify="center">
+    <StyledGrid container direction="column" alignItems="center">
       {/* User hasn't posted? Show appropriate message. Else, create
                   post cards for all user posts */}
       {userPosts.length ? (
@@ -54,8 +55,13 @@ function ProfilePagePosts({ userPosts }) {
         handleDeletion={handleDeletion}
         handleClose={handleClose}
       />
-    </Grid>
+    </StyledGrid>
   );
 }
 
 export default ProfilePagePosts;
+
+// STYLES:
+const StyledGrid = styled(Grid)`
+  min-height: 100vh;
+`;
