@@ -1,6 +1,6 @@
 //  AVAILABLE PROFILE THEMES HERE. THIS DOESN'T NOT NEED TO BE ORDERED, BUT THEMES MUST BE GIVEN A
 // UNIQUE VALUE:
-//  a. value, which dicat
+//  a. value, which acts as a key... although this may not be necessary anymore
 //  b. background color
 //  c. "board" i.e. mid section color
 //  d. title, which dictates what will show up to the client

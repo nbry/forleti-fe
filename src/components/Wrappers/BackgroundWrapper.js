@@ -39,6 +39,7 @@ function BackgroundWrapper({ setContent }) {
   return (
     <PageLoadedContext.Provider
       value={{ pageLoaded, setPageLoaded, loggedInUser, setLoggedInUser }}>
+      {/* SHOW HEADER IF THERE IS A LOGGED IN USER */}
       {loggedIn && <Header />}
 
       {/* BACKGROUND COLOR WILL CHANGE BASED OFF OF RESULT OF parseTheme */}
