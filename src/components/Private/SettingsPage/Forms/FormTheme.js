@@ -67,7 +67,9 @@ function FormTheme() {
         <form onSubmit={handleSubmit}>
           <DialogContent>
             <FullWidthFormControl component="fieldset">
-              <FormLabel component="legend">Available Themes</FormLabel>
+              <FormLabel component="legend" style={{ color: "gray" }}>
+                Available Themes
+              </FormLabel>
               <RadioGroup
                 aria-label="themes"
                 name="changeTo"
