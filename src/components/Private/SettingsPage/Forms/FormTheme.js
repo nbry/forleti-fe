@@ -38,18 +38,16 @@ function FormTheme() {
   // Handle form submission. Reset page if successful
   function handleSubmit(evt) {
     evt.preventDefault();
+
+    // prettier-ignore
     async function submitThemeChange({
-      category,
-      setting,
-      changeTo,
-      password,
+      category, setting, changeTo, password,
     }) {
       try {
+
+        // prettier-ignore
         const res = await BackendApi.changeSetting({
-          category,
-          setting,
-          changeTo,
-          password,
+          category, setting, changeTo, password, 
         });
         console.log(res);
         handleClose();
@@ -69,7 +67,7 @@ function FormTheme() {
       <FullWidthBox>
         <form onSubmit={handleSubmit}>
           <DialogContent>
-            <FormControl component="fieldset">
+            <FullWidthFormControl component="fieldset">
               <FormLabel component="legend">Available Themes</FormLabel>
               <RadioGroup
                 aria-label="themes"
@@ -82,17 +80,26 @@ function FormTheme() {
                     direction="row"
                     alignItems="center"
                     key={profileThemes[themeNumber].value}>
-                    <FormControlLabel
+                    <StyledFormControlLabel
                       value={themeNumber}
                       control={<Radio />}
                       label={profileThemes[themeNumber].title}
                     />
-                    <Brightness1Icon />
-                    <Brightness1Icon />
+
+                    {/* A LITTLE BOX ACTING AS A PREVIEW FOR EACH THEME.
+                    HAS TWO ICONS SHOWING THE BACKGROUND AND BOARD COLORS */}
+                    <ColorGrid container direction="row" alignItems="center">
+                      <Brightness1Icon
+                        style={{ color: profileThemes[themeNumber].background }}
+                      />
+                      <Brightness1Icon
+                        style={{ color: profileThemes[themeNumber].board }}
+                      />
+                    </ColorGrid>
                   </Grid>
                 ))}
               </RadioGroup>
-            </FormControl>
+            </FullWidthFormControl>
           </DialogContent>
           <DialogActions>
             <Button variant="contained" onClick={handleClose}>
@@ -111,6 +118,20 @@ function FormTheme() {
 export default FormTheme;
 
 // STYLES:
+const ColorGrid = styled(Grid)`
+  border-radius: 10px;
+  background: gray;
+  width: auto;
+`;
+
+const FullWidthFormControl = styled(FormControl)`
+  width: 100%;
+`;
+
 const FullWidthBox = styled(Box)`
   width: 100%;
+`;
+
+const StyledFormControlLabel = styled(FormControlLabel)`
+  flex-grow: 1;
 `;
