@@ -5,6 +5,8 @@ import BackgroundWrapper from "components/BackgroundWrapper";
 import BackendApi from "utils/BackendApi";
 import { useParams } from "react-router-dom";
 import LoginContext from "components/LoginContext";
+import styled from "styled-components";
+import { Box, Grid, Typography } from "@material-ui/core";
 
 function ProfilePage() {
   const { username } = useParams();
@@ -27,10 +29,18 @@ function ProfilePage() {
 
   return (
     <>
-      {userBeingViewed && (
+      {userBeingViewed ? (
         <BackgroundWrapper user={userBeingViewed} setContent="profile">
           <ProfilePageHeader userData={userBeingViewed} />
           <ProfilePagePosts userPosts={userBeingViewed.posts} />
+        </BackgroundWrapper>
+      ) : (
+        <BackgroundWrapper user={{ theme: null }} setContent="profile">
+          <Grid container justify="center">
+            <Box m={7}>
+              <Title variant="h2">User {username} Not Found</Title>
+            </Box>
+          </Grid>
         </BackgroundWrapper>
       )}
     </>
@@ -38,3 +48,8 @@ function ProfilePage() {
 }
 
 export default ProfilePage;
+
+//STYLES:
+const Title = styled(Typography)`
+  font-family: "Raleway";
+`;
