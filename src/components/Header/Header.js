@@ -7,29 +7,30 @@ import LoginContext from "components/LoginContext";
 import myColors from "utils/static/colors";
 import parseTheme from "utils/functions/parseTheme";
 
-function Header() {
+function Header({ theme }) {
   const { loggedIn, loggedInUser } = useContext(LoginContext);
 
   // SHOW DYNAMIC STYLING FOR HEADER COLOR, BASED ON USER'S THEME
-  const theme = parseTheme(loggedInUser ? loggedInUser.theme : null);
+  // Seems a bit overkill, but it'll catch all while the app renders
+  theme = loggedIn
+    ? parseTheme(loggedInUser ? loggedInUser.theme : null)
+    : theme;
 
   return (
-    <>
-      {loggedIn && (
-        <StyledAppBar
-          id="header"
-          position="sticky"
-          elevation={0}
-          style={{ background: theme.background }}>
-          <StyledToolbar>
-            <Title>
-              <StyledNavLink to="/home">Forleti</StyledNavLink>
-            </Title>
-            <HeaderMenu />
-          </StyledToolbar>
-        </StyledAppBar>
-      )}
-    </>
+    <StyledAppBar
+      id="header"
+      position="sticky"
+      elevation={0}
+      style={{ background: theme.background }}>
+      <StyledToolbar>
+        <Title>
+          <StyledNavLink to="/home">Forleti</StyledNavLink>
+        </Title>
+
+        {/* ONLY SHOW HEADER MENU IF LOGGED IN */}
+        {loggedIn && <HeaderMenu />}
+      </StyledToolbar>
+    </StyledAppBar>
   );
 }
 
