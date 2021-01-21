@@ -9,7 +9,8 @@
 //    b. The form value dictates which React Component is rendered in the dialog.
 //       At the present, can be either "account", "bio", or "remove account"
 //    c. inputType -> (email is email, username is text... etc.)
-//    d. [optional] textConstraint dictates how long a test input can be.
+//    d. [optional] maxLength dictates how long a test input can be.
+//    e. [mandatory IF optional] minLength dicates the minimum length of a text input
 //    d. The value is set to match the "loggedInUser" object from LoginContext (cannot be null)
 //    e. The desciption is client facing and must be formatted (can be null)
 //    f. changeable is a boolean that dictates if functionality has been implemented to change setting
@@ -23,7 +24,8 @@ const userSettings = [
         changeable: true,
         form: "account",
         inputType: "text",
-        textConstraint: 15,
+        maxLength: 15,
+        minLength: 6,
         value: "username",
         description: `Your username must be must be unique and between 6 and 15 characters in length.
         Your username will be displayed on your profile and will dictate your profile's address.`,
@@ -33,7 +35,8 @@ const userSettings = [
         changeable: true,
         form: "account",
         inputType: "text",
-        textConstraint: 20,
+        maxLength: 20,
+        minLength: 0,
         value: "display_name",
         description: `Your display name acts as the title of your blog and shows up on the top of your profile. 
           It could be your username, your actual name, a nickname, a pseudonym, anything. It can be up to 20 characters long.`,
@@ -52,7 +55,8 @@ const userSettings = [
         changeable: true,
         form: "account",
         inputType: "password",
-        textConstraint: 50,
+        maxLength: 50,
+        minLength: 8,
         value: "password",
         description:
           "Your password must be between 8 to 50 characters in length. We recommend mixing letters, numbers, and symbols for a stronger password.",
@@ -67,7 +71,8 @@ const userSettings = [
         changeable: true,
         form: "bio",
         inputType: "text",
-        textConstraint: 200,
+        maxLength: 200,
+        minLength: 0,
         value: "bio",
         description:
           "Describe yourself in 200 characters! Your bio is displayed on your profile for others to see.",

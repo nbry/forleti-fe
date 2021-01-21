@@ -49,7 +49,9 @@ function FormAccount() {
           changeTo,
           password,
         });
-        console.log(res);
+        if (res.status === 400) {
+          alert(res.message);
+        }
         handleClose();
         history.go(0);
       } catch (e) {
@@ -70,7 +72,10 @@ function FormAccount() {
               name="changeTo"
               value={formData.changeTo}
               onChange={handleChange}
-              inputProps={{ maxLength: setting.textConstraint }}
+              inputProps={{
+                maxLength: setting.maxLength,
+                minLength: setting.minLength,
+              }}
               placeholder={"Change your " + setting.title + " to..."}
               fullWidth
               type={setting.inputType}
@@ -82,7 +87,10 @@ function FormAccount() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              inputProps={{ maxLength: setting.textConstraint }}
+              inputProps={{
+                maxLength: setting.textConstraint,
+                minLength: setting.minLength,
+              }}
               placeholder="Enter current password to submit change"
               type="password"
               fullWidth
