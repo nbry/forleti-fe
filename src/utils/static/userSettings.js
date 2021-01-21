@@ -38,7 +38,7 @@ const userSettings = [
         maxLength: 50,
         minLength: 0,
         value: "display_name",
-        description: `Your display name acts as the title of your blog and shows up on the top of your profile. 
+        description: `Your display name acts as your blog's title and is displayed on your profile. 
           It could be your username, your actual name, a nickname, a pseudonym, anything. It can be up to 50 characters long.`,
       },
       {

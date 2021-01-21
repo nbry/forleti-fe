@@ -62,6 +62,9 @@ function FormAccount() {
   }
   return (
     <Grid container justify="center">
+      {setting.value === "display_name" && (
+        <small>Remaining: {setting.maxLength - formData.changeTo.length}</small>
+      )}
       <FullWidthBox>
         <form onSubmit={handleSubmit}>
           <DialogContent>
