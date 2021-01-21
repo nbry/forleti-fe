@@ -19,7 +19,6 @@ function ProfilePage() {
         const res = await BackendApi.getUserByUsername(username);
         if (res.user) {
           setUserBeingViewed(res.user);
-          console.log(res.user);
         }
       }
     }

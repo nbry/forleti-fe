@@ -10,7 +10,7 @@ class BackendApi {
     // visiting a "protected" route, the token must be in the header.
     const headers = { Authorization: `Bearer ${token}` };
 
-    console.debug("API Call:", endpoint, paramsOrData, verb);
+    // console.debug("API Call:", endpoint, paramsOrData, verb);
 
     try {
       // axios sends query string data via the "params" key,
@@ -25,7 +25,7 @@ class BackendApi {
         })
       ).data;
     } catch (err) {
-      console.error("API Error:", err.response);
+      // console.error("API Error:", err.response);
       let message = err.response.data.message;
       throw Array.isArray(message) ? message : [message];
     }

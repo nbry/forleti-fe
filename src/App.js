@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import LoginContext from "./components/LoginContext";
+import LoginContext from "components/LoginContext";
 import "./App.css";
 import Header from "components/Header/Header";
-import PrivateRoutes from "./components/Routes/PrivateRoutes";
-import PublicRoutes from "./components/Routes/PublicRoutes";
+import PrivateRoutes from "components/Routes/PrivateRoutes";
+import PublicRoutes from "components/Routes/PublicRoutes";
 import BackendApi from "utils/BackendApi";
 
 function App() {
@@ -29,7 +29,6 @@ function App() {
       if (loggedIn) {
         const res = await BackendApi.getLoggedInUser();
         setLoggedInUser(res.user);
-        console.log("From App.js, loggedInUser = ", res.user);
       }
       // Ping the back end when user visits a page.
       // Sometimes deployed apps can "go to sleep" if there's no traffic.

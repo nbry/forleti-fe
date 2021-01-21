@@ -50,7 +50,9 @@ function FormTheme() {
         const res = await BackendApi.changeSetting({
           category, setting, changeTo, password, 
         });
-        console.log(res);
+        if (res.status === 400) {
+          alert(res.message)
+        }
         handleClose();
         history.go(0)
       } catch (e) {
