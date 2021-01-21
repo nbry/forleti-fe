@@ -35,11 +35,11 @@ const userSettings = [
         changeable: true,
         form: "account",
         inputType: "text",
-        maxLength: 20,
+        maxLength: 50,
         minLength: 0,
         value: "display_name",
         description: `Your display name acts as the title of your blog and shows up on the top of your profile. 
-          It could be your username, your actual name, a nickname, a pseudonym, anything. It can be up to 20 characters long.`,
+          It could be your username, your actual name, a nickname, a pseudonym, anything. It can be up to 50 characters long.`,
       },
       {
         title: "Email",
