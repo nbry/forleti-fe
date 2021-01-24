@@ -1,13 +1,16 @@
 // prettier-ignore
-import { Box, Button, DialogActions, DialogContent, Grid, TextField } from "@material-ui/core";
+import { Box, Button, DialogActions, Grid } from "@material-ui/core";
 import React, { useContext, useState } from "react";
-import ChangeSettingsContext from "../Setting/ChangeSettingsContext";
+import ChangeSettingsContext from "components/Setting/ChangeSettingsContext";
 import BackendApi from "utils/BackendApi";
 import styled from "styled-components";
 import LoginContext from "components/LoginContext";
 import { useHistory } from "react-router-dom";
+import Account from "./FormContent/Account";
+import Bio from "./FormContent/Bio";
+import Theme from "./FormContent/Theme";
 
-function FormAccount() {
+function SettingForm({ category }) {
   const { setting, handleClose } = useContext(ChangeSettingsContext);
   const { loggedInUser } = useContext(LoginContext);
   const history = useHistory();
@@ -17,7 +20,7 @@ function FormAccount() {
   // NOTE account settings REQUIRES authentication, which is handled on
   // the backend. ACCOUNT SETTINGS MUST BE SET WITH A CATEGORY OF ACCOUNT!
   const INITIAL_STATE = {
-    category: "profile",
+    category,
     setting: setting.value,
     changeTo: loggedInUser[setting.value] || "",
     password: "",
@@ -31,6 +34,7 @@ function FormAccount() {
       ...formData,
       [name]: value,
     }));
+    console.log(formData);
   };
 
   // Handle form submission. Reset page if successful
@@ -61,26 +65,37 @@ function FormAccount() {
     submitAccountChange({ ...formData });
   }
   return (
-    <Grid container direction="column" justify="center" alignItems="center">
-      <small>Remaining: {200 - formData.changeTo.length}</small>
+    <Grid container justify="center">
+      {setting.value === "display_name" && (
+        <small>Remaining: {setting.maxLength - formData.changeTo.length}</small>
+      )}
       <FullWidthBox>
         <form onSubmit={handleSubmit}>
-          <DialogContent>
-            <TextField
-              label={setting.value}
-              multiline
-              rows={7}
-              inputProps={{ maxLength: setting.textConstraint }}
-              variant="outlined"
-              name="changeTo"
-              value={formData.changeTo}
-              onChange={handleChange}
-              placeholder={"Change your " + setting.title + " to..."}
-              fullWidth
-              type={setting.inputType}
-              required
+          {/* THIS IS WHERE FORMS FORM IS BEING CONTENT IS BEING RENDERED */}
+          {setting.form === "account" && (
+            <Account
+              formData={formData}
+              handleChange={handleChange}
+              setting={setting}
             />
-          </DialogContent>
+          )}
+
+          {setting.form === "bio" && (
+            <Bio
+              formData={formData}
+              handleChange={handleChange}
+              setting={setting}
+            />
+          )}
+
+          {setting.form === "theme" && (
+            <Theme
+              formData={formData}
+              handleChange={handleChange}
+              setting={setting}
+            />
+          )}
+
           <DialogActions>
             <Button variant="contained" onClick={handleClose}>
               Cancel
@@ -95,7 +110,7 @@ function FormAccount() {
   );
 }
 
-export default FormAccount;
+export default SettingForm;
 
 // STYLES:
 const FullWidthBox = styled(Box)`
