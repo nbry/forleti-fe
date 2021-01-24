@@ -4,10 +4,10 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import ChangeSettingsContext from "./ChangeSettingsContext";
-import FormAccount from "../Forms/FormAccount";
-import FormBio from "../Forms/FormBio";
-import FormRemoveAccount from "../Forms/FormRemoveAccount";
-import FormTheme from "../Forms/FormTheme";
+import FormAccount from "components/SettingForms/FormAccount";
+import FormBio from "components/SettingForms/FormBio";
+import FormRemoveAccount from "components/SettingForms/FormRemoveAccount";
+import FormTheme from "components/SettingForms/FormTheme";
 
 function DeletePostDialog() {
   const { setting, changeDialogOpen, handleClose } = useContext(

@@ -1,7 +1,7 @@
 // prettier-ignore
 import { Box, Button, DialogActions, DialogContent, Grid, TextField } from "@material-ui/core";
 import React, { useContext, useState } from "react";
-import ChangeSettingsContext from "../Settings/ChangeSettingsContext";
+import ChangeSettingsContext from "../Setting/ChangeSettingsContext";
 import BackendApi from "utils/BackendApi";
 import styled from "styled-components";
 import LoginContext from "components/LoginContext";

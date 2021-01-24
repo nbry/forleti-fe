@@ -3,7 +3,7 @@ import { Box, Button, DialogActions, DialogContent, Grid, Radio,
   RadioGroup, FormControlLabel, FormControl, FormLabel, } from "@material-ui/core";
 import Brightness1Icon from "@material-ui/icons/Brightness1";
 import React, { useContext, useState } from "react";
-import ChangeSettingsContext from "../Settings/ChangeSettingsContext";
+import ChangeSettingsContext from "components/Setting/ChangeSettingsContext";
 import BackendApi from "utils/BackendApi";
 import profileThemes from "utils/static/profileThemes";
 import styled from "styled-components";
