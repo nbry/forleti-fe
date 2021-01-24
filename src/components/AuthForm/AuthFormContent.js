@@ -5,7 +5,7 @@ import LockIcon from "@material-ui/icons/Lock";
 import CreateIcon from "@material-ui/icons/Create";
 import styled from "styled-components";
 import { useContext } from "react";
-import LandingPageBannerContext from "../LandingPageBannerContext";
+import LandingPageBannerContext from "../Landing/LandingPageBannerContext";
 import PreReleaseNotice from "utils/PreReleaseNotice";
 
 function AuthFormContent({ formData, handleChange, handleSubmit }) {

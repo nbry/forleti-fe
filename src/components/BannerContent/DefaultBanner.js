@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { IconButton, Button, Collapse, Grid } from "@material-ui/core";
 import { Link as Scroll } from "react-scroll";
-import LoginContext from "../../LoginContext";
-import LandingPageBannerContext from "../LandingPageBannerContext";
+import LoginContext from "../LoginContext";
+import LandingPageBannerContext from "../Landing/LandingPageBannerContext";
 
 function DefaultBanner() {
   document.title = "Forleti";

@@ -12,6 +12,8 @@ function PostCard({ post, handleClickOpen, setTargetPostId }) {
   return (
     <StyledPaper elevation={5}>
       <PostCardTitle component="h2">{post.title}</PostCardTitle>
+
+      {/* This is where the post content goes */}
       <Content className="postContent">{parse(post.content)}</Content>
       <Grid container direction="row" alignItems="flex-end">
         <CreatedDate>

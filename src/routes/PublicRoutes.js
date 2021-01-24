@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import LandingPage from "components/LandingPage/LandingPage";
-import ProfilePage from "components/ProfilePage/ProfilePage";
+import LandingPage from "pages/LandingPage";
+import ProfilePage from "pages/ProfilePage";
 
 const PublicRoutes = () => {
   return (

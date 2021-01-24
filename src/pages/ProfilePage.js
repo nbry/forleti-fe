@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import ProfilePageHeader from "./ProfilePageHeader";
-import ProfilePagePosts from "./ProfilePagePosts";
+import ProfilePageHeader from "components/Profile/ProfilePageHeader";
+import ProfilePagePosts from "components/Profile/ProfilePagePosts";
 import BackgroundWrapper from "components/BackgroundWrapper";
 import BackendApi from "utils/BackendApi";
 import { useParams } from "react-router-dom";

@@ -1,8 +1,8 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import HomePage from "components/HomePage/HomePage";
-import ProfilePage from "components/ProfilePage/ProfilePage";
-import SettingsPage from "components/SettingsPage/SettingsPage";
+import HomePage from "pages/HomePage";
+import ProfilePage from "pages/ProfilePage";
+import SettingsPage from "pages/SettingsPage";
 
 const LoggedInRoutes = () => {
   return (

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import LoginContext from "components/LoginContext";
 import Header from "components/Header/Header";
-import PrivateRoutes from "components/Routes/PrivateRoutes";
-import PublicRoutes from "components/Routes/PublicRoutes";
+import PrivateRoutes from "routes/PrivateRoutes";
+import PublicRoutes from "routes/PublicRoutes";
 import BackendApi from "utils/BackendApi";
 
 function App() {

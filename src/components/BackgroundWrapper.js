@@ -29,7 +29,7 @@ function BackgroundWrapper({ user, children, setContent }) {
         style={{ backgroundColor: theme.background }}>
         {/* BOARD COLOR WILL CHANGE BASED OFF OF RESULT OF parseTheme */}
         <Board style={{ backgroundColor: theme.board }}>
-          {/* HISTORY and SETTINGS routes share the same background. Fade within the background */}
+          {/* HOME and SETTINGS routes share the same background. Fade within the background */}
           {setContent !== "profile" ? (
             <WorkingPaper>
               <Fade in={fadeStart} {...(fadeStart ? { timeout: 300 } : {})}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import DefaultBanner from "./BannerContent/DefaultBanner";
-import AuthForm from "./AuthForm/AuthForm";
+import DefaultBanner from "../BannerContent/DefaultBanner";
+import AuthForm from "../AuthForm/AuthForm";
 import LandingPageBannerContext from "./LandingPageBannerContext";
 import { useHistory } from "react-router-dom";
 

@@ -2,9 +2,9 @@ import { Box, Grid, Typography } from "@material-ui/core";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import PreReleaseNotice from "utils/PreReleaseNotice";
-import SettingFormDialog from "./SettingFormDialog";
-import SettingsPageList from "./SettingsPageList";
-import ChangeSettingsContext from "./ChangeSettingsContext";
+import SettingFormDialog from "components/Settings/SettingFormDialog";
+import SettingsPageList from "components/Settings/SettingsPageList";
+import ChangeSettingsContext from "components/Settings/ChangeSettingsContext";
 import BackgroundWrapper from "components/BackgroundWrapper";
 import LoginContext from "components/LoginContext";
 

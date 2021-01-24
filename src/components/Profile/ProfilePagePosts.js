@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import PostCard from "./PostCard/PostCard";
+import PostCard from "../PostCard/PostCard";
 import { Grid } from "@material-ui/core";
 import BackendApi from "utils/BackendApi";
-import DeletePostDialog from "./DeletePostDialog";
+import DeletePostDialog from "../DeletePostDialog";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 

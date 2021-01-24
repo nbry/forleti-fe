@@ -4,7 +4,7 @@ import AuthFormContent from "./AuthFormContent";
 import LoginContext from "components/LoginContext";
 import BackendApi from "utils/BackendApi";
 import capitalize from "utils/functions/capitalize";
-import LandingPageBannerContext from "../LandingPageBannerContext";
+import LandingPageBannerContext from "../Landing/LandingPageBannerContext";
 
 function AuthForm() {
   const { bannerContent, checked } = useContext(LandingPageBannerContext);

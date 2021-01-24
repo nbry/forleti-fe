@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import LandingPage from "../../components/LandingPage/LandingPage";
-import LandingPageBanner from "../../components/LandingPage/LandingPageBanner";
-import LandingPageInfo from "../../components/LandingPage/LandingPageInfo";
-import DefaultBanner from "../../components/LandingPage/BannerContent/DefaultBanner";
+import LandingPage from "../../components/Landing/LandingPage";
+import LandingPageBanner from "../../components/Landing/LandingPageBanner";
+import LandingPageInfo from "../../components/Landing/LandingPageInfo";
+import DefaultBanner from "../../components/BannerContent/DefaultBanner";
 
 
 let realUseContext;

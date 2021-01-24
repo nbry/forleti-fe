@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import LandingPageBanner from "./LandingPageBanner";
-import LandingPageInfo from "./LandingPageInfo";
+import LandingPageBanner from "components/Landing/LandingPageBanner";
+import LandingPageInfo from "components/Landing/LandingPageInfo";
 
 function LandingPage({ setBanner }) {
   return (
