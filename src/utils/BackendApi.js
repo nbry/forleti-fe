@@ -64,8 +64,12 @@ class BackendApi {
   }
 
   static async getUserByUsername(username) {
-    let user_info = await this.request(`user/${username}`);
-    return user_info;
+    try {
+      let user_info = await this.request(`user/${username}`);
+      return user_info;
+    } catch (e) {
+      return null;
+    }
   }
 
   // ********************
