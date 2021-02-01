@@ -4,7 +4,7 @@ function formatDate(dateTimeFromPython) {
     "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
   ];
   const dateTime = new Date(dateTimeFromPython);
-  const hour = dateTime.getHours() !== 0 ? dateTime.getHours() % 12 : 12;
+  const hour = dateTime.getHours() !== 12 ? dateTime.getHours() % 12 : 12;
   const meridiem = dateTime.getHours() < 12 ? "AM" : "PM";
   const minute =
     dateTime.getMinutes() < 10
