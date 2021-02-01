@@ -1,3 +1,9 @@
+// This function is used to return the user's current state of any given setting.
+// It is required because different settings have different default values, formats, etc. 
+// For example, "dark mode" is stored in the database as a Boolean, BUT should be displayed as 
+// "ON" or "OFF" on the settings page. Although this is conceptually pretty easy, it's better to have
+// one centralized location that will take care of issue. Update this function when adding more settings.
+
 import profileThemes from "utils/static/profileThemes";
 
 function parseSetting(setting, user) {
