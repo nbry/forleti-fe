@@ -131,6 +131,31 @@ const userSettings = [
       },
     ],
   },
+
+  // PRIVACY SETTINGS ARE NOT IMPLEMENTED YET. USE THIS TO DEMONSTRATE CODING WORKFLOW
+
+  // {
+  //   category: "Privacy (TESTING)",
+  //   settings: [
+  //     {
+  //       title: "Hide Account",
+  //       changeable: true,
+  //       form: "account",
+  //       inputType: "",
+  //       value: "hide_account",
+  //       description: "Temporarily hide account from all users",
+  //     },
+  //     {
+  //       title: "Private Profile",
+  //       changeable: true,
+  //       form: "profile",
+  //       inputType: "",
+  //       value: "private_profile",
+  //       description: "Set your profile content to only be visible to followers",
+  //     },
+  //   ],
+  // },
+  
 ];
 
 export default userSettings;

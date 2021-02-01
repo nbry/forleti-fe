@@ -7,11 +7,11 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 function ProfilePagePosts({ userPosts }) {
-  // Use state for delete dialog and pageLoaded context to handle post deletion.
+  // Use state for delete dialog to handle post deletion.
   // This single dialog will be dynamic. Each post card will have a "deletePost"
   // method passed down as a prop. On open, the target blog post's id will be passed in.
   // User can then choose to submit the deltion request. After account deletion,
-  // set pageLoaded to true to force a  re-render.
+  // force a refresh of the page.
 
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [targetPostId, setTargetPostId] = useState(null);

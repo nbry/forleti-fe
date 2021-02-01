@@ -56,6 +56,13 @@ const profileThemes = {
     background: "#110600",
     board: "#dfd2b4",
   },
+
+  // 8: {
+  //   value: "testing",
+  //   title: "TESTING THEME",
+  //   background: "purple",
+  //   board: "cyan",
+  // },
 };
 
 export default profileThemes;
