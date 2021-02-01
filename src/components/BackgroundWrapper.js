@@ -19,6 +19,8 @@ function BackgroundWrapper({ user, children, setContent }) {
 
   return (
     <>
+      {/* A MODIFIED HEADER WILL BE SHOWN WHEN VISITING PROFILES WHILE LOGGED OUT.
+      THE HEADER WILL NOT HAVE AN ACCOUNT MENU, AND WILL REFLECT THE THEME OF THE USER BEING VIEWED */}
       {!loggedIn && <Header theme={theme} />}
 
       {/* BACKGROUND COLOR WILL CHANGE BASED OFF OF RESULT OF parseTheme */}
@@ -48,6 +50,8 @@ function BackgroundWrapper({ user, children, setContent }) {
 }
 
 export default BackgroundWrapper;
+
+// STYLES:
 
 const BackgroundColor = styled(Grid)`
   background-attachment: fixed;
