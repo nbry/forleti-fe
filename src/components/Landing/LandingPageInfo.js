@@ -1,10 +1,14 @@
+import { Typography } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
+import WorkingPaper from "utils/WorkingPaper";
 
 function LandingPageInfo() {
   return (
     <OuterWrapper id="loading-page-info">
-      <div>TESTING CONTENT</div>
+      <WorkingPaper elevation={10}>
+        <Title variant="h2">Patch Notes</Title>
+      </WorkingPaper>
     </OuterWrapper>
   );
 }
@@ -16,5 +20,9 @@ const OuterWrapper = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  
+`;
+
+const Title = styled(Typography)`
+  font-family: "Raleway";
 `;
