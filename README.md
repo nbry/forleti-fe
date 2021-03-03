@@ -16,7 +16,7 @@ Check out the Backend Repository [here!](https://github.com/nbry/forleti-be)
 
 - **Developer Utility Files For Dynamic Rendering - The Pride and Joy of the Frontend**
 
-	Developers can modify a POJO to customize and add features to the menu. By simply modifying this file, developers will observe the the **dynamic rendering of visuals, modals, and functionality for added features.** This feature is CRUCIAL for ease of development particularly for developers not familiar with front-end development (or even for non-developers). Profile themes can also be added/removed by modifying a POJO.
+	Developers can modify a POJO to customize and add features to the menu. By simply modifying this file, developers will observe the the **dynamic rendering of visuals, modals, and functionality for added settings.** This feature is CRUCIAL for ease of development particularly for developers not familiar with front-end development (or even for non-developers). Profile themes can also be added/removed by modifying a POJO.
 
 	To observe these files, go the following directory: 
 
