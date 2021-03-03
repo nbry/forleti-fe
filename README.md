@@ -1,7 +1,7 @@
 # Forleti - Frontend
 The Forleti project is an implementation of a settings menu for a rapidly growing social media application. This project was built with focuses on ease of development and collaboration.  Forleti utilizes a modular programming style, clear annotations, and expressive tests.
 
-This repository is the React front end for the blogging app. It renders components dynamically based on a "Plain Old JavaScript Object" (POJO). The eventual goal is for the front end to render dynamically from JSON files, so developers unfamiliar with front end conventions (or even non-developers) can modify the settings menu.
+This repository is the React front end for the blogging app. It renders components dynamically based on a "Plain Old JavaScript Object" (POJO). Developers unfamiliar with frontend conventions (or even non-developers) can add/remove settings by modifying these files. 
 
 Check out the Backend Repository [here!](https://github.com/nbry/forleti-be)
 
@@ -22,7 +22,7 @@ Check out the Backend Repository [here!](https://github.com/nbry/forleti-be)
 
 	`/src/utils/static`
 
-	There you'll find the files `userSettings.js` and `profileThemes.js` which handle the dynamic rendering of the settings menu and profile themes. Both files contain instructions.
+	There you'll find the files `userSettings.js` and `profileThemes.js` which handle the dynamic rendering of the settings menu and profile themes. Both files contain instructions. The eventual goal is for the front end to render dynamically from a more conventional data interchange format, like JSON. 
 
 
 - **Clean Coding/Separation of Concerns**  
