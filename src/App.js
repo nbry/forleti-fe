@@ -31,10 +31,11 @@ function App() {
       }
       // Ping the back end when user visits a page.
       // Sometimes deployed apps can "go to sleep" if there's no traffic.
-      // The result doesn't matter, so don't handle the promise.
       else {
-        BackendApi.request("poke");
-        setLoggedInUser("default");
+        const res = await BackendApi.request("poke");
+        if (res) {
+          setLoggedInUser("default");
+        }
       }
     }
     getLoggedInUser();
