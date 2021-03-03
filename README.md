@@ -43,6 +43,7 @@ Check out the Backend Repository [here!](https://github.com/nbry/forleti-be)
 - Conventional Commits - For automating patch notes
 - JSON-rendered components (as opposed to JavaScript objects)
 - Completely implemented microservices architecture (back-end)
+- Cloud storage (AWS S3) for image uploading
 
 #### User Features:
 
@@ -51,7 +52,7 @@ Check out the Backend Repository [here!](https://github.com/nbry/forleti-be)
 - FAQ
 - Landing Page Content
 - Dashboard
-- A following/upvoting system
+- User Following/Post upvoting system
 - Dark Mode
 - Image Uploading
 - Email verification
